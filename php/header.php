@@ -34,15 +34,12 @@
 
         .dropdown-menu {
             background-color: #b973ff;
+            border-radius: 0px;
         }
 
         .dropdown-menu a:hover {
             background-color: black;
             color: #b973ff;
-        }
-
-        .dropdown-menu{
-            transition: 1s;
         }
     </style>
 </head>
@@ -57,13 +54,13 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav" style="transition: 0.4s; color: transparent;">
+        <div class="collapse navbar-collapse" id="navbarNav" style="transition: 0.5s; color: transparent;">
             <ul class="navbar-nav mr-auto">
                 <li class='nav-item dropdown'>
                     <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
                         Tech
                     </a>
-                    <div class='dropdown-menu' style='text-align: center;'>
+                    <div class='dropdown-menu' style='text-align: center; transition: all 1s ease-in;'>
                         <a class='nav-link' href='#'>
                             Apple
                         </a>
@@ -166,6 +163,3 @@
             </ul>
         </div>
     </nav>
-</body>
-
-</html>

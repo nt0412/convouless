@@ -1,3 +1,4 @@
+<?php include_once("../Convouless/php/banner.php") ?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -41,125 +42,141 @@
             background-color: black;
             color: #b973ff;
         }
+
+        .contact :hover{
+            color: #b973ff;
+        }
+        .contact a {
+            color: #C71C7D;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            color: rgb(217, 147, 173);
+            text-decoration: none;
+        }
     </style>
 </head>
 
-<body class="container">
-    <nav class="navbar navbar-expand-md navbar-dark">
-        <a class="navbar-brand" href="../../../Convouless/index.php">
-            <img src="../../../Convouless/image/navbar_icon/outline_home_white_24dp.png" class="img-fluid">
-        </a>
+<body class="container-fluid">
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand" href="../../../Convouless/index.php">
+                <img src="../../../Convouless/image/navbar_icon/outline_home_white_24dp.png" class="img-fluid">
+            </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <img src="../../Convouless/image/view_headline_white_24dp.svg" alt="">
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav" style="transition: 0.5s; color: transparent;">
-            <ul class="navbar-nav mr-auto">
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Tech
-                    </a>
-                    <div class='dropdown-menu' style='text-align: center; transition: all 1s ease-in;'>
-                        <a class='nav-link' href='#'>
-                            Apple
+            <div class="collapse navbar-collapse" id="navbarNav" style="transition: 0.5s; color: transparent;">
+                <ul class="navbar-nav mr-auto">
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
+                            Tech
                         </a>
-                        <a class='nav-link' href='#'>
-                            Samsung
+                        <div class='dropdown-menu' style='text-align: center; transition: all 1s ease-in;'>
+                            <a class='nav-link' href='#'>
+                                Apple
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Samsung
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Xiaomi
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Sony
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Asus
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Nintendo
+                            </a>
+                        </div>
+                    </li>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
+                            Reviews
                         </a>
-                        <a class='nav-link' href='#'>
-                            Xiaomi
+                        <div class='dropdown-menu' style='text-align: center;'>
+                            <a class='nav-link' href='#'>
+                                Phone
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Tablet
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Laptop
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Watch
+                            </a>
+                            <a class='nav-link' href='#'>
+                                PC
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Playstation
+                            </a>
+                        </div>
+                    </li>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
+                            Entertainment
                         </a>
-                        <a class='nav-link' href='#'>
-                            Sony
+                        <div class='dropdown-menu' style='text-align: center;'>
+                            <a class='nav-link' href='#'>
+                                Film
+                            </a>
+                            <a class='nav-link' href='#'>
+                                TV
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Games
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Comics
+                            </a>
+                            <a class='nav-link' href='#'>
+                                Books
+                            </a>
+                        </div>
+                    </li>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
+                            About us
                         </a>
-                        <a class='nav-link' href='#'>
-                            Asus
-                        </a>
-                        <a class='nav-link' href='#'>
-                            Nintendo
-                        </a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Reviews
-                    </a>
-                    <div class='dropdown-menu' style='text-align: center;'>
-                        <a class='nav-link' href='#'>
-                            Phone
-                        </a>
-                        <a class='nav-link' href='#'>
-                            Tablet
-                        </a>
-                        <a class='nav-link' href='#'>
-                            Laptop
-                        </a>
-                        <a class='nav-link' href='#'>
-                            Watch
-                        </a>
-                        <a class='nav-link' href='#'>
-                            PC
-                        </a>
-                        <a class='nav-link' href='#'>
-                            Playstation
-                        </a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Entertainment
-                    </a>
-                    <div class='dropdown-menu' style='text-align: center;'>
-                        <a class='nav-link' href='#'>
-                            Film
-                        </a>
-                        <a class='nav-link' href='#'>
-                            TV
-                        </a>
-                        <a class='nav-link' href='#'>
-                            Games
-                        </a>
-                        <a class='nav-link' href='#'>
-                            Comics
-                        </a>
-                        <a class='nav-link' href='#'>
-                            Books
-                        </a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        About us
-                    </a>
-                    <div class='dropdown-menu' style='text-align: center;'>
-                        <a class='nav-link' href='#'>
-                            Facebook
-                        </a>
-                        <a class='nav-link' href='#'>
-                            Instagram
-                        </a>
-                        <a class='nav-link' href='#'>
-                            Twitter
-                        </a>
-                    </div>
-                </li>
-            </ul>
+                        <div class='dropdown-menu' style='text-align: center;'>
+                            <a class='nav-link' href='#'>
+                                <img src="../../Convouless/image/social_media_icon/facebook.png">Facebook
+                            </a>
+                            <a class='nav-link' href='#'>
+                                <img src="../../Convouless/image/social_media_icon/instagram.png"> Instagram
+                            </a>
+                            <a class='nav-link' href='#'>
+                                <img src="../../Convouless/image/social_media_icon/twitter.png"> Twitter
+                            </a>
+                        </div>
+                    </li>
+                </ul>
 
-            <ul class="navbar-nav">
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        <img src='../../../Convouless/image/navbar_icon/outline_account_circle_white_24dp.png'>
-                    </a>
-                    <div class='dropdown-menu' style='text-align: center;'>
-                        <a class='nav-link' href='../../LAB3/php/login.php'>
-                            <img src='../../../Convouless/image/_login.png' class='img-fluid'>Login
+                <ul class="navbar-nav">
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
+                            <img src='../../../Convouless/image/navbar_icon/outline_account_circle_white_24dp.png'>
                         </a>
-                        <a class='nav-link' href='../../LAB3/php/register.php'>
-                            <img src='../../../Convouless/image/_register.png' class='img-fluid'>Register
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+                        <div class='dropdown-menu' style='text-align: center;'>
+                            <a class='nav-link' href='#'>
+                                <img src='../../Convouless/image/login.svg' class='img-fluid'>Login
+                            </a>
+                            <a class='nav-link' href='#'>
+                                <img src='../../Convouless/image/register.svg' class='img-fluid'>Register
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <hr style="width: 100%; color: purple; background-color: #b973ff;">

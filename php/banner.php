@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Home</title>
+    <link rel="shortcut icon" href="../../Convouless/image/logo.ico" type="image/x-icon">
     <style>
         @media only screen and (max-width: 767px) {
             .banner1 {

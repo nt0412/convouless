@@ -1,5 +1,5 @@
 <footer>
-    <hr width="100%">
+    <hr style="width: 100%; color: purple; background-color: #b973ff;">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">

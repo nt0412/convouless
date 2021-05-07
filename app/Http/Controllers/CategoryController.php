@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::orderBy('category_name','ASC')->get();
+        $category = Category::orderBy('category_name', 'ASC')->get();
         return view('admincp.category.index')->with(compact('category'));
     }
 
@@ -57,7 +57,7 @@ class CategoryController extends Controller
         $category->category_description = $data['category_description'];
         $category->category_enable = $data['category_enable'];
         $category->save();
-        return redirect()->back()->with('status','Message: Add success');
+        return redirect()->back()->with('status', 'Message: Add success');
     }
 
     /**
@@ -110,9 +110,8 @@ class CategoryController extends Controller
         $category->category_slug = $data['category_slug'];
         $category->category_description = $data['category_description'];
         $category->category_enable = $data['category_enable'];
-
         $category->save();
-        return redirect()->back()->with('status','Message: Update success');
+        return redirect()->back()->with('status', 'Message: Updated success');
     }
 
     /**
@@ -124,6 +123,6 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         Category::find($id)->delete();
-        return redirect()->back()->with('status','Message: Deleted success');
+        return redirect()->back()->with('status', 'Message: Deleted success');
     }
 }

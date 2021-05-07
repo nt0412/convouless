@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="col-sm-6" style="text-align: right;">
-                <h3 style="font-weight: bold;">MEDIAHELP</h3>
+                <h3 style="font-weight: bold; color: whitesmoke;">MEDIAHELP</h3>
                 <div class="contact">
                     <ul style="list-style: none;">
                         <li>

@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card" style="background-color: #343a40; color: whitesmoke;">
-                    <div class="card-header">Edit Category</div>
+                    <div class="card-header" style="color: gold;">Edit Category</div>
 
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -25,23 +25,22 @@
                             {{ session('status') }}
                         </div>
                         @endif
-
                         <form method="POST" action="{{route('category.update',[$cate->category_id])}}">
                             @method('PUT')
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Category's name</label>
-                                <input type="text" class="form-control" value="{{$cate->category_name}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="category_name" placeholder="Category's name">
+                                <input type="text" class="form-control" value="{{$cate->category_name}}" onkeyup="ChangeToSlug();" id="slug" name="category_name" placeholder="Category's name">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Category's Slug</label>
-                                <input type="text" class="form-control" value="{{$cate->category_slug}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="category_slug" placeholder="Category's name">
+                                <input type="text" class="form-control" value="{{$cate->category_slug}}" id="convert_slug" name="category_slug" placeholder="Slug's name">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Description</label>
-                                <input type="text" class="form-control" value="{{$cate->category_description}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="category_description" placeholder="Description">
+                                <input type="text" class="form-control" value="{{$cate->category_description}}" id="exampleInputEmail1" name="category_description" placeholder="Description">
                             </div>
 
                             <div class="form-group">
@@ -57,7 +56,7 @@
                                 </select>
                             </div>
 
-                            <button type="submit" class="btn btn-dark btn-outline-warning name=" btn-add">Update</button>
+                            <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add">Update</button>
                         </form>
                     </div>
                 </div>

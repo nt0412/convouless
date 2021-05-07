@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::orderBy('CategoryName','ASC')->get();
+        $category = Category::orderBy('category_name','ASC')->get();
         return view('admincp.category.index')->with(compact('category'));
     }
 
@@ -38,19 +38,19 @@ class CategoryController extends Controller
     {
         $data = $request->validate(
             [
-                'CategoryName' => 'required|unique:category|max:255',
-                'CategoryDescription' => 'required|max:255',
-                'CategoryEnable' => 'required',
+                'category_name' => 'required|unique:category|max:255',
+                'category_description' => 'required|max:255',
+                'category_enable' => 'required',
             ],
             [
-                'CategoryName.required' => 'Message: Need to fill the Name of Category',
-                'CategoryDescription.required' => 'Message: Need to fill the Description of Category',
+                'category_name.required' => 'Message: Need to fill the Name of Category',
+                'category_description.required' => 'Message: Need to fill the Description of Category',
             ]
         );
         $category = new Category();
-        $category->CategoryName = $data['CategoryName'];
-        $category->CategoryDescription = $data['CategoryDescription'];
-        $category->CategoryEnable = $data['CategoryEnable'];
+        $category->category_name = $data['category_name'];
+        $category->category_description = $data['category_description'];
+        $category->category_enable = $data['category_enable'];
         $category->save();
         return redirect()->back()->with('status','Message: Add success');
     }

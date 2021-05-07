@@ -45,12 +45,15 @@
             color: #b973ff;
         }
 
+        .contact{
+            color: whitesmoke;
+        }
         .contact :hover {
             color: #b973ff;
         }
 
         .contact a {
-            color: #C71C7D;
+            color: white;
             font-size: 15px;
             text-decoration: none;
         }

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h3 style="color:white;"><strong>CONTACTS</strong></h3>
+                <h3 style="color: white;"><strong>CONTACTS</strong></h3>
                 <div class="contact">
                     <p>708A HUNG PHU, Ward 10, District 8</p>
                     <p style="color: wheat;">PHONE: 0903308124</p>

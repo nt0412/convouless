@@ -27,23 +27,23 @@
                     <form method="POST" action="{{route('category.store')}}">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Category's name</label>
-                            <input type="text" class="form-control" value="{{old('CategoryName')}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="CategoryName" placeholder="Category's name">
+                            <label>Category's name</label>
+                            <input type="text" class="form-control" value="{{old('category_name')}}" name="category_name" placeholder="Category's name">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Category's Slug</label>
-                            <input type="text" class="form-control" value="{{old('CategorySlug')}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="CategorySlug" placeholder="Category's name">
+                            <label>Category's Slug</label>
+                            <input type="text" class="form-control" value="{{old('category_slug')}}" name="category_slug" placeholder="Category's slug">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Description</label>
-                            <input type="text" class="form-control" value="{{old('CategoryDescription')}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="CategoryDescription" placeholder="Description">
+                            <label>Description</label>
+                            <input type="text" class="form-control" value="{{old('category_description')}}" name="category_description" placeholder="Description">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Enable</label>
-                            <select class="custom-select" name="CategoryEnable">
+                            <label>Enable</label>
+                            <select class="custom-select" name="category_enable">
                                 <option value="1">Enable</option>
                                 <option value="0">Disenable</option>
                             </select>

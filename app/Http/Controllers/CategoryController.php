@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admincp.category.index');
+        $category = Category::orderBy('CategoryName','ASC')->get();
+        return view('admincp.category.index')->with(compact('category'));
     }
 
     /**
@@ -94,8 +95,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($Category_ID)
     {
-        //
+        Category::find($Category_ID)->delete();
+        return redirect()->back()->with('status','Message: Deleted success');
     }
 }

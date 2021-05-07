@@ -28,19 +28,19 @@
                             @foreach($category as $key => $cate)
                             <tr>
                                 <th scope="row">{{$key+1}}</th>
-                                <td>{{$cate->CategoryName}}</td>
-                                <td>{{$cate->CategorySlug}}</td>
-                                <td>{{$cate->CategoryDescription}}</td>
+                                <td>{{$cate->category_name}}</td>
+                                <td>{{$cate->Category_Slug}}</td>
+                                <td>{{$cate->category_description}}</td>
                                 <td>
                                     @if($cate->CategoryEnable == 1)
                                     <span class="text text-success">Enable</span>
-                                    @elseif($cate->CategoryEnable == 0)
+                                    @elseif($cate->category_enable == 0)
                                     <span class="text text-danger">Disenable</span>
                                     @endif
                                 </td>
                                 <td>
-                                    <a style="color: blue;" href="{{route('category.edit',[$cate->Category_ID])}}">Edit</a>
-                                    <form action="{{route('category.destroy',[$cate->Category_ID])}}" method="POST">
+                                    <a style="color: blue;" href="{{route('category.edit',[$cate->category_id ])}}">Edit</a>
+                                    <form action="{{route('category.destroy',[$cate->category_id ])}}" method="POST">
                                         @method('DELETE')
                                         @csrf
                                         <button onclick="return confirm('Are you sure you want to delete ?');" class="btn btn-danger">Delete</button>

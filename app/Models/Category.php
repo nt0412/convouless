@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable = ['CategoryName','CategoryDescription','Enable'];
+    protected $fillable = ['CategoryName','CategoryDescription','Enable','CategorySlug'];
     protected $primaryKey = 'Category_ID';
     protected $table = 'category';
 

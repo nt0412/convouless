@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNav" style="transition: 0.5s; color: transparent;">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Admin</a>
+                <a class="nav-link" href="http://localhost:8080/Convouless/home">Manager menu</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

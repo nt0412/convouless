@@ -39,16 +39,21 @@ class CategoryController extends Controller
         $data = $request->validate(
             [
                 'CategoryName' => 'required|unique:category|max:255',
+                'CategorySlug' => 'required|unique:category|max:255',
                 'CategoryDescription' => 'required|max:255',
                 'CategoryEnable' => 'required',
             ],
             [
                 'CategoryName.required' => 'Message: Need to fill the Name of Category',
+                'CategorySlug.required' => 'Message: Need to fill the Slug of Category',
+                'CategoryName.unique' => 'Message: Choose another Name of Category',
+                'CategorySlug.unique' => 'Message: Choose another Slug of Category',
                 'CategoryDescription.required' => 'Message: Need to fill the Description of Category',
             ]
         );
         $category = new Category();
         $category->CategoryName = $data['CategoryName'];
+        $category->CategorySlug = $data['CategorySlug'];
         $category->CategoryDescription = $data['CategoryDescription'];
         $category->CategoryEnable = $data['CategoryEnable'];
         $category->save();
@@ -74,7 +79,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cate = Category::find($id);
+        return view('admincp.category.edit')->with(compact('cate'));
     }
 
     /**
@@ -86,7 +92,27 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->validate(
+            [
+                'CategoryName' => 'required|max:255',
+                'CategorySlug' => 'required|max:255',
+                'CategoryDescription' => 'required|max:255',
+                'CategoryEnable' => 'required',
+            ],
+            [
+                'CategoryName.required' => 'Message: Need to fill the Name of Category',
+                'CategorySlug.required' => 'Message: Need to fill the Slug of Category',
+                'CategoryDescription.required' => 'Message: Need to fill the Description of Category',
+            ]
+        );
+        $category = Category::find($id);
+        $category->CategoryName = $data['CategoryName'];
+        $category->CategorySlug = $data['CategorySlug'];
+        $category->CategoryDescription = $data['CategoryDescription'];
+        $category->CategoryEnable = $data['CategoryEnable'];
+
+        $category->save();
+        return redirect()->back()->with('status','Message: Update success');
     }
 
     /**
@@ -95,9 +121,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($Category_ID)
+    public function destroy($id)
     {
-        Category::find($Category_ID)->delete();
+        Category::find($id)->delete();
         return redirect()->back()->with('status','Message: Deleted success');
     }
 }

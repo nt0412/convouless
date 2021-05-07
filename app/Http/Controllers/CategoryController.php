@@ -38,40 +38,24 @@ class CategoryController extends Controller
     {
         $data = $request->validate(
             [
-<<<<<<< HEAD
-                'CategoryName' => 'required|unique:category|max:255',
-                'CategorySlug' => 'required|unique:category|max:255',
-                'CategoryDescription' => 'required|max:255',
-                'CategoryEnable' => 'required',
-            ],
-            [
-                'CategoryName.required' => 'Message: Need to fill the Name of Category',
-                'CategorySlug.required' => 'Message: Need to fill the Slug of Category',
-                'CategoryName.unique' => 'Message: Choose another Name of Category',
-                'CategorySlug.unique' => 'Message: Choose another Slug of Category',
-                'CategoryDescription.required' => 'Message: Need to fill the Description of Category',
-            ]
-        );
-        $category = new Category();
-        $category->CategoryName = $data['CategoryName'];
-        $category->CategorySlug = $data['CategorySlug'];
-        $category->CategoryDescription = $data['CategoryDescription'];
-        $category->CategoryEnable = $data['CategoryEnable'];
-=======
                 'category_name' => 'required|unique:category|max:255',
+                'category_slug' => 'required|unique:category|max:255',
                 'category_description' => 'required|max:255',
                 'category_enable' => 'required',
             ],
             [
                 'category_name.required' => 'Message: Need to fill the Name of Category',
+                'category_slug.required' => 'Message: Need to fill the Slug of Category',
+                'category_name.unique' => 'Message: Choose another Name of Category',
+                'category_slug.unique' => 'Message: Choose another Slug of Category',
                 'category_description.required' => 'Message: Need to fill the Description of Category',
             ]
         );
         $category = new Category();
         $category->category_name = $data['category_name'];
+        $category->category_slug = $data['category_slug'];
         $category->category_description = $data['category_description'];
         $category->category_enable = $data['category_enable'];
->>>>>>> efd7167480278a9c233a03121f60ab4c55336c67
         $category->save();
         return redirect()->back()->with('status','Message: Add success');
     }
@@ -110,22 +94,22 @@ class CategoryController extends Controller
     {
         $data = $request->validate(
             [
-                'CategoryName' => 'required|max:255',
-                'CategorySlug' => 'required|max:255',
-                'CategoryDescription' => 'required|max:255',
-                'CategoryEnable' => 'required',
+                'category_name' => 'required|max:255',
+                'category_slug' => 'required|max:255',
+                'category_description' => 'required|max:255',
+                'category_enable' => 'required',
             ],
             [
-                'CategoryName.required' => 'Message: Need to fill the Name of Category',
-                'CategorySlug.required' => 'Message: Need to fill the Slug of Category',
-                'CategoryDescription.required' => 'Message: Need to fill the Description of Category',
+                'category_name.required' => 'Message: Need to fill the Name of Category',
+                'category_slug.required' => 'Message: Need to fill the Slug of Category',
+                'category_description.required' => 'Message: Need to fill the Description of Category',
             ]
         );
         $category = Category::find($id);
-        $category->CategoryName = $data['CategoryName'];
-        $category->CategorySlug = $data['CategorySlug'];
-        $category->CategoryDescription = $data['CategoryDescription'];
-        $category->CategoryEnable = $data['CategoryEnable'];
+        $category->category_name = $data['category_name'];
+        $category->category_slug = $data['category_slug'];
+        $category->category_description = $data['category_description'];
+        $category->category_enable = $data['category_enable'];
 
         $category->save();
         return redirect()->back()->with('status','Message: Update success');

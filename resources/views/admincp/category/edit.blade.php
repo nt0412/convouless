@@ -26,22 +26,22 @@
                         </div>
                         @endif
 
-                        <form method="POST" action="{{route('category.update',[$cate->Category_ID])}}">
+                        <form method="POST" action="{{route('category.update',[$cate->category_id])}}">
                             @method('PUT')
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Category's name</label>
-                                <input type="text" class="form-control" value="{{$cate->CategoryName}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="CategoryName" placeholder="Category's name">
+                                <input type="text" class="form-control" value="{{$cate->category_name}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="category_name" placeholder="Category's name">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Category's Slug</label>
-                                <input type="text" class="form-control" value="{{$cate->CategorySlug}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="CategorySlug" placeholder="Category's name">
+                                <input type="text" class="form-control" value="{{$cate->category_slug}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="category_slug" placeholder="Category's name">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Description</label>
-                                <input type="text" class="form-control" value="{{$cate->CategoryDescription}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="CategoryDescription" placeholder="Description">
+                                <input type="text" class="form-control" value="{{$cate->category_description}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="category_description" placeholder="Description">
                             </div>
 
                             <div class="form-group">

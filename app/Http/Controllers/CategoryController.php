@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::orderBy('category_name','ASC')->get();
-        return view('admincp.category.index')->with(compact('tblcategory'));
+        return view('admincp.category.index')->with(compact('category'));
     }
 
     /**

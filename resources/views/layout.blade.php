@@ -132,12 +132,10 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
             <div class="tinthuong" style="margin: 0 100px;">
-
                 <div class="mota text-center ">
                     <h3 class="fs-1 text-uppercase ">tech</h3>
                     <p class="fs-4">The latest tech news about the world's best
@@ -166,7 +164,6 @@
                                     </div>
 
                                 </div>
-
                             </div>
 
                             <div class="news_items">
@@ -197,12 +194,9 @@
                                                     123 comment
                                                 </a>
                                             </div>
-
-
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
 
                             <div class="news_items_noibat2">
@@ -229,8 +223,6 @@
                                                     123 comment
                                                 </a>
                                             </div>
-
-
                                         </div>
                                     </div>
 
@@ -255,7 +247,6 @@
                                                 startups
                                             </a>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

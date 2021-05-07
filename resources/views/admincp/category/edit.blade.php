@@ -46,11 +46,11 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Enable</label>
-                                <select class="custom-select" name="CategoryEnable">
-                                    @if($cate->CategoryEnable==1)
+                                <select class="custom-select" name="category_enable">
+                                    @if($cate->category_enable==1)
                                     <option selected value="1">Enable</option>
                                     <option value="0">Disenable</option>
-                                    @elseif($cate->CategoryEnable==0)
+                                    @elseif($cate->category_enable==0)
                                     <option value="1">Enable</option>
                                     <option selected value="0">Disenable</option>
                                     @endif

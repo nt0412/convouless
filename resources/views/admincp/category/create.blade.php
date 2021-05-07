@@ -27,6 +27,24 @@
                     <form method="POST" action="{{route('category.store')}}">
                         @csrf
                         <div class="form-group">
+<<<<<<< HEAD
+                            <label for="exampleInputEmail1">Category's name</label>
+                            <input type="text" class="form-control" value="{{old('category_name')}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="category_name" placeholder="Category's name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Category's Slug</label>
+                            <input type="text" class="form-control" value="{{old('category_slug')}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="category_slug" placeholder="Category's name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Description</label>
+                            <input type="text" class="form-control" value="{{old('category_description')}}" id="exampleInputEmail1" aria-describedby="emailHelp" name="category_description" placeholder="Description">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Enable</label>
+=======
                             <label>Category's name</label>
                             <input type="text" class="form-control" value="{{old('category_name')}}" name="category_name" placeholder="Category's name">
                         </div>
@@ -43,13 +61,14 @@
 
                         <div class="form-group">
                             <label>Enable</label>
+>>>>>>> 5094a7d2e1f42186e14aa14a89a654d95d815ef1
                             <select class="custom-select" name="category_enable">
                                 <option value="1">Enable</option>
                                 <option value="0">Disenable</option>
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-dark btn-outline-warning name="btn-add">Add</button>
+                        <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add">Add</button>
                     </form>
                 </div>
             </div>

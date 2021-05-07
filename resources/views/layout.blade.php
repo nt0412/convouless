@@ -112,7 +112,7 @@
             }
         </style>
 
-        <img src="{{url('/images/')}}" alt="Image" />
+        <!-- <img src="{{url('/images/')}}" alt="Image" /> -->
         <div class="container">
 
             <div class="noibat my-5 ">

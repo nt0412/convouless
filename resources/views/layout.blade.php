@@ -35,9 +35,8 @@
 
 
 </div>
-<div class="container-fluid ">
-    <div class="conten">
-
+<div class="container ">
+    <div class="content">
         <!-- header -->
         <style>
             .container-fluid {
@@ -48,8 +47,8 @@
                 color: black;
             }
 
-            .container {
-                background-color: black !important;
+            .content{
+                background-color: white;
             }
 
             a {
@@ -64,8 +63,6 @@
             a:hover {
                 color: red;
             }
-
-            .noibat {}
 
             .noibat .row {
                 /* border-color: transparent; */
@@ -114,13 +111,12 @@
 
         <!-- <img src="{{url('/images/')}}" alt="Image" /> -->
         <div class="container">
-
             <div class="noibat my-5 ">
                 <div class="row ">
 
                     <div class="col-6 p-0">
-                        <div class="card bg-dark text-white" style="">
-                            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg"  class="card-img-top" alt="...">
+                        <div class="card bg-dark text-white">
+                            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title" style="font-family: nunito;font-weight: bold;text-transform: uppercase;">Card title quick example text to build on the card tit</h5>
                                 <p class="card-text"> by <span style="color: red;">some </span></p>
@@ -128,8 +124,8 @@
                         </div>
                     </div>
                     <div class="col-6 p-0">
-                        <div class="card bg-dark text-white" style="">
-                            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg"  class="card-img-top" alt="...">
+                        <div class="card bg-dark text-white">
+                            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title" style="font-family: nunito;font-weight: bold;text-transform: uppercase;">Card title quick example text to build on the card tit</h5>
                                 <p class="card-text"> by <span style="color: red;">some </span></p>
@@ -154,10 +150,6 @@
                 <div class="news">
                     <div class="row">
                         <div class="col-8 ">
-
-
-
-
                             <div class="news_items_noibat">
                                 <div class="row" style="margin: 16px 0; ">
                                     <div class="col-6" style="text-align: right;">
@@ -177,13 +169,11 @@
 
                             </div>
 
-
-
                             <div class="news_items">
                                 <div class="d-flex justify-content-start">
                                     <div>
 
-                                        <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg"  width="221px" alt="">
+                                        <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" width="221px" alt="">
                                     </div>
                                     <div>
                                         <h4>(and sometimes worst) hardware, apps, and much more and much more. From
@@ -214,7 +204,6 @@
                                 </div>
 
                             </div>
-
 
                             <div class="news_items_noibat2">
                                 <div>
@@ -252,34 +241,23 @@
 
                             </div>
 
-
-
-
-
-
                             <div class="news_items_noibat">
                                 <div class="row" style="margin: 16px 0; ">
                                     <div class="col-6" style="text-align: right;">
                                         <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem</h4>
                                     </div>
                                     <div class="col-6">
-                                        <h4 class="title" style="">Lorem Ipsum Lorem</h4>
+                                        <h4 class="title" ">Lorem Ipsum Lorem</h4>
                                     </div>
-                                    <div class="by">
-                                        by
-                                        <a href="">
-                                            startups
-                                        </a>
+                                    <div class=" by">
+                                            by
+                                            <a href="">
+                                                startups
+                                            </a>
                                     </div>
 
                                 </div>
-
                             </div>
-
-
-
-
-
                         </div>
                         <!-- video futuer -->
                         <div class="col-4">
@@ -299,7 +277,6 @@
                                             top companies like Google and Apple to tiny startups</h5>
                                     </li>
                                 </ul>
-
                             </div>
                             <div class="video_items">
                                 <ul style="padding-left: 0px;">
@@ -335,20 +312,13 @@
                                             top companies like Google and Apple to tiny startups</h5>
                                     </li>
                                 </ul>
-
                             </div>
-
-
                         </div>
                     </div>
                 </div>
-
                 <hr>
             </div>
         </div>
-
-
-
     </div>
 </div>
 <?php include_once("../Convouless/php/footer.php"); ?>

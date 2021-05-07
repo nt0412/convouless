@@ -120,7 +120,7 @@
 
                     <div class="col-6 p-0">
                         <div class="card bg-dark text-white" style="">
-                            <img src="./img/apple-watch-s6-44mm-vien-nhom-day-cao-su-navy-232420-102444-600x600.jpg" class="card-img-top" alt="...">
+                            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg"  class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title" style="font-family: nunito;font-weight: bold;text-transform: uppercase;">Card title quick example text to build on the card tit</h5>
                                 <p class="card-text"> by <span style="color: red;">some </span></p>
@@ -129,7 +129,7 @@
                     </div>
                     <div class="col-6 p-0">
                         <div class="card bg-dark text-white" style="">
-                            <img src="./img/apple-watch-s6-44mm-vien-nhom-day-cao-su-navy-232420-102444-600x600.jpg" class="card-img-top" alt="...">
+                            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg"  class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title" style="font-family: nunito;font-weight: bold;text-transform: uppercase;">Card title quick example text to build on the card tit</h5>
                                 <p class="card-text"> by <span style="color: red;">some </span></p>
@@ -183,7 +183,7 @@
                                 <div class="d-flex justify-content-start">
                                     <div>
 
-                                        <img src="./img/asus-vivobook-x415ja-i5-ek090t-17-600x600.jpg" width="221px" alt="">
+                                        <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg"  width="221px" alt="">
                                     </div>
                                     <div>
                                         <h4>(and sometimes worst) hardware, apps, and much more and much more. From
@@ -246,7 +246,7 @@
                                     </div>
 
                                     <div class="image">
-                                        <img src="./img/ipad-gen-8-cellular-vang-new-600x600-600x600.jpg" alt="" style="width: 100%; ">
+                                        <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" alt="" style="width: 100%; ">
                                     </div>
                                 </div>
 
@@ -289,10 +289,10 @@
                                     <li class="" style="position: relative;">
                                         <div style="height: 160px; overflow: hidden;">
 
-                                            <img class="img-fluid" src="./img/apple-watch-s6-44mm-vien-nhom-day-cao-su-red-232420-102444-600x600.jpg" alt="">
+                                            <img class="img-fluid" src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" alt="">
                                         </div>
                                         <!-- <i class="material-icons" >play_arrow</i> -->
-                                        <i class="fas fa-play" style=" border: 7px solid white;position: absolute;top: 35%;font-size: 80px;right: 39%;border-radius: 50%;background: whitesmoke;"></i>
+                                        <i class="fas fa-play" style="color:whitesmoke; position: absolute;top: 35%;font-size: 80px;right: 39%;"></i>
                                     </li>
                                     <li>
                                         <h5>mes worst) hardware, apps, and much more and much more. From
@@ -306,10 +306,10 @@
                                     <li class="" style="position: relative;">
                                         <div style="height: 160px; overflow: hidden;">
 
-                                            <img class="img-fluid" src="./img/apple-watch-s6-44mm-vien-nhom-day-cao-su-red-232420-102444-600x600.jpg" alt="">
+                                            <img class="img-fluid" src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" alt="">
                                         </div>
-                                        <!-- <i class="material-icons" style=" border: 7px solid white;position: absolute;top: 35%;font-size: 80px;right: 39%;border-radius: 50%;background: whitesmoke;">play_arrow</i> -->
-                                        <i class="fas fa-play" style=" border: 7px solid white;position: absolute;top: 35%;font-size: 80px;right: 39%;border-radius: 50%;background: whitesmoke;"></i>
+                                        <!-- <i class="material-icons" style="color:whitesmoke; position: absolute;top: 35%;font-size: 80px;right: 39%;">play_arrow</i> -->
+                                        <i class="fas fa-play" style="color:whitesmoke; position: absolute;top: 35%;font-size: 80px;right: 39%;"></i>
 
                                     </li>
                                     <li>
@@ -324,10 +324,10 @@
                                     <li class="" style="position: relative;">
                                         <div style="height: 160px; overflow: hidden;">
 
-                                            <img class="img-fluid" src="./img/apple-watch-s6-44mm-vien-nhom-day-cao-su-red-232420-102444-600x600.jpg" alt="">
+                                            <img class="img-fluid" src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" alt="">
                                         </div>
-                                        <!-- <i class="material-icons" style=" border: 7px solid white;position: absolute;top: 35%;font-size: 80px;right: 39%;border-radius: 50%;background: whitesmoke;">play_arrow</i> -->
-                                        <i class="fas fa-play" style=" border: 7px solid white;position: absolute;top: 35%;font-size: 80px;right: 39%;border-radius: 50%;background: whitesmoke;"></i>
+                                        <!-- <i class="material-icons" style="color:whitesmoke; position: absolute;top: 35%;font-size: 80px;right: 39%;">play_arrow</i> -->
+                                        <i class="fas fa-play " style="color:whitesmoke; position: absolute;top: 35%;font-size: 80px;right: 39%;"></i>
 
                                     </li>
                                     <li>

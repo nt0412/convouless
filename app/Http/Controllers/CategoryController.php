@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -34,7 +35,23 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate(
+            [
+                'CategoryName' => 'required|unique:category|max:255',
+                'CategoryDescription' => 'required|max:255',
+                'CategoryEnable' => 'required',
+            ],
+            [
+                'CategoryName.required' => 'Message: Need to fill the Name of Category',
+                'CategoryDescription.required' => 'Message: Need to fill the Description of Category',
+            ]
+        );
+        $category = new Category();
+        $category->CategoryName = $data['CategoryName'];
+        $category->CategoryDescription = $data['CategoryDescription'];
+        $category->CategoryEnable = $data['CategoryEnable'];
+        $category->save();
+        return redirect()->back()->with('status','Message: Add success');
     }
 
     /**

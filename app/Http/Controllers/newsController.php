@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\Post;
+use App\Models\news;
 
-class PostController extends Controller
+class newsController extends Controller
 {
+   
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('admincp.post.index');
+        return view('admincp.news.index');
     }
 
     /**
@@ -32,7 +33,7 @@ class PostController extends Controller
             echo "\t\n";
             echo $value -> posts_id;
         }
-        return view('admincp.post.create')->with(compact('cate'));
+        return view('admincp.news.create')->with(compact('cate'));
     }
 
     /**
@@ -61,7 +62,7 @@ class PostController extends Controller
                 'news_content.required' => 'Message: Need to fill the Description of posts',
             ]
         );
-        $posts = new post();
+        $posts = new news();
         $posts->news_title = $data['news_title'];
         $posts->news_slug = $data['news_slug'];
         $posts->news_content = $data['news_content'];

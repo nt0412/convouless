@@ -25,7 +25,7 @@
                             {{ session('status') }}
                         </div>
                         @endif
-                        <form method="POST" action="{{route('post.store')}}">
+                        <form method="POST" action="{{route('news.store')}}">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Post's name</label>

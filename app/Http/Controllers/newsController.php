@@ -16,7 +16,9 @@ class newsController extends Controller
      */
     public function index()
     {
-        return view('admincp.news.index');
+        $list_news = news::with('listCategogy')->orderBy('news_id', 'DESC')->get();
+        dd($list_news);
+        // return view('admincp.news.index')->with(compact('list_news'));
     }
 
     /**
@@ -28,11 +30,11 @@ class newsController extends Controller
     {
         $cate = Category::orderBy('category_id','DESC')->get();
         // echo print_r($cate);
-        foreach ($cate as $key => $value) {
-            echo $value -> news_title;
-            echo "\t\n";
-            echo $value -> posts_id;
-        }
+        // foreach ($cate as $key => $value) {
+        //     echo $value -> news_title;
+        //     echo "\t\n";
+        //     echo $value -> posts_id;
+        // }
         return view('admincp.news.create')->with(compact('cate'));
     }
 
@@ -46,29 +48,49 @@ class newsController extends Controller
     {
         $data = $request->validate(
             [
-                'news_title' => 'required|unique:tblposts',
-                'news_slug' => 'required|unique:tblposts',
-                // 'news_metatile' => 'unique:tblposts|max:255',
-                // 'news_summary' => 'unique:tblposts|max:255',
-                'news_img' => 'required|dimensions:min_width:100,min_height:100',
+                'news_title' => 'required|unique:tblposts|max:255',
+                'news_slug' => 'required|unique:tblposts|max:255',
+                'news_metatile' => 'required',
+                'news_summary' => 'required',
+                // 'news_img' => 'required',
                 'news_content' => 'required',
                 'news_enable' => 'required',
             ],
             [
                 'news_title.required' => 'Message: Need to fill the Name of posts',
                 'news_slug.required' => 'Message: Need to fill the Slug of posts',
+                'news_content.required' => 'Message: Need to fill the news_content of posts',
+                'news_metatile.required' => 'Message: Need to fill the news_metatile of posts',
+                'news_summary.required' => 'Message: Need to fill the news_summary of posts',
+                // 'news_img.required' => 'Message: Need to fill the Description of posts',
+                // 'news_enable.required' => 'Message: Need to fill the Description of posts',
+
                 'news_title.unique' => 'Message: Choose another Name of posts',
                 'news_slug.unique' => 'Message: Choose another Slug of posts',
-                'news_content.required' => 'Message: Need to fill the Description of posts',
             ]
         );
-        $posts = new news();
-        $posts->news_title = $data['news_title'];
-        $posts->news_slug = $data['news_slug'];
-        $posts->news_content = $data['news_content'];
-        $posts->posts_enable = $data['news_enable'];
-        $posts->posts_img = $data['news_img'];
-        $posts->save();
+        $news = new news();
+        echo $news;
+        echo  $data['news_title'];
+        $news->news_title = $data['news_title'];
+        $news->news_slug = $data['news_slug'];
+        $news->news_content = $data['news_content'];
+        $news->news_enable = $data['news_enable'];
+        $news->news_img = $data['news_img'];
+
+        $get_image = $request->news_img;
+        $path ='public/upload/news/';
+        $get_name_image = $get_image->getClientOriginalName();
+        $name_image = current(explode('.',$get_name_image));
+        $timestamp = date("Y").date("m").date("d").date("h").date("i").date("s");
+        $new_image = $name_image.$timestamp.'.'.$get_image->getClientOriginalExtension();
+        $get_image->move($path,$new_image);
+
+        $news->news_img = $new_image;
+
+
+
+        $news->save();
         return redirect()->back()->with('status', 'Message: Add success');
     
     }

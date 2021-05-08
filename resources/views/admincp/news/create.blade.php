@@ -29,11 +29,11 @@
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Post's name</label>
-                                <input type="text" class="form-control" value="{{old('news_title')}}" onkeyup="ChangeToSlug();" id="slug" name="news_name" placeholder="Posts's name">
+                                <input type="text" class="form-control" value="{{old('news_title')}}" onkeyup="ChangeToSlug();" id="slug" name="news_title" placeholder="Posts's name">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Post's Slug</label>
-                                <input type="text" class="form-control" value="{{old('category_name')}}"  id="convert_slug" name="news_slug" placeholder="Posts's name">
+                                <input type="text" class="form-control" value="{{old('news_slug')}}"  id="convert_slug" name="news_slug" placeholder="Posts's slug">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Post's news_metatile</label>
@@ -46,8 +46,8 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Post Content</label>
-                                <input type="text" class="form-control" value="{{old('news_content')}}" id="exampleInputEmail1" name="news_content" placeholder="Content">
-                                <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
+                                <!-- <input type="text" class="form-control" value="{{old('news_content')}}" id="exampleInputEmail1" name="news_content" placeholder="Content"> -->
+                                <textarea name="" class="form-control"  value="{{old('news_content')}}"  name="news_content" placeholder="Content" cols="30" rows="10"></textarea>
                             </div>
 
                             <div class="form-group">
@@ -60,7 +60,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">image</label>
-                                <input type="image" src="" name="news_img"  alt="">
+                                <input type="file" accept="image/*" class="form-control-file" name="news_img" id="exampleFormControlFile1">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Enable</label>

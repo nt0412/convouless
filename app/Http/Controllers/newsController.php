@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\news;
+use App\Models\News;
 
 class newsController extends Controller
 {
@@ -16,9 +16,8 @@ class newsController extends Controller
      */
     public function index()
     {
-        $list_news = news::with('listCategogy')->orderBy('news_id', 'DESC')->get();
-        dd($list_news);
-        // return view('admincp.news.index')->with(compact('list_news'));
+        $list_news = news::with('category')->orderBy('news_id', 'DESC')->get();
+        return view('admincp.news.index')->with(compact('list_news'));
     }
 
     /**
@@ -48,8 +47,8 @@ class newsController extends Controller
     {
         $data = $request->validate(
             [
-                'news_title' => 'required|unique:tblposts|max:255',
-                'news_slug' => 'required|unique:tblposts|max:255',
+                'news_title' => 'required|unique:tblnews|max:255',
+                'news_slug' => 'required|unique:tblnews|max:255',
                 'news_metatile' => 'required',
                 'news_summary' => 'required',
                 // 'news_img' => 'required',
@@ -69,28 +68,30 @@ class newsController extends Controller
                 'news_slug.unique' => 'Message: Choose another Slug of posts',
             ]
         );
-        $news = new news();
-        echo $news;
-        echo  $data['news_title'];
+
+        $new_image = "";
+        if($request->hasFile("")) {
+            $get_image = $request->news_img;
+            $path ='public/upload/news/';
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.',$get_name_image));
+            $timestamp = date("Y").date("m").date("d").date("h").date("i").date("s");
+            $new_image = $name_image.$timestamp.'.'.$get_image->getClientOriginalExtension();
+            $get_image->move($path,$new_image);
+        }
+
+
+        $news = new News();
+        // echo $news;
+        // echo  $data['news_title'];
         $news->news_title = $data['news_title'];
         $news->news_slug = $data['news_slug'];
         $news->news_content = $data['news_content'];
         $news->news_enable = $data['news_enable'];
-        $news->news_img = $data['news_img'];
-
-        $get_image = $request->news_img;
-        $path ='public/upload/news/';
-        $get_name_image = $get_image->getClientOriginalName();
-        $name_image = current(explode('.',$get_name_image));
-        $timestamp = date("Y").date("m").date("d").date("h").date("i").date("s");
-        $new_image = $name_image.$timestamp.'.'.$get_image->getClientOriginalExtension();
-        $get_image->move($path,$new_image);
 
         $news->news_img = $new_image;
-
-
-
         $news->save();
+
         return redirect()->back()->with('status', 'Message: Add success');
     
     }

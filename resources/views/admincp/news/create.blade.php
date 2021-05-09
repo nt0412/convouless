@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Post Content</label>
                                 <!-- <input type="text" class="form-control" value="{{old('news_content')}}" id="exampleInputEmail1" name="news_content" placeholder="Content"> -->
-                                <textarea name="" class="form-control"  value="{{old('news_content')}}"  name="news_content" placeholder="Content" cols="30" rows="10"></textarea>
+                                <textarea class="form-control"  name="news_content" placeholder="Content" cols="30" rows="10">{{old('news_content')}}</textarea>
                             </div>
 
                             <div class="form-group">
@@ -64,9 +64,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Enable</label>
-                                <select class="custom-select" name="">
+                                <select class="custom-select" name="news_enable">
                                     <option value="1">Enable</option>
-                                    <option value="0">Disenable</option>
+                                    <option value="0">Disable</option>
                                 </select>
                             </div>
 

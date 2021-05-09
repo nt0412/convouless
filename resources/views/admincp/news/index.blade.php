@@ -33,7 +33,7 @@
                 <td>{{$item->news_enable}}</td>
                 <td>{{$item->news_title}}</td>
                 <td>{{$item->news_slug}}</td>
-                <td>{{$item->listCategogy->date_posted}}</td>
+                <td>{{$item->category->category_name}}</td>
                 <td>{{$item->news_metatile}}</td>
                 <td>{{$item->news_summary}}</td>
                 <td>{{$item->news_content}}</td>

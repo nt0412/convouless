@@ -52,7 +52,7 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Category Post</label>
-                                <select class="custom-select" name="">
+                                <select class="custom-select" name="category_id">
                                     @foreach($cate as $key => $muc)
                                     <option value="{{$muc->category_id}}">{{$muc->category_name}}</option>
                                     @endforeach

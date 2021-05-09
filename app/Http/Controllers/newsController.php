@@ -45,13 +45,18 @@ class newsController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
+        // echo 'asdfasd';
+        // echo $request->category_id;
+        // echo $request;
         $data = $request->validate(
             [
                 'news_title' => 'required|unique:tblnews|max:255',
                 'news_slug' => 'required|unique:tblnews|max:255',
                 'news_metatile' => 'required',
                 'news_summary' => 'required',
-                // 'news_img' => 'required',
+                // 'category_id' =>'required',
+                'news_img' => 'required',
                 'news_content' => 'required',
                 'news_enable' => 'required',
             ],
@@ -68,6 +73,7 @@ class newsController extends Controller
                 'news_slug.unique' => 'Message: Choose another Slug of posts',
             ]
         );
+        // return $data;
 
         $new_image = "";
         if($request->hasFile("")) {
@@ -88,6 +94,13 @@ class newsController extends Controller
         $news->news_slug = $data['news_slug'];
         $news->news_content = $data['news_content'];
         $news->news_enable = $data['news_enable'];
+        $news->category_id = $request->category_id;
+        $news->news_metatile = 1;
+        $news->news_summary= 1;
+        $news->date_updated = date(now());
+        $news->post_id= 1;
+        $news->author_id= 1;
+        
 
         $news->news_img = $new_image;
         $news->save();

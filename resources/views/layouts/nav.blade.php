@@ -23,14 +23,14 @@
                         Posts
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{route('post.create')}}">Add post</a>
-                        <a class="dropdown-item" href="{{route('post.index')}}">Listed post</a>
+                        <a class="dropdown-item" href="{{route('news.create')}}">Add post</a>
+                        <a class="dropdown-item" href="{{route('news.index')}}">Listed post</a>
                     </div>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-dark btn-outline-warning type=" submit">Search</button>
+                <button class="btn btn-dark btn-outline-warning" type=" submit">Search</button>
             </form>
         </div>
     </nav>

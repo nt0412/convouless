@@ -7,7 +7,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card" style="background-color: #343a40; color: whitesmoke;">
-                    <div class="card-header" style="color: gold;">Listed Category</div>
+                    <div class="card-header" style="color: gold; text-align: center;">
+                        <h2>Category list</h2>
+                    </div>
                     <div class="card-body">
                         @if (session('status'))
                         <div class="alert alert-success" role="alert">

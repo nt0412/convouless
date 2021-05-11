@@ -2,6 +2,9 @@
 @section('content')
 @include('layouts.nav')
 <div class="container bg-dark" style="overflow: scroll;">
+    <div class="card-header" style="color: gold; text-align: center;">
+        <h2>Category list</h2>
+    </div>
     @if (session('status'))
     <div class="alert alert-success" role="alert">
         {{ session('status') }}

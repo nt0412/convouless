@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,12 +21,11 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container-fluid">
         <div class="row">
             <div class="banner1">
-                <img src="../../Convouless/image/banner.png" class="img-fluid">
+                <img src="../../Convouless/image/banner_1.png" class="img-fluid" width="100%">
             </div>
             <div class="banner2">
                 <img src="../../Convouless/image/banner_2.png" class="img-fluid">
@@ -35,5 +33,4 @@
         </div>
     </div>
 </body>
-
 </html>

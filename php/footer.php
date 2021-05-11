@@ -26,7 +26,7 @@
                             Twitter <a href="#"><img src="../../Convouless/image/social_media_icon_footer/twitter.png" alt=""></a>
                         </li>
                         <li>
-                            <p style="color: #C71C7D;">&#169; 2021, Convouless.CORP</p>
+                            <p style="color: #b973ff;">&#169; 2021, Convouless.CORP</p>
                         </li>
                     </ul>
                 </div>

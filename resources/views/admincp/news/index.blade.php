@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 @section('content')
 @include('layouts.nav')
@@ -49,8 +50,8 @@
                     @endif
                 </td>
                 <td>
-                    <a style="color: blue;" class="btn btn-primary" href="{{route('category.edit',[$item->news_id])}}">Edit</a>
-                    <form action="{{route('category.destroy',[$item->news_id])}}" method="POST">
+                    <a style="color: blue;" class="btn btn-primary" href="{{route('news.edit',[$item->news_id])}}">Edit</a>
+                    <form action="{{route('news.destroy',[$item->news_id])}}" method="POST">
                         @method('DELETE')
                         @csrf
                         <button onclick="return confirm('Are you sure you want to delete ?');" class="btn btn-danger">Delete</button>

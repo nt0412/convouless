@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\News;
+use Illuminate\Support\Facades\Auth;
 
 class newsController extends Controller
 {
@@ -15,7 +17,8 @@ class newsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {       
+
         $list_news = news::with('category')->orderBy('news_id', 'DESC')->get();
         return view('admincp.news.index')->with(compact('list_news'));
     }
@@ -28,12 +31,9 @@ class newsController extends Controller
     public function create()
     {
         $cate = Category::orderBy('category_id','DESC')->get();
-        // echo print_r($cate);
-        // foreach ($cate as $key => $value) {
-        //     echo $value -> news_title;
-        //     echo "\t\n";
-        //     echo $value -> posts_id;
-        // }
+        // dd();   
+ 
+        
         return view('admincp.news.create')->with(compact('cate'));
     }
 
@@ -45,17 +45,14 @@ class newsController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
-        // echo 'asdfasd';
-        // echo $request->category_id;
-        // echo $request;
+
         $data = $request->validate(
             [
-                'news_title' => 'required|unique:tblnews|max:255',
-                'news_slug' => 'required|unique:tblnews|max:255',
+                'news_title' => 'required|max:255',
+                'news_slug' => 'required|max:255',
                 'news_metatile' => 'required',
                 'news_summary' => 'required',
-                // 'category_id' =>'required',
+
                 'news_img' => 'required',
                 'news_content' => 'required',
                 'news_enable' => 'required',
@@ -95,11 +92,12 @@ class newsController extends Controller
         $news->news_content = $data['news_content'];
         $news->news_enable = $data['news_enable'];
         $news->category_id = $request->category_id;
-        $news->news_metatile = 1;
-        $news->news_summary= 1;
+        $news->news_metatile = $data['news_metatile'];
+        $news->news_summary= $data['news_summary'];
         $news->date_updated = date(now());
-        $news->post_id= 1;
-        $news->author_id= 1;
+        // $news->post_id= 1;
+        // $news->author_id = $user->id;
+        $news->author_id = Auth::id();
         
 
         $news->news_img = $new_image;
@@ -128,7 +126,12 @@ class newsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news = News::find($id);
+        // $list_cate = news::with('category')->get();
+        $cate = Category::orderBy('category_id','DESC')->get();
+
+        // print_r ($list_news);
+        return view('admincp.news.edit')->with(compact('news','cate'));
     }
 
     /**
@@ -152,5 +155,25 @@ class newsController extends Controller
     public function destroy($id)
     {
         //
+    }
+    //up load file of edit
+    public function upload_ckeditor(Request $request)
+    {
+        $request->upload->move(public_path('uploads/news'), $request->file('upload')->getClientOriginalName());
+        // echo $request;
+        echo json_encode(array('file_name' => $request->file('upload')->getClientOriginalName()));
+    }
+
+    public function file_brower(){
+        $paths = glob(public_path('uploads/news/*'));
+        $fileNames = array();
+        foreach ($paths as $path) {
+            array_push($fileNames, basename($path));
+        }
+        $data = array(
+            'fileNames' => $fileNames
+        );
+        return view('admincp.news.file_brower')->with($data);
+
     }
 }

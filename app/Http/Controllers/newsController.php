@@ -8,7 +8,7 @@ use App\Models\News;
 
 class newsController extends Controller
 {
-   
+
     /**
      * Display a listing of the resource.
      *
@@ -27,7 +27,7 @@ class newsController extends Controller
      */
     public function create()
     {
-        $cate = Category::orderBy('category_id','DESC')->get();
+        $cate = Category::orderBy('category_id','ASC')->get();
         // echo print_r($cate);
         // foreach ($cate as $key => $value) {
         //     echo $value -> news_title;
@@ -93,7 +93,7 @@ class newsController extends Controller
         $news->save();
 
         return redirect()->back()->with('status', 'Message: Add success');
-    
+
     }
 
     /**

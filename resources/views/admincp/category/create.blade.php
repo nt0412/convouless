@@ -53,9 +53,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card" style="background-color: #343a40; color: whitesmoke;">
-                    <div class="card-header" style="color: gold; text-align: center;">
-                        <h2>Add Category</h2>
-                    </div>
+                    <div class="card-header" style="color: gold; text-align: center;"><h2>Add Category</h2></div>
 
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -91,7 +89,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Enable</label>
+                                <label for="exampleInputEmail1">Status</label>
                                 <select class="custom-select" name="category_enable">
                                     <option value="1" style="color: green;">Enable</option>
                                     <option value="0" style="color: red;">Disenable</option>

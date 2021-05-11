@@ -130,18 +130,20 @@
 
             <div class="col-sm-4">
                 <div class="video">
-                    <h4 class="text-center fs-1" style="border-bottom: 2px solid #b973ff ;">News video</h4>
+                    <h4 class="text-center fs-1" style="border-bottom: 2px solid #b973ff; font-family: sans-serif; margin-top: 2%;">News video</h4>
                     <div class="video_items">
                         <ul style="padding-left: 0px;">
-                            <li class="" style="position: relative;">
+                            <li style="position: relative;">
                                 <div style="overflow: hidden;">
                                     <img class="img-fluid" src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" alt="">
                                 </div>
                                 <i class="fas fa-play" style="color:whitesmoke; position: absolute;top: 35%;font-size: 80px;right: 39%;"></i>
                             </li>
-                            <li>
-                                <h5>Hardware, apps, and much more and much more. From
-                                    top companies like Google and Apple to tiny startups</h5>
+                            <li class="title">
+                                <a href="">
+                                    <h5 style="font-weight: bold;">Hardware, apps, and much more and much more. From
+                                        top companies like Google and Apple to tiny startups</h5>
+                                </a>
                             </li>
                         </ul>
                     </div>

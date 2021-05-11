@@ -14,17 +14,17 @@
         <thead class="thead-light">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">news_enable</th>
-                <th scope="col">news's title</th>
-                <th scope="col">news's Slug</th>
-                <th scope="col">cate</th>
-                <th scope="col">news_metatile</th>
-                <th scope="col">news_summary</th>
-                <th scope="col">news_content</th>
-                <th scope="col">news_img</th>
-                <th scope="col">author</th>
-                <th scope="col">date_posted</th>
-                <th scope="col">date_updated</th>
+                <th scope="col">news enable</th>
+                <th scope="col">News's Title</th>
+                <th scope="col">News's Slug</th>
+                <th scope="col">Category</th>
+                <th scope="col">News_metatile</th>
+                <th scope="col">News_summary</th>
+                <th scope="col">News_content</th>
+                <th scope="col">News_img</th>
+                <th scope="col">Author</th>
+                <th scope="col">Date_posted</th>
+                <th scope="col">Date_updated</th>
                 <th scope="col">Enable</th>
                 <th scope="col">Tools</th>
             </tr>

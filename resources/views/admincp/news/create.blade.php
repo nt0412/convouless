@@ -75,7 +75,7 @@
                         <form class="box" method="POST" action="{{route('news.store')}}">
                             @csrf
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Post's name</label>
+                                <label for="exampleInputEmail1">Post's Name</label>
                                 <input type="text" class="form-control" value="{{old('news_title')}}" onkeyup="ChangeToSlug();" id="slug" name="news_title" placeholder="Posts's name">
                             </div>
                             <div class="form-group">
@@ -83,23 +83,23 @@
                                 <input type="text" class="form-control" value="{{old('news_slug')}}" id="convert_slug" name="news_slug" placeholder="Posts's slug">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Post's news_metatile</label>
+                                <label for="exampleInputEmail1">Post's Metatile</label>
                                 <input type="text" class="form-control" value="{{old('news_metatile')}}" name="news_metatile" placeholder="Posts's name">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Post's news_summary</label>
+                                <label for="exampleInputEmail1">Post's Summary</label>
                                 <input type="text" class="form-control" value="{{old('news_summary')}}" name="news_summary" placeholder="Posts's name">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Post Content</label>
+                                <label for="exampleInputEmail1">Post's Content</label>
                                 <!-- <input type="text" class="form-control" value="{{old('news_content')}}" id="exampleInputEmail1" name="news_content" placeholder="Content"> -->
                                 <textarea class="form-control" name="news_content" placeholder="Content" cols="30" rows="10">{{old('news_content')}}</textarea>
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Category Post</label>
-                                <select class="custom-select" name="">
+                                <label for="exampleInputEmail1">Post's Category</label>
+                                <select class="custom-select" name="category_id">
                                     @foreach($cate as $key => $muc)
                                     <option value="{{$muc->category_id}}">{{$muc->category_name}}</option>
                                     @endforeach
@@ -107,7 +107,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Choose image</label>
-                                <input type="file" accept="image/*" class="form-control-file" name="news_img" id="exampleFormControlFile1">
+                                <input class="form-control-file" type="file" accept="image/*" name="news_img" id="exampleFormControlFile1">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Enable</label>

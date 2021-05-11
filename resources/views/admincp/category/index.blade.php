@@ -23,7 +23,7 @@
                                     <th scope="col">Category's name</th>
                                     <th scope="col">Category's Slug</th>
                                     <th scope="col">Description</th>
-                                    <th scope="col">Enable</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Tools</th>
                                 </tr>
                             </thead>

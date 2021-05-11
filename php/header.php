@@ -140,11 +140,6 @@
             text-decoration: none;
         }
 
-        @media only screen and (max-width: 767px) {
-            .content .col-sm-4 .video {
-                visibility: die;
-            }
-        }
     </style>
 </head>
 

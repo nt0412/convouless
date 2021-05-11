@@ -1,16 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<style>
+    .box{
+        color: goldenrod;
+    }
+    .box h1{
+        text-align: center;
+        color: goldenrod;
+        font-family: Sans-serif;
+    }
+    .box button {
+        border: 2px solid goldenrod;
+        color: white;
+        border-radius: 15px;
+        transition: 0.3s;
+    }
+
+    .box button:hover {
+        background-color: goldenrod;
+        border-color: whitesmoke;
+        color: black;
+    }
+</style>
+<div class="container" style="background-color: black;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                <div class="card-body" style="background-color: black;">
+                    <form class="box" method="POST" action="{{ route('register') }}">
                         @csrf
-
+                        <h1>Register</h1>
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -63,7 +83,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark btn-outline-warning">
                                     {{ __('Register') }}
                                 </button>
                             </div>

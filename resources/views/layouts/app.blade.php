@@ -27,7 +27,7 @@
     <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
 </head>
 
-<body>
+<body style="background-color: black;">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: black;">
             <div class="container">

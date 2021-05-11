@@ -15,7 +15,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{route('category.create')}}">Add category</a>
-                        <a class="dropdown-item" href="{{route('category.index')}}">Listed category</a>
+                        <a class="dropdown-item" href="{{route('category.index')}}">Category list</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -24,7 +24,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{route('news.create')}}">Add post</a>
-                        <a class="dropdown-item" href="{{route('news.index')}}">Listed post</a>
+                        <a class="dropdown-item" href="{{route('news.index')}}">Post list</a>
                     </div>
                 </li>
             </ul>

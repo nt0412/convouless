@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Enable</label>
+                                <label for="exampleInputEmail1">Status</label>
                                 <select class="custom-select" name="category_enable">
                                     @if($cate->category_enable==1)
                                     <option selected value="1">Enable</option>

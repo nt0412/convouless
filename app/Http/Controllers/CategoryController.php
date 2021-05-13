@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\News;
 
 class CategoryController extends Controller
 {
@@ -122,7 +123,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
+        News::where('category_id', $id)->update(array('category_id' => '0'));
         Category::find($id)->delete();
+
         return redirect()->back()->with('status', 'Message: Deleted success');
     }
 }

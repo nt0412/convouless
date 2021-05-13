@@ -45,6 +45,7 @@
         border: 2px solid goldenrod;
         border-radius: 24px;
         background-color: whitesmoke;
+        width: 10rem;
     }
 </style>
 
@@ -53,7 +54,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card" style="background-color: #343a40; color: whitesmoke;">
-                    <div class="card-header" style="color: gold; text-align: center;"><h2>Add Category</h2></div>
+                    <div class="card-header" style="color: gold; text-align: center; border-bottom: 2px solid white;"><h2>Add Category</h2></div>
 
                     @if ($errors->any())
                     <div class="alert alert-danger">

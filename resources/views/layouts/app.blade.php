@@ -17,8 +17,14 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    {{-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script> --}}
+
+    <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
 </head>
 
 <body style="background-color: black;">
@@ -83,7 +89,6 @@
     <script type="text/javascript">
         function ChangeToSlug() {
             var slug;
-
             //Lấy text từ thẻ input title
             slug = document.getElementById("slug").value;
             slug = slug.toLowerCase();

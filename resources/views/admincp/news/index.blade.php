@@ -40,7 +40,7 @@
                 <td>{{$item->category->category_name}}</td>
                 <td>{{$item->news_metatile}}</td>
                 <td>{{$item->news_summary}}</td>
-                <td>{{$item->news_content}}</td>
+                <textarea>{{$item->news_content}}</textarea>
                 <td>{{$item->news_img}}</td>
                 <td>{{$item->author_id}}</td>
                 <td>{{$item->date_posted}}</td>

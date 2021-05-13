@@ -25,6 +25,8 @@
     {{-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script> --}}
     
     <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
+    <script src="{{asset('public/ckeditor/ckeditor.js')}}"></script>
+    <script src="{{asset('public/ckfinder/ckfinder.js')}}"></script>
 </head>
 
 <body style="background-color: black;">

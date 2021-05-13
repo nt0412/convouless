@@ -122,6 +122,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
+        // News::
         Category::find($id)->delete();
         return redirect()->back()->with('status', 'Message: Deleted success');
     }

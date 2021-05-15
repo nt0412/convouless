@@ -92,17 +92,12 @@
             @foreach($list_news as $key => $item)
             <tr>
                 <td>{{$key+1}}</td>
-                <td>{{$item->news_title}}</td>
-                <td>{{$item->news_slug}}</td>
+                <td class="content_td"><p>{{$item->news_title}}</p></td>
+                <td class="content_td"><p>{{$item->news_slug}}</p> </td>
                 <td>{{$item->category->category_name}}</td>
-                <td>{{$item->news_metatile}}</td>
-<<<<<<< HEAD
-                <td><div>{{$item->news_summary}}</div></td>
-                {{-- <td><div>{{$item->news_content}}</div></td> --}}
-=======
-                <td>{{$item->news_summary}}</td>
+                <td class="content_td"><p>{{$item->news_metatile}}</p></td>
+                <td class="content_td"><p>{{$item->news_summary}}</p></td>
                 <td class="content_td"><p>{{$item->news_content}}</p></td>
->>>>>>> e3d0cf284110053ab713c920c6d764175ab8fd8d
                 <td>{{$item->news_img}}</td>
                 <td>{{$item->author_id}}</td>
                 <td>{{$item->date_posted}}</td>

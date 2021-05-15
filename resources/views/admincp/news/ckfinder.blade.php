@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+
 <script src="{{asset('js/ckfinder.js')}}"></script>
 <script>
 	CKFinder.start();

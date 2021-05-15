@@ -22,6 +22,15 @@
         border-color: whitesmoke;
         color: black;
     }
+
+    .box input[type="text"]:focus,
+    .box input[type="email"]:focus,
+    .box input[type="password"]:focus,
+    .box input[type="email"]:focus,
+    .box input[type="email"]:focus {
+        border-color: goldenrod;
+        transition: 0.5s;
+    }
 </style>
 <div class="container" style="background-color: black;">
     <div class="row justify-content-center">

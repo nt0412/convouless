@@ -144,11 +144,6 @@
             text-decoration: none;
         }
 
-        @media only screen and (max-width: 767px) {
-            .content .col-sm-4 .video {
-                visibility: die;
-            }
-        }
     </style>
 </head>
 
@@ -157,7 +152,8 @@
         <div class="row">
             <nav class="navbar navbar-expand-md navbar-dark" style="background-color: black !important;">
                 <a class="navbar-brand" href="../../../Convouless/index.php">
-                    <img src="../../../Convouless/image/navbar_icon/outline_home_white_24dp.png" class="img-fluid">
+                    <!-- <img src="../../../Convouless/image/logo.png" class="img-fluid"> -->
+                    <img src="image/logo.png" class="img-fluid">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">

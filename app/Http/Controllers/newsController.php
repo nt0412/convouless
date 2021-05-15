@@ -38,8 +38,6 @@ class newsController extends Controller
 
         $cate = Category::orderBy('category_name','ASC')->get();
         // dd();
-
-
         return view('admincp.news.create')->with(compact('cate'));
     }
 

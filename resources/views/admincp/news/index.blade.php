@@ -71,7 +71,7 @@
                 <th scope="col">Category</th>
                 <th scope="col">News_metatile</th>
                 <th scope="col">News_summary</th>
-                <th scope="col">News_content</th>
+                {{-- <th scope="col">News_content</th> --}}
                 <th scope="col">News_img</th>
                 <th scope="col">Author</th>
                 <th scope="col">Date_posted</th>
@@ -88,8 +88,8 @@
                 <td>{{$item->news_slug}}</td>
                 <td>{{$item->category->category_name}}</td>
                 <td>{{$item->news_metatile}}</td>
-                <td>{{$item->news_summary}}</td>
-                <td><div>{{$item->news_content}}</div></td>
+                <td><div>{{$item->news_summary}}</div></td>
+                {{-- <td><div>{{$item->news_content}}</div></td> --}}
                 <td>{{$item->news_img}}</td>
                 <td>{{$item->author_id}}</td>
                 <td>{{$item->date_posted}}</td>

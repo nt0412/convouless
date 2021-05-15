@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class newsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -29,6 +34,8 @@ class newsController extends Controller
      */
     public function create()
     {
+        // return Auth::id();
+
         $cate = Category::orderBy('category_name','ASC')->get();
         // dd();
 
@@ -44,6 +51,8 @@ class newsController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->file('news_img')->getClientOriginalName());
+        // return {{asset('images')}};
 
         $data = $request->validate(
             [
@@ -71,21 +80,9 @@ class newsController extends Controller
         );
         // return $data;
 
-        $new_image = "";
-        if($request->hasFile("")) {
-            $get_image = $request->news_img;
-            $path ='public/upload/news/';
-            $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.',$get_name_image));
-            $timestamp = date("Y").date("m").date("d").date("h").date("i").date("s");
-            $new_image = $name_image.$timestamp.'.'.$get_image->getClientOriginalExtension();
-            $get_image->move($path,$new_image);
-        }
-
 
         $news = new News();
-        // echo $news;
-        // echo  $data['news_title'];
+
         $news->news_title = $data['news_title'];
         $news->news_slug = $data['news_slug'];
         $news->news_content = $data['news_content'];
@@ -94,12 +91,15 @@ class newsController extends Controller
         $news->news_metatile = $data['news_metatile'];
         $news->news_summary= $data['news_summary'];
         $news->date_updated = date(now());
-        // $news->post_id= 1;
-        // $news->author_id = $user->id;
+
+        
         $news->author_id = Auth::id();
+        // $news->author_id = 1;
 
+        $image = $request->file('news_img');
+        $image->move(public_path('images'), $image->getClientOriginalName());
+        $news->news_img = $image->getClientOriginalName();
 
-        $news->news_img = $new_image;
         $news->save();
 
         return redirect()->back()->with('status', 'Message: Success');
@@ -181,8 +181,7 @@ class newsController extends Controller
 
 
         $news = new News();
-        // echo $news;
-        // echo  $data['news_title'];
+
         $news = News::find($id);
         $news->news_title = $data['news_title'];
         $news->news_slug = $data['news_slug'];
@@ -192,8 +191,7 @@ class newsController extends Controller
         $news->news_metatile = $data['news_metatile'];
         $news->news_summary= $data['news_summary'];
         $news->date_updated = date(now());
-        // $news->post_id= 1;
-        // $news->author_id = $user->id;
+
         $news->author_id = Auth::id();
 
 

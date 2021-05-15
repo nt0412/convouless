@@ -17,5 +17,6 @@ Route::resource('/category', CategoryController::class);
 Route::resource('/news', newsController::class);
 
 
+
 Route::post('/news/upload_ckeditor', [newsController::class,'upload_ckeditor']);
 Route::get('/news/file_brower', [newsController::class,'file_brower']);

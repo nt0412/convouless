@@ -74,7 +74,7 @@
             {{ session('status') }}
         </div>
         @endif
-        <form class="box" method="POST" action="{{route('news.store')}}" style="padding: 0 5%;">
+        <form class="box" method="POST" action="{{route('news.store')}}"  enctype="multipart/form-data" style="padding: 0 5%;">
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">Post's Name</label>

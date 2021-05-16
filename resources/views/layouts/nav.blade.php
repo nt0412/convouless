@@ -2,7 +2,7 @@
     .search-box {
         float: left;
         height: 40px;
-        background-color: white;
+        background-color: gold;
         border-radius: 40px;
     }
 
@@ -12,18 +12,17 @@
     }
 
     .search-box:hover>.search-btn {
-        background-color: gold;
-        color: #343a40;
+        background-color: #343a40;
+        color: gold;
     }
 
     .search-btn {
         float: right;
         border-radius: 50%;
-        background-color: #343a40;
-        outline: red;
+        background-color: gold;
         align-items: center;
         transition: 0.5s;
-        color: gold;
+        color: #343a40;
         cursor: pointer;
         width: 40px;
         height: 40px;

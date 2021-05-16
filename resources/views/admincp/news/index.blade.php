@@ -56,9 +56,9 @@
 
     .content_td p {
         -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
     }
 </style>
 <div class="container-fluid">
@@ -79,8 +79,8 @@
                 <th scope="col">Category</th>
                 <th scope="col">Metatile</th>
                 <th scope="col">Summary</th>
-                {{-- <th scope="col" style="width: 30%;">Content</th> --}}
-                <th scope="col">Image</th>
+                <th scope="col" style="width: 20%; text-align: center;">Content</th>
+                <th scope="col" style="width: 20%; text-align: center;">Image</th>
                 <th scope="col">Author</th>
                 <th scope="col">Date Posted</th>
                 <th scope="col">Date Updated</th>
@@ -92,12 +92,22 @@
             @foreach($list_news as $key => $item)
             <tr>
                 <td>{{$key+1}}</td>
-                <td class="content_td"><p>{{$item->news_title}}</p></td>
-                <td class="content_td"><p>{{$item->news_slug}}</p> </td>
+                <td class="content_td">
+                    <p>{{$item->news_title}}</p>
+                </td>
+                <td class="content_td">
+                    <p>{{$item->news_slug}}</p>
+                </td>
                 <td>{{$item->category->category_name}}</td>
-                <td class="content_td"><p>{{$item->news_metatile}}</p></td>
-                <td class="content_td"><p>{{$item->news_summary}}</p></td>
-                {{-- <td class="content_td"><p>{{$item->news_content}}</p></td> --}}
+                <td class="content_td">
+                    <p>{{$item->news_metatile}}</p>
+                </td>
+                <td class="content_td">
+                    <p>{{$item->news_summary}}</p>
+                </td>
+                <td class="content_td">
+                   <div>{{$item->news_content}}</div>
+                </td>
                 <td>{{$item->news_img}}</td>
                 <td>{{$item->author_id}}</td>
                 <td>{{$item->date_posted}}</td>

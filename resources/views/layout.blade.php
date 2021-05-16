@@ -1,6 +1,5 @@
 @include('banner')
 @include('header')
-
 <div class="container" id="grad">
     <div class="row">
         <div class="col-md-8" style="padding: 1px;">

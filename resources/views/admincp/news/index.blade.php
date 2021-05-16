@@ -106,7 +106,7 @@
                     <p>{{$item->news_summary}}</p>
                 </td>
                 <td class="content_td">
-                   <div>{{$item->news_content}}</div>
+                    <p>{{$item->news_content}}</p>
                 </td>
                 <td>{{$item->news_img}}</td>
                 <td>{{$item->author_id}}</td>

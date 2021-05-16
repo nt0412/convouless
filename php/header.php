@@ -14,11 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
 
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
- 
+
 
     <style>
         body {
@@ -152,7 +152,6 @@
         <div class="row">
             <nav class="navbar navbar-expand-md navbar-dark" style="background-color: black !important;">
                 <a class="navbar-brand" href="../../../Convouless/index.php">
-                    <!-- <img src="../../../Convouless/image/logo.png" class="img-fluid"> -->
                     <img src="image/logo.png" class="img-fluid">
                 </a>
 

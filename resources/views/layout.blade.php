@@ -1,42 +1,44 @@
-<?php include_once("../Convouless/php/header.php"); ?>
+<?php include_once("php/header.php"); ?>
 <div class="container" id="grad">
     <div class="row">
         <div class="col-md-8" style="padding: 1px;">
-            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="img-fluid">
+            <div >
+                <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">    
+            </div>
         </div>
         <div class="col-sm-4" style="padding: 1px;">
-            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="img-fluid">
+            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-4" style="padding: 1px;">
-            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="img-fluid">
+            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
         </div>
 
         <div class="col-sm-8" style="padding: 1px;">
-            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="img-fluid">
+            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-4" style="padding: 1px;">
-            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="img-fluid">
+            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
         </div>
 
         <div class="col-sm-4" style="padding: 1px;">
-            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="img-fluid">
+            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
         </div>
 
         <div class="col-sm-4" style="padding: 1px;">
-            <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="img-fluid">
+            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
         </div>
     </div>
     <div class="noibat my-3">
         <div class="row">
             <div class="col-sm-6 p-0">
                 <div class="card bg-dark text-white">
-                    <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="card-img-top">
+                    <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title" style="font-family: nunito;font-weight: bold;text-transform: uppercase;">Card title quick example text to build on the card tit</h5>
                         <p class="card-text"> by <span style="color: red;">Jonas Bill</span></p>
@@ -45,7 +47,7 @@
             </div>
             <div class="col-sm-6 p-0">
                 <div class="card bg-dark text-white">
-                    <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="card-img-top">
+                    <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title" style="font-family: nunito;font-weight: bold;text-transform: uppercase;">Card title quick example text to build on the card tit</h5>
                         <p class="card-text"> by <span style="color: red;">Bobb Bruce</span></p>
@@ -92,7 +94,7 @@
                             <div class="col-sm-4">
                                 <br>
                                 <div class="news_image">
-                                    <img src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" class="img-fluid">
+                                    <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
                                 </div>
                             </div>
                             <div class="col-sm-8">
@@ -135,7 +137,7 @@
                         <ul style="padding-left: 0px;">
                             <li style="position: relative;">
                                 <div style="overflow: hidden;">
-                                    <img class="img-fluid" src="../../../Convouless/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg" alt="">
+                                    <img class="img-fluid" src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" alt="">
                                 </div>
                                 <i class="fas fa-play" style="color:whitesmoke; position: absolute;top: 35%;font-size: 80px;right: 39%;"></i>
                             </li>

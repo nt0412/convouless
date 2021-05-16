@@ -28,10 +28,12 @@
         width: 40px;
         height: 40px;
     }
-    #navbarNav>div>a{
+
+    #navbarNav>div>a {
         position: relative;
     }
-    #navbarNav > div > a > i{
+
+    #navbarNav>div>a>i {
         position: absolute;
         left: 7px;
     }
@@ -39,6 +41,7 @@
     .search-btn>i {
         font-size: 25px;
     }
+
     .search-txt {
         border: none;
         background: none;

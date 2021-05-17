@@ -58,9 +58,8 @@ class newsController extends Controller
                 'news_slug' => 'required|unique:tblnews|max:255',
                 'news_metatile' => 'required',
                 'news_summary' => 'required',
-
-                'news_img' => 'required',
                 'news_content' => 'required',
+                'news_img' => 'required',
                 'news_enable' => 'required',
             ],
             [
@@ -90,7 +89,7 @@ class newsController extends Controller
         $news->news_summary= $data['news_summary'];
         $news->date_updated = date(now());
 
-        
+
         $news->author_id = Auth::id();
         // $news->author_id = 1;
 
@@ -125,7 +124,7 @@ class newsController extends Controller
     {
         $news = News::find($id);
         // $list_cate = news::with('category')->get();
-        $cate = Category::orderBy('category_id','DESC')->get();
+        $cate = Category::orderBy('category_name','ASC')->get();
 
         // print_r ($list_news);
         return view('admincp.news.edit')->with(compact('news','cate'));

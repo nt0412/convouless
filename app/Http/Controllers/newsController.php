@@ -90,7 +90,7 @@ class newsController extends Controller
         $news->news_summary= $data['news_summary'];
         $news->date_updated = date(now());
 
-        
+
         $news->author_id = Auth::id();
         // $news->author_id = 1;
 
@@ -228,5 +228,10 @@ class newsController extends Controller
         );
         return view('admincp.news.file_brower')->with($data);
 
+    }
+    public function apple()
+    {
+        $apple_news = news::with('category')->orderBy('news_id', 'DESC')->get();
+        return view('admincp.news.apple')->with(compact('apple_news'));;
     }
 }

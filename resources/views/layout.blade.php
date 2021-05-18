@@ -3,8 +3,8 @@
 <div class="container" id="grad">
     <div class="row">
         <div class="col-md-8" style="padding: 1px;">
-            <div >
-                <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">    
+            <div>
+                <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
             </div>
         </div>
         <div class="col-sm-4" style="padding: 1px;">

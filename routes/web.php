@@ -15,7 +15,4 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('/category', CategoryController::class);
 Route::resource('/news', newsController::class);
 
-
-Route::get('posts', function(){
-    return view('news.posts');
-});
+Route::get('/apple', [newsController::class, 'apple'])->name('news.apple');

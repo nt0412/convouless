@@ -25,6 +25,7 @@
             color: whitesmoke;
             background-color: black;
         }
+
         #navbarNav {
             transition: 0.5s;
             color: transparent;
@@ -117,32 +118,35 @@
             overflow: hidden;
         }
 
-        .comment a{
+        .comment a {
             color: #cc165c;
             text-decoration: none;
         }
-        .comment a:hover{
+
+        .comment a:hover {
             color: darkred;
             text-decoration: none;
         }
 
-        .author a{
+        .author a {
             color: #cc165c;
             text-decoration: none;
         }
-        .author a:hover{
+
+        .author a:hover {
             color: darkred;
             text-decoration: none;
         }
+
         .title a {
             color: black;
             text-decoration: none;
         }
+
         .title a:hover {
             color: #cc165c;
             text-decoration: none;
         }
-
     </style>
 </head>
 
@@ -166,22 +170,9 @@
                             </a>
                             <div class='dropdown-menu' style='text-align: center; transition: all 1s ease-in;'>
                                 <a class='nav-link' href='#'>
-                                    Apple
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    Samsung
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    Xiaomi
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    Sony
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    Asus
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    Nintendo
+                                    @php
+
+                                    @endphp
                                 </a>
                             </div>
                         </li>
@@ -239,7 +230,7 @@
                             </a>
                             <div class='dropdown-menu' style='text-align: center;'>
                                 <a class='nav-link' href='#'>
-                                <img src="../../Convouless/image/social_media_icon/facebook.png" class='img-fluid'> Facebook
+                                    <img src="../../Convouless/image/social_media_icon/facebook.png" class='img-fluid'> Facebook
                                 </a>
                                 <a class='nav-link' href='#'>
                                     <img src="../../Convouless/image/social_media_icon/instagram.png" class='img-fluid'> Instagram
@@ -254,20 +245,38 @@
                         </li>
                     </ul>
 
-                    <ul class="navbar-nav">
-                        <li class='nav-item dropdown'>
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                        @if (Route::has('login'))
+                        <li class="nav-item dropdown">
                             <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
                                 <img src='../../../Convouless/image/navbar_icon/outline_account_circle_white_24dp.png'>
                             </a>
-                            <div class='dropdown-menu' style='text-align: center;'>
-                                <a class='nav-link' href='http://localhost:8080/Convouless/login'>
-                                    <img src='../../Convouless/image/login.svg' class='img-fluid'>Login
-                                </a>
-                                <a class='nav-link' href='http://localhost:8080/Convouless/register'>
-                                    <img src='../../Convouless/image/register.svg' class='img-fluid'>Register
-                                </a>
+                            <div class="dropdown-menu" style="text-align: center;">
+                                <a class="nav-link" href="{{ route('login') }}"><img src="{{url('/image/login.svg')}}" class='img-fluid'>{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}"><img src="{{url('/image/register.svg')}}" class='img-fluid'>{{ __('Register') }}</a>
                             </div>
                         </li>
+                        @endif
+
+                        @else
+                        <li class="nav-item dropdown">
+                            <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown' style="font-size: large;">
+                                Hello! {{ Auth::user()->name }}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" style="text-align: center;">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    <img src="{{url('/image/logout.svg')}}" class='img-fluid'> {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
                     </ul>
                 </div>
             </nav>

@@ -54,7 +54,12 @@
         }
     }
 
-    .content_td p {
+    table
+    {
+        text-align: center;
+    }
+
+    table tbody tr td p {
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
@@ -78,9 +83,8 @@
                 <th scope="col">News's Slug</th>
                 <th scope="col">Category</th>
                 <th scope="col">Metatile</th>
-                <th scope="col">Summary</th>
-                <th scope="col" style="width: 20%; text-align: center;">Content</th>
-                <th scope="col" style="width: 20%; text-align: center;">Image</th>
+                <th scope="col" style="width: 20%;">Summary</th>
+                <th scope="col"style="width: 20%;">Image</th>
                 <th scope="col">Author</th>
                 <th scope="col">Date Posted</th>
                 <th scope="col">Date Updated</th>
@@ -92,21 +96,18 @@
             @foreach($list_news as $key => $item)
             <tr>
                 <td>{{$key+1}}</td>
-                <td class="content_td">
+                <td>
                     <p>{{$item->news_title}}</p>
                 </td>
-                <td class="content_td">
+                <td>
                     <p>{{$item->news_slug}}</p>
                 </td>
                 <td>{{$item->category->category_name}}</td>
-                <td class="content_td">
+                <td>
                     <p>{{$item->news_metatile}}</p>
                 </td>
-                <td class="content_td">
+                <td>
                     <p>{{$item->news_summary}}</p>
-                </td>
-                <td class="content_td">
-                    <p>{{$item->news_content}}</p>
                 </td>
                 <td>{{$item->news_img}}</td>
                 <td>{{$item->author_id}}</td>

@@ -154,7 +154,7 @@
     <div class="container">
         <div class="row">
             <nav class="navbar navbar-expand-md navbar-dark" style="background-color: black !important;">
-                <a class="navbar-brand" href="../../../Convouless/index.php">
+                <a class="navbar-brand" href="../../../Convouless/">
                     <img src="image/logo.png" class="img-fluid">
                 </a>
 
@@ -251,7 +251,7 @@
                         @if (Route::has('login'))
                         <li class="nav-item dropdown">
                             <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                                <img src='../../../Convouless/image/navbar_icon/outline_account_circle_white_24dp.png'>
+                                <img src="{{url('/image/navbar_icon/User.svg')}}" class='img-fluid'>
                             </a>
                             <div class="dropdown-menu" style="text-align: center;">
                                 <a class="nav-link" href="{{ route('login') }}"><img src="{{url('/image/login.svg')}}" class='img-fluid'>{{ __('Login') }}</a>
@@ -262,10 +262,11 @@
 
                         @else
                         <li class="nav-item dropdown">
-                            <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown' style="font-size: large;">
-                                Hello! {{ Auth::user()->name }}
+                            <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
+                                <img src="{{url('/image/navbar_icon/login_success.svg')}}" class='img-fluid'>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" style="text-align: center;">
+                                <p style="color: white;">Hello! <a href='#' style="color: #e0e0e0;">{{ Auth::user()->name }}</a></p>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     <img src="{{url('/image/logout.svg')}}" class='img-fluid'> {{ __('Logout') }}

@@ -109,20 +109,15 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Choose main image</label>
+                <label for="exampleInputEmail1">Choose image</label>
                 <input type="file" accept="image/*" class="form-control-file" name="news_img" id="exampleFormControlFile1">
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Status</label>
                 <select class="custom-select" name="news_enable">
-                    @if($news->news_enable==1)
-                    <option selected value="1">Enable</option>
-                    <option value="0">Disenable</option>
-                    @elseif($news->news_enable==0)
                     <option value="1">Enable</option>
-                    <option selected value="0">Disenable</option>
-                    @endif
+                    <option value="0">Disable</option>
                 </select>
             </div>
 
@@ -130,16 +125,22 @@
         </form>
 </body>
 <script>
-    CKEDITOR.replace('news_content', {
-        language: 'vi',
-        filebrowserBrowseUrl: '{{ asset(' / public / ckfinder / ckfinder.html ') }}',
-        filebrowserImageBrowseUrl: '{{ asset(' / public / ckfinder / ckfinder.html ? type = Images ') }}',
-        filebrowserFlashBrowseUrl: '{{ asset(' / public / ckfinder / ckfinder.html ? type = Flash ') }}',
-        filebrowserUploadUrl: '{{ asset(' / public / ckfinder / core / connector / php / connector.php ? command = QuickUpload & type = Files ') }}',
-        filebrowserImageUploadUrl: '{{ asset(' / public / ckfinder / core / connector / php / connector.php ? command = QuickUpload & type = Images ') }}',
-        filebrowserFlashUploadUrl: '{{ asset(' / public / ckfinder / core / connector / php / connector.php ? command = QuickUpload & type = Flash ') }}'
+    // $(document).ready(function() {
 
+    CKEDITOR.replace('editor1', {
+        height: 400,
+        filebrowserUploadUrl: "{{ asset('/news/upload_ckeditor') }}",
+        filebrowserBrowseUrl: "{{ asset('/news/file_brower') }}",
+
+        // config.removeDialogTabs = 'image:Upload';
     });
+    CKEDITOR.editorConfig = function(config) {
+        removeDialogTabs = 'image:Upload';
+    }
+    // });
+
+    var textarea = document.querySelector('textarea');
+    textarea.addEventListener('keydown', autosize);
 
     function autosize() {
         var el = this;

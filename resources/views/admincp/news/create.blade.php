@@ -108,7 +108,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Choose main image</label>
+                <label for="exampleInputEmail1">Choose image</label>
                 <input class="form-control-file" type="file" accept="image/*" name="news_img" id="exampleFormControlFile1">
             </div>
             <div class="form-group">
@@ -131,7 +131,7 @@ CKEDITOR.replace('news_content', {
             filebrowserFlashBrowseUrl: '{{ asset('/public/ckfinder/ckfinder.html?type=Flash') }}',
             filebrowserUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
             filebrowserImageUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
-            filebrowserFlashUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
+            filebrowserFlashUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flas') }}h'
 
         });
 

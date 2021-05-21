@@ -1,3 +1,13 @@
+@php
+    use App\Models\Category;
+    use App\Models\MainCategory;
+    $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
+    // dd($list_main_cate[0]->main_cate_id);
+   
+    // dd($list_cate);
+    // print_r($list_cate);
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -164,7 +174,28 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
+                    @foreach ($list_main_cate as $main)
                         <li class='nav-item dropdown'>
+                            <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
+                                {{$main->main_cate_name}}
+                            </a>
+                            <div class='dropdown-menu' style='text-align: center; transition: all 1s ease-in;'>
+                                <a class='nav-link' href='#'>
+                                    @php
+                                         $list_cate = Category::where('main_cate_id', $main->main_cate_id)->orderBy('category_name','ASC')->get();
+                                    @endphp
+                                    @foreach ($list_cate as $item)
+                                    <a class='nav-link' href='#'>
+                                        {{$item->category_name}}
+                                    </a>
+                                    @endforeach
+                                </a>
+                            </div>
+                        </li>
+                    @endforeach
+                        
+
+                        {{-- <li class='nav-item dropdown'>
                             <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
                                 Tech
                             </a>
@@ -188,24 +219,16 @@
                                 Reviews
                             </a>
                             <div class='dropdown-menu' style='text-align: center;'>
+                                @php
+                                    use App\Models\Category;
+                                    $list_cate = Category::orderBy('category_name','ASC')->get();
+                                    // print_r($list_cate);
+                                @endphp
+                                @foreach ($list_cate as $item)
                                 <a class='nav-link' href='#'>
-                                    Phone
+                                    {{$item->category_name}}
                                 </a>
-                                <a class='nav-link' href='#'>
-                                    Tablet
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    Laptop
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    Watch
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    PC
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    Playstation
-                                </a>
+                                @endforeach
                             </div>
                         </li>
                         <li class='nav-item dropdown'>
@@ -229,7 +252,7 @@
                                     Books
                                 </a>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <li class='nav-item dropdown'>
                             <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>

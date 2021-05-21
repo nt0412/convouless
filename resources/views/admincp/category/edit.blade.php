@@ -25,7 +25,7 @@
                             {{ session('status') }}
                         </div>
                         @endif
-                        <form method="POST" action="{{route('category.update',[$cate->category_id])}}">
+                        <form class="box" method="POST" action="{{route('category.update',[$cate->category_id])}}">
                             @method('PUT')
                             @csrf
                             <div class="form-group">
@@ -41,6 +41,13 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Description</label>
                                 <input type="text" class="form-control" value="{{$cate->category_description}}" id="exampleInputEmail1" name="category_description" placeholder="Description">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Main Category</label>
+                                <select class="custom-select" name="main_cate_id">
+
+                                </select>
                             </div>
 
                             <div class="form-group">

@@ -15,9 +15,10 @@ class CreateTblmainCategory extends Migration
     {
         Schema::create('tblmain_category', function (Blueprint $table) {
             $table->integer('main_cate_id')->autoIncrement();
-            // $table->timestamps();
-            $table->string('main_cate_name')->charset('utf8');
-            // $table->collation = 'utf8_general_ci';
+            $table->text('main_cate_name')->charset('utf8');
+            $table->text('main_cate_slug');
+            $table->text('main_cate_description')->charset('utf8');
+            $table->integer('main_cate_status');
         });
     }
 

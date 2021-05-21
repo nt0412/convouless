@@ -3,7 +3,7 @@
 @include('layouts.nav')
 <style>
     .box {
-        color: white;
+        color: black;
         font-family: Sans-serif;
     }
 
@@ -11,9 +11,9 @@
         border: 0;
         background: none;
         display: block;
-        border: 2px solid goldenrod;
+        border: 2px solid black;
         outline: none;
-        color: white;
+        color: black;
         border-radius: 24px;
         transition: 0.3s;
     }
@@ -28,24 +28,29 @@
         display: block;
         margin: 5px auto;
         text-align: center;
-        border: 2px solid goldenrod;
+        border: 2px solid black;
         padding: 10px 40px;
         outline: none;
-        color: white;
+        color: black;
         border-radius: 24px;
         transition: 0.3s;
     }
 
     .box button:hover {
-        background-color: goldenrod;
-        border-color: black;
+        background-color: black;
+        border-color: whitesmoke;
+        color: gold;
     }
 
     .custom-select {
-        border: 2px solid goldenrod;
+        border: 2px solid black;
         border-radius: 24px;
         background-color: whitesmoke;
         width: 10rem;
+    }
+
+    .form-group {
+        font-weight: bold;
     }
 </style>
 
@@ -53,9 +58,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card" style="background-color: #343a40; color: whitesmoke;">
-                    <div class="card-header" style="color: gold; text-align: center; border-bottom: 2px solid white;">
-                        <h2>Add Category</h2>
+                <div class="card" style="background-color: goldenrod;">
+                    <div class="card-header" style="color: black; text-align: center; border-bottom: 2px solid black;">
+                        <h2>Add MAIN Category</h2>
                     </div>
 
                     @if ($errors->any())
@@ -74,39 +79,38 @@
                             {{ session('status') }}
                         </div>
                         @endif
-                        <form class="box" method="POST" action="{{route('category.store')}}">
+                        <form class="box" method="POST" action="{{route('main-category.update',[$main_cate->main_cate_id])}}">
+                            @method('PUT')
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Category's name</label>
-                                <input type="text" class="form-control" value="{{old('category_name')}}" onkeyup="ChangeToSlug();" id="slug" name="category_name" placeholder="Category's name">
+                                <input type="text" class="form-control" value="{{$main_cate->main_cate_name}}" onkeyup="ChangeToSlug();" id="slug" name="main_cate_name" placeholder="Category's name">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Category's Slug</label>
-                                <input type="text" class="form-control" value="{{old('category_slug')}}" id="convert_slug" name="category_slug" placeholder="Slug's name">
+                                <input type="text" class="form-control" value="{{$main_cate->main_cate_slug}}" id="convert_slug" name="main_cate_slug" placeholder="Slug's name">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Description</label>
-                                <input type="text" class="form-control" value="{{old('category_description')}}" id="exampleInputEmail1" name="category_description" placeholder="Description">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Main Category</label>
-                                <select class="custom-select" name="main_cate_id">
-
-                                </select>
+                                <input type="text" class="form-control" value="{{$main_cate->main_cate_description}}" id="exampleInputEmail1" name="main_cate_description" placeholder="Description">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Status</label>
-                                <select class="custom-select" name="category_enable">
-                                    <option value="1" style="color: green;">Enable</option>
-                                    <option value="0" style="color: red;">Disenable</option>
+                                <select class="custom-select" name="main_cate_status">
+                                    @if($main_cate->main_cate_status == 1)
+                                    <option selected value="1">Enable</option>
+                                    <option value="0">Disenable</option>
+                                    @elseif($main_cate->main_cate_status == 0)
+                                    <option value="1">Enable</option>
+                                    <option selected value="0">Disenable</option>
+                                    @endif
                                 </select>
                             </div>
 
-                            <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add">Add</button>
+                            <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add">Update</button>
                         </form>
                     </div>
                 </div>

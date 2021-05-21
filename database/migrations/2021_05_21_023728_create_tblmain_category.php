@@ -19,7 +19,9 @@ class CreateTblmainCategory extends Migration
             $table->text('main_cate_slug');
             $table->text('main_cate_description')->charset('utf8');
             $table->integer('main_cate_status');
+
         });
+        
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\News;
+use App\Models\MainCategory;
 
 class CategoryController extends Controller
 {
@@ -38,7 +39,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admincp.category.create');
+        $main_cate = MainCategory::orderBy('main_cate_name','ASC')->get();
+
+        // return view('admincp.news.create')->with(compact('cate'));
+        return view('admincp.category.create')->with(compact('main_cate'));
     }
 
     /**

@@ -44,6 +44,13 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Main Category</label>
+                                <select class="custom-select" name="main_cate_id">
+
+                                </select>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Status</label>
                                 <select class="custom-select" name="category_enable">
                                     @if($cate->category_enable==1)

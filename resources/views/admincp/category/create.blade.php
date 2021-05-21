@@ -54,7 +54,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card" style="background-color: #343a40; color: whitesmoke;">
-                    <div class="card-header" style="color: gold; text-align: center; border-bottom: 2px solid white;"><h2>Add Category</h2></div>
+                    <div class="card-header" style="color: gold; text-align: center; border-bottom: 2px solid white;">
+                        <h2>Add Category</h2>
+                    </div>
 
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -87,6 +89,13 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Description</label>
                                 <input type="text" class="form-control" value="{{old('category_description')}}" id="exampleInputEmail1" name="category_description" placeholder="Description">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Main Category</label>
+                                <select class="custom-select" name="main_cate_id">
+
+                                </select>
                             </div>
 
                             <div class="form-group">

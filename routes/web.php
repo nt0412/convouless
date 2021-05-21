@@ -20,3 +20,10 @@ Route::get('/form', function () {
     return view('test');
 });
 
+Route::get('/form/{slug}', function(){
+    // $slug = '{slug}';
+    // return view()->with($slug);
+
+
+});
+

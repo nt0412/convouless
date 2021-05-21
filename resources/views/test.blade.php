@@ -1,3 +1,6 @@
+@php
+    echo $slug;
+@endphp
 @include('header')
 <style>
     .relate_news .col-sm-4 {

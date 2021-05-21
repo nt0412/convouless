@@ -96,7 +96,13 @@
 
             <div class="form-group content">
                 <label for="exampleInputEmail1">Post's Content</label>
-                <textarea class="form-control" name="news_content" placeholder="Content" cols="30" rows="10">{{$news->news_content}}</textarea>
+                {{-- <textarea class="form-control" name="news_content" placeholder="Content" cols="30" rows="10">{{$news->news_content}}</textarea> --}}
+                <textarea class=" ckeditor form-control" name="news_content" placeholder="Content" cols="30" rows="10">
+                    @php
+                    echo $news->news_content
+                @endphp
+                </textarea>
+
             </div>
 
             <div class="form-group">
@@ -125,19 +131,17 @@
         </form>
 </body>
 <script>
-    // $(document).ready(function() {
+   
+    CKEDITOR.replace('news_content', {
+                language: 'vi',
+                filebrowserBrowseUrl: '{{ asset('/public/ckfinder/ckfinder.html') }}',
+                filebrowserImageBrowseUrl: '{{ asset('/public/ckfinder/ckfinder.html?type=Images') }}',
+                filebrowserFlashBrowseUrl: '{{ asset('/public/ckfinder/ckfinder.html?type=Flash') }}',
+                filebrowserUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
+                filebrowserImageUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
+                filebrowserFlashUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flas') }}h'
 
-    CKEDITOR.replace('editor1', {
-        height: 400,
-        filebrowserUploadUrl: "{{ asset('/news/upload_ckeditor') }}",
-        filebrowserBrowseUrl: "{{ asset('/news/file_brower') }}",
-
-        // config.removeDialogTabs = 'image:Upload';
-    });
-    CKEDITOR.editorConfig = function(config) {
-        removeDialogTabs = 'image:Upload';
-    }
-    // });
+            });
 
     var textarea = document.querySelector('textarea');
     textarea.addEventListener('keydown', autosize);

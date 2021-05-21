@@ -171,8 +171,15 @@
                             <div class='dropdown-menu' style='text-align: center; transition: all 1s ease-in;'>
                                 <a class='nav-link' href='#'>
                                     @php
-
+                                        use App\Models\Category;
+                                        $list_cate = Category::orderBy('category_name','ASC')->get();
+                                        // print_r($list_cate);
                                     @endphp
+                                    @foreach ($list_cate as $item)
+                                    <a class='nav-link' href='#'>
+                                        {{$item->category_name}}
+                                    </a>
+                                    @endforeach
                                 </a>
                             </div>
                         </li>

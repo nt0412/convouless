@@ -32,12 +32,14 @@
 
     .box input[type="email"]:focus {
         width: 280px;
-        border-color: #cc165c;;
+        border-color: #cc165c;
+        ;
     }
 
     .box input[type="password"]:focus {
         width: 250px;
-        border-color: #cc165c;;
+        border-color: #cc165c;
+        ;
     }
 
     .box button {
@@ -55,16 +57,16 @@
     }
 
     .box button:hover {
-        background-color: #cc165c;;
+        background-color: #cc165c;
+        ;
         border-color: whitesmoke;
     }
 
-    .box a
-    {
+    .box a {
         color: white;
     }
-    .box a:hover
-    {
+
+    .box a:hover {
         color: #cc165c;
     }
 </style>
@@ -120,6 +122,11 @@
                                 @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
+                                </a>
+                                @endif
+                                @if (Route::has('register'))
+                                <a class="nav-link" href="{{ route('register') }}">
+                                    Didn't have an account yet ?
                                 </a>
                                 @endif
                             </div>

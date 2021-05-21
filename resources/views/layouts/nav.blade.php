@@ -2,7 +2,7 @@
     .search-box {
         float: left;
         height: 40px;
-        background-color: gold;
+        background-color: goldenrod;
         border-radius: 40px;
     }
 
@@ -19,7 +19,7 @@
     .search-btn {
         float: right;
         border-radius: 50%;
-        background-color: gold;
+        background-color: goldenrod;
         align-items: center;
         transition: 0.5s;
         color: #343a40;
@@ -74,6 +74,8 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a style="font-weight: bold; color: goldenrod;" class="dropdown-item" href="{{route('main-category.create')}}">Add main category</a>
+                        <a style="font-weight: bold; color: goldenrod;" class="dropdown-item" href="{{route('main-category.index')}}">Main Category list</a>
                         <a class="dropdown-item" href="{{route('category.create')}}">Add category</a>
                         <a class="dropdown-item" href="{{route('category.index')}}">Category list</a>
                     </div>

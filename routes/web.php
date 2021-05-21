@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\newsController;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +15,7 @@ Route::get('/home', function () {
 Auth::routes();
 
 Route::get('/admin', [HomeController::class, 'index'])->name('admin');
+Route::resource('/main-category', MainCategoryController::class);
 Route::resource('/category', CategoryController::class);
 Route::resource('/news', newsController::class);
 

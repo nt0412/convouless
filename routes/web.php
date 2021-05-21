@@ -18,14 +18,11 @@ Route::resource('/category', CategoryController::class);
 Route::resource('/news', newsController::class);
 
 Route::get('/apple', [newsController::class, 'apple']);
-Route::get('/form', function () {
-    return view('test');
-});
 
-Route::get('/form/{slug}', function(){
+
+Route::get('/{slug}', function($slug){
     // $slug = '{slug}';
-    // return view()->with($slug);
-
-
+    // $slug = "ha-noi-them-1-ca-duong-tinh-sars-cov-2-lien-quan-bv-benh-nhiet-doi-tu";
+    return view('posts', ['slug' => $slug]);
 });
 

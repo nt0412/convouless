@@ -13,17 +13,21 @@
 </style>
 </style>
 <div class="container-fluid">
-    <div class="news-main-image"><!-- ĐỂ XUẤT RA MAIN IMAGE CỦA BÀI VIẾT -->
+    <div class="news-main-image">
+        <!-- ĐỂ XUẤT RA MAIN IMAGE CỦA BÀI VIẾT -->
         <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
     </div>
     <div class="container" style="background-color: white !important; color: black;">
-        <div class="title"> <!-- TIÊU ĐỀ CỦA BÀI VIẾT -->
+        <div class="title">
+            <!-- TIÊU ĐỀ CỦA BÀI VIẾT -->
             <h1>APPLE’S PHIL SCHILLER GIVES EPIC IPHONE TESTIMONY</h1>
-            <div class="author"><!-- TÁC GIÀ, KÈM NGÀY THÁNG NĂM NẾU CÓ -->
+            <div class="author">
+                <!-- TÁC GIÀ, KÈM NGÀY THÁNG NĂM NẾU CÓ -->
                 <p>by <a href="#" style="color: #cc165c;">Phillip Connan</a></p>
             </div>
         </div>
-        <div class="content"><!-- NỘI DUNG BÀI VIẾT -->
+        <div class="content">
+            <!-- NỘI DUNG BÀI VIẾT -->
             <p>
                 We’ve gotten through the expert witnesses of Epic v. Apple, and as a reward, Phil Schiller — currently an “Apple Fellow,” whatever that is, and previously the senior vice president of worldwide marketing — took the stand like a twinkly App Store St. Nick. To hear him tell it, Apple is a wonderful partner to developers, selflessly improving dev tools and responding to their needs. At times the testimony feels like a prolonged ad for iOS.
 
@@ -43,7 +47,7 @@
         <div class="col-sm-4">
             <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
             <div class="title" style="padding: 10px; background-color: black;">
-                <a href="#" st yle="color: white">
+                <a href="#" style="color: white">
                     <h4 style="font-weight: bold;">Hardware, apps, and much more and much more. From
                         top companies like Google and Apple to tiny startups
                     </h4>

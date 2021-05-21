@@ -6,12 +6,14 @@ use App\Http\Controllers\newsController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('layout');
+    return view('home');
 });
-
+Route::get('/home', function () {
+    return view('home');
+});
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/admin', [HomeController::class, 'index'])->name('admin');
 Route::resource('/category', CategoryController::class);
 Route::resource('/news', newsController::class);
 

@@ -32,9 +32,9 @@ $list_news_by_cate = News::where('category_id', $news->category_id )->get();
 </style>
 </style>
 <div class="container-fluid">
-    <div class="news-main-image">
+    <div class="news-main-image text-center">
         <!-- ĐỂ XUẤT RA MAIN IMAGE CỦA BÀI VIẾT -->
-        <img src="@php echo $news->news_img; @endphp" class="img-fluid">
+        <img src="{{asset('images')}}/@php echo $news->news_img; @endphp" class="img-fluid">
     </div>
     <div class="container" style="background-color: white !important; color: black;">
         <div class="title">
@@ -63,7 +63,7 @@ $list_news_by_cate = News::where('category_id', $news->category_id )->get();
     <div class="relate_news row" id="grad">
         @foreach ($list_news_by_cate as $item)
         <div class="col-sm-4">
-            <img src="{{$item->news_img}}" class="img-fluid">
+            <img src="{{asset('images')}}/{{$item->news_img}}" class="img-fluid">
             <div class="title" style="padding: 10px; background-color: black;">
                 <a href="#" style="color: white">
                     <h4 style="font-weight: bold;">

@@ -97,7 +97,9 @@
             <tr>
                 <td>{{$key+1}}</td>
                 <td>
-                    <p>{{$item->news_title}}</p>
+                    <a href="{{$item->news_slug}}">
+                        <p>{{$item->news_title}}</p>
+                    </a>
                 </td>
                 <td>
                     <p>{{$item->news_slug}}</p>

@@ -157,6 +157,11 @@
             color: #cc165c;
             text-decoration: none;
         }
+
+        .title a h4:hover {
+            color: #cc165c;
+            text-decoration: none;
+        }
     </style>
 </head>
 

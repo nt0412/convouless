@@ -21,7 +21,9 @@ Route::resource('/news', newsController::class);
 
 Route::get('/apple', [newsController::class, 'apple']);
 
-
+Route::get('/test', function () {
+    return view('form_sau_khi_chon_cate');
+});
 Route::get('/{slug}', function($slug){
     // $slug = '{slug}';
     // $slug = "ha-noi-them-1-ca-duong-tinh-sars-cov-2-lien-quan-bv-benh-nhiet-doi-tu";

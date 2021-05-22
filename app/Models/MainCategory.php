@@ -13,4 +13,7 @@ class MainCategory extends Model
     protected $primaryKey = 'main_cate_id';
     protected $guarded = [];
 
+    public function category(){
+        return $this->hasMany('app\Models\Category');
+    }
 }

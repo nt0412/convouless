@@ -83,22 +83,22 @@
                             @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Category's name</label>
+                                <label>Category's name</label>
                                 <input type="text" class="form-control" value="{{$main_cate->main_cate_name}}" onkeyup="ChangeToSlug();" id="slug" name="main_cate_name" placeholder="Category's name">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Category's Slug</label>
+                                <label>Category's Slug</label>
                                 <input type="text" class="form-control" value="{{$main_cate->main_cate_slug}}" id="convert_slug" name="main_cate_slug" placeholder="Slug's name">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Description</label>
+                                <label>Description</label>
                                 <input type="text" class="form-control" value="{{$main_cate->main_cate_description}}" id="exampleInputEmail1" name="main_cate_description" placeholder="Description">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Status</label>
+                                <label>Status</label>
                                 <select class="custom-select" name="main_cate_status">
                                     @if($main_cate->main_cate_status == 1)
                                     <option selected value="1">Enable</option>

@@ -77,42 +77,44 @@
         <form class="box" method="POST" action="{{route('news.store')}}"  enctype="multipart/form-data" style="padding: 0 5%;">
             @csrf
             <div class="form-group">
-                <label for="exampleInputEmail1">Post's Name</label>
+                <label>Post's Name <span class="attention">*</span></label>
                 <input type="text" class="form-control" value="{{old('news_title')}}" onkeyup="ChangeToSlug();" id="slug" name="news_title" placeholder="Posts's name">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Post's Slug</label>
+                <label>Post's Slug <span class="attention">*</span></label>
                 <input type="text" class="form-control" value="{{old('news_slug')}}" id="convert_slug" name="news_slug" placeholder="Posts's slug">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Post's Metatile</label>
+                <label>Post's Metatile <span class="attention">*</span></label>
                 <input type="text" class="form-control" value="{{old('news_metatile')}}" name="news_metatile" placeholder="Posts's name">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Post's Summary</label>
+                <label>Post's Summary <span class="attention">*</span></label>
                 <input type="text" class="form-control" value="{{old('news_summary')}}" name="news_summary" placeholder="Posts's name">
             </div>
 
             <div class="form-group content">
-                <label for="exampleInputEmail1">Post's Content</label>
+                <label>Post's Content <span class="attention">*</span></label>
                 <textarea class=" ckeditor form-control" name="news_content" placeholder="Content" cols="30" rows="10">{{old('news_content')}}</textarea>
 
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Post's Category</label>
+                <label>Post's Category</label>
                 <select class="custom-select" name="category_id">
                     @foreach($cate as $key => $muc)
                     <option value="{{$muc->category_id}}">{{$muc->category_name}}</option>
                     @endforeach
                 </select>
             </div>
+
             <div class="form-group">
-                <label for="exampleInputEmail1">Choose image</label>
-                <input class="form-control-file" type="file" accept="image/*" name="news_img" id="exampleFormControlFile1">
+                <label>Choose spotlight image <span class="attention">*</span></label>
+                <input class="form-control-file" type="file" accept="image/*" name="news_img">
             </div>
+
             <div class="form-group">
-                <label for="exampleInputEmail1">Status</label>
+                <label>Status</label>
                 <select class="custom-select" name="news_enable">
                     <option value="1">Enable</option>
                     <option value="0">Disable</option>
@@ -122,8 +124,8 @@
             <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add">Add</button>
         </form>
 </body>
-<script>
 
+<script>
 CKEDITOR.replace('news_content', {
             language: 'vi',
             filebrowserBrowseUrl: '{{ asset('/public/ckfinder/ckfinder.html') }}',

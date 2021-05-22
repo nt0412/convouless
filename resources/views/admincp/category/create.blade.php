@@ -77,31 +77,31 @@
                         <form class="box" method="POST" action="{{route('category.store')}}">
                             @csrf
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Category's name</label>
+                                <label>Category's name <span class="attention">*</span></label>
                                 <input type="text" class="form-control" value="{{old('category_name')}}" onkeyup="ChangeToSlug();" id="slug" name="category_name" placeholder="Category's name">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Category's Slug</label>
+                                <label>Category's Slug <span class="attention">*</span></label>
                                 <input type="text" class="form-control" value="{{old('category_slug')}}" id="convert_slug" name="category_slug" placeholder="Slug's name">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Description</label>
+                                <label>Description <span class="attention">*</span></label>
                                 <input type="text" class="form-control" value="{{old('category_description')}}" id="exampleInputEmail1" name="category_description" placeholder="Description">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Main Category</label>
+                                <label>Main Category <span class="attention">*</span></label>
                                 <select class="custom-select" name="main_cate_id">
-                                     @foreach($main_cate as $key => $muc)
-                                            <option  value="{{$muc->main_cate_id}}">{{$muc->main_cate_name}}</option>
+                                    @foreach($main_cate as $key => $muc)
+                                    <option value="{{$muc->main_cate_id}}">{{$muc->main_cate_name}}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Status</label>
+                                <label>Status</label>
                                 <select class="custom-select" name="category_enable">
                                     <option value="1" style="color: green;">Enable</option>
                                     <option value="0" style="color: red;">Disenable</option>

@@ -170,11 +170,11 @@
         <div class="row">
             <nav class="navbar navbar-expand-md navbar-dark" style="background-color: black !important;">
                 <a class="navbar-brand" href="../../../Convouless/">
-                    <img src="image/logo.png" class="img-fluid">
+                    <img src="{{url('image/logo.png')}}" class="img-fluid">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                    <img src="../../Convouless/image/view_headline_white_24dp.svg" alt="">
+                    <img src="{{url('image/view_headline_white_24dp.svg')}}" alt="">
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">

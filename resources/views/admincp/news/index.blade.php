@@ -111,7 +111,10 @@
                 <td>
                     <p>{{$item->news_summary}}</p>
                 </td>
-                <td>{{$item->news_img}}</td>
+                <td>
+                    {{-- <img class=""  src="{{asset('public/images/')}}/{{$item->news_img}}" alt="{{$item->news_img}}" height="172px"> --}}
+                    <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt=""  height="172px">
+                </td>
                 <td>{{$item->author_id}}</td>
                 <td>{{$item->date_posted}}</td>
                 <td>{{$item->date_updated}}</td>

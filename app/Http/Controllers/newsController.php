@@ -36,7 +36,7 @@ class newsController extends Controller
     {
         // return Auth::id();
 
-        $cate = Category::orderBy('category_name','ASC')->get();
+        $cate = Category::orderBy('category_name', 'ASC')->get();
         // dd();
         return view('admincp.news.create')->with(compact('cate'));
     }
@@ -87,7 +87,7 @@ class newsController extends Controller
         $news->news_enable = $data['news_enable'];
         $news->category_id = $request->category_id;
         $news->news_metatile = $data['news_metatile'];
-        $news->news_summary= $data['news_summary'];
+        $news->news_summary = $data['news_summary'];
         $news->date_updated = date(now());
 
 
@@ -101,7 +101,6 @@ class newsController extends Controller
         $news->save();
 
         return redirect()->back()->with('status', 'Message: Success');
-
     }
 
     /**
@@ -125,10 +124,10 @@ class newsController extends Controller
     {
         $news = News::find($id);
         // $list_cate = news::with('category')->get();
-        $cate = Category::orderBy('category_id','DESC')->get();
+        $cate = Category::orderBy('category_id', 'DESC')->get();
 
         // print_r ($list_news);
-        return view('admincp.news.edit')->with(compact('news','cate'));
+        return view('admincp.news.edit')->with(compact('news', 'cate'));
     }
 
     /**
@@ -166,16 +165,7 @@ class newsController extends Controller
         );
         // return $data;
 
-        $new_image = "";
-        if($request->hasFile("")) {
-            $get_image = $request->news_img;
-            $path ='public/upload/news/';
-            $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.',$get_name_image));
-            $timestamp = date("Y").date("m").date("d").date("h").date("i").date("s");
-            $new_image = $name_image.$timestamp.'.'.$get_image->getClientOriginalExtension();
-            $get_image->move($path,$new_image);
-        }
+
 
 
         $news = new News();
@@ -187,13 +177,26 @@ class newsController extends Controller
         $news->news_enable = $data['news_enable'];
         $news->category_id = $request->category_id;
         $news->news_metatile = $data['news_metatile'];
-        $news->news_summary= $data['news_summary'];
+        $news->news_summary = $data['news_summary'];
         $news->date_updated = date(now());
 
         $news->author_id = Auth::id();
 
 
-        $news->news_img = $new_image;
+        $getnews_img = '';
+// dd($request->hasFile("news_img"));
+        if ($request->hasFile('news_img')) {
+
+            //Lưu file vào thư mục public/upload/news_img
+            $news_img = $request->file('news_img');
+            $getnews_img = time() . '_' . $news_img->getClientOriginalName();
+            $destinationPath = public_path('images');
+            $news_img->move($destinationPath, $getnews_img);
+        }
+
+
+
+        $news->news_img = $getnews_img;
         $news->save();
         return redirect()->back()->with('status', 'Message: Updated success');
     }
@@ -217,7 +220,8 @@ class newsController extends Controller
         echo json_encode(array('file_name' => $request->file('upload')->getClientOriginalName()));
     }
 
-    public function file_brower(){
+    public function file_brower()
+    {
         $paths = glob(public_path('uploads/news/*'));
         $fileNames = array();
         foreach ($paths as $path) {
@@ -227,7 +231,6 @@ class newsController extends Controller
             'fileNames' => $fileNames
         );
         return view('admincp.news.file_brower')->with($data);
-
     }
     public function apple()
     {

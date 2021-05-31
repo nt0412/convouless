@@ -21,4 +21,8 @@ class Category extends Model
     public function News(){
         return $this->hasMany('app\Models\news');
     }
+    public function main_category(){
+        // Model, foreign key of current table, owner table id
+        return $this->belongsTo(MainCategory::class,'main_cate_id','main_cate_id');
+    }
 }

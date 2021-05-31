@@ -124,7 +124,7 @@ class newsController extends Controller
     {
         $news = News::find($id);
         // $list_cate = news::with('category')->get();
-        $cate = Category::orderBy('category_id', 'DESC')->get();
+        $cate = Category::orderBy('category_name','ASC')->get();
 
         // print_r ($list_news);
         return view('admincp.news.edit')->with(compact('news', 'cate'));

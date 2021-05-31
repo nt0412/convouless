@@ -3,7 +3,7 @@
     use App\Models\MainCategory;
     $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
     // dd($list_main_cate[0]->main_cate_id);
-   
+
     // dd($list_cate);
     // print_r($list_cate);
 @endphp
@@ -157,6 +157,11 @@
             color: #cc165c;
             text-decoration: none;
         }
+
+        .title a h4:hover {
+            color: #cc165c;
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -193,9 +198,9 @@
                             </div>
                         </li>
                     @endforeach
-                        
 
-                        {{-- <li class='nav-item dropdown'>
+
+                        <!-- {{-- <li class='nav-item dropdown'>
                             <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
                                 Tech
                             </a>
@@ -252,7 +257,7 @@
                                     Books
                                 </a>
                             </div>
-                        </li> --}}
+                        </li> --}} -->
 
                         <li class='nav-item dropdown'>
                             <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>

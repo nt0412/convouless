@@ -27,6 +27,13 @@
     <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
     <script src="{{asset('public/ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('public/ckfinder/ckfinder.js')}}"></script>
+
+    <style>
+    .attention {
+        color: #cc165c;
+        font-size: 1.5rem;
+    }
+    </style>
 </head>
 
 <body style="background-color: black;">

@@ -73,6 +73,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Category's name</th>
                                     <th scope="col">Category's Slug</th>
+                                    <th scope="col">MainCategory</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Tools</th>
@@ -84,6 +85,7 @@
                                     <th scope="row">{{$key+1}}</th>
                                     <td>{{$cate->category_name}}</td>
                                     <td>{{$cate->category_slug}}</td>
+                                    <td>{{$cate->main_category->main_cate_name}}</td>
                                     <td>{{$cate->category_description}}</td>
                                     <td>
                                         @if($cate->category_enable == 1)

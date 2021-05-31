@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\MainCategory;
 use App\Models\Category;
 use App\Models\News;
+use App\Models\MainCategory;
 
 class MainCategoryController extends Controller
 {
@@ -134,7 +134,7 @@ class MainCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //News::where('main_cate_id', $id)->update(array('main_cate_id' => '0'));
+        News::where('category_id', $id)->update(array('category_id' => '0'));
         MainCategory::find($id)->delete();
 
         return redirect()->back()->with('status', 'Message: Deleted success');

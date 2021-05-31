@@ -1,9 +1,15 @@
-@include('banner')
 @include('header')
-<div class="container" id="grad">
-    <div class="row">
-        <div class="col-md-8" style="padding: 1px;">
-            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
+<style>
+    h4:hover{
+        color: #cc165c;
+    }
+</style>
+<div class="container">
+    <h1 style="text-align: center; font-family: sans-serif;">Tên của Category vừa click</h1>
+    <!-- Những bài viết cùng danh mục -->
+    <div class="row" id="grad">
+        <div class="col-sm-6" style="padding: 1px;">
+            <img class="img-fluid" src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" alt="">
             <div class="title" style="padding: 10px; background-color: black;">
                 <a href="#" style="color: white" >
                     <h4 style="font-weight: bold;">Hardware, apps, and much more and much more. From
@@ -12,32 +18,8 @@
                 </a>
             </div>
         </div>
-        <div class="col-sm-4" style="padding: 1px;">
-            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
-            <div class="title" style="padding: 10px; background-color: black;">
-                <a href="#" style="color: white" >
-                    <h4 style="font-weight: bold;">Hardware, apps, and much more and much more. From
-                        top companies like Google and Apple to tiny startups
-                    </h4>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-4" style="padding: 1px;">
-            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
-            <div class="title" style="padding: 10px; background-color: black;">
-                <a href="#" style="color: white" >
-                    <h4 style="font-weight: bold;">Hardware, apps, and much more and much more. From
-                        top companies like Google and Apple to tiny startups
-                    </h4>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-sm-8" style="padding: 1px;">
-            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
+        <div class="col-sm-6" style="padding: 1px;">
+            <img class="img-fluid" src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" alt="">
             <div class="title" style="padding: 10px; background-color: black;">
                 <a href="#" style="color: white" >
                     <h4 style="font-weight: bold;">Hardware, apps, and much more and much more. From
@@ -47,73 +29,6 @@
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-sm-4" style="padding: 1px;">
-            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
-            <div class="title" style="padding: 10px; background-color: black;">
-                <a href="#" style="color: white" >
-                    <h4 style="font-weight: bold;">Hardware, apps, and much more and much more. From
-                        top companies like Google and Apple to tiny startups
-                    </h4>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-sm-4" style="padding: 1px;">
-            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
-            <div class="title" style="padding: 10px; background-color: black;">
-                <a href="#" style="color: white" >
-                    <h4 style="font-weight: bold;">Hardware, apps, and much more and much more. From
-                        top companies like Google and Apple to tiny startups
-                    </h4>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-sm-4" style="padding: 1px;">
-            <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="img-fluid">
-            <div class="title" style="padding: 10px; background-color: black;">
-                <a href="#" style="color: white" >
-                    <h4 style="font-weight: bold;">Hardware, apps, and much more and much more. From
-                        top companies like Google and Apple to tiny startups
-                    </h4>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="noibat my-3">
-        <div class="row">
-            <div class="col-sm-6 p-0">
-                <div class="card bg-dark text-white">
-                    <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title" style="font-family: nunito;font-weight: bold;text-transform: uppercase;">Card title quick example text to build on the card tit</h5>
-                        <p class="card-text"> by <span style="color: red;">Jonas Bill</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 p-0">
-                <div class="card bg-dark text-white">
-                    <img src="{{url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg')}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title" style="font-family: nunito;font-weight: bold;text-transform: uppercase;">Card title quick example text to build on the card tit</h5>
-                        <p class="card-text"> by <span style="color: red;">Bobb Bruce</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tinthuong">
-        <div class="mota" style="text-align: center;">
-            <h3 class="fs-1 text-uppercase " style="font-weight: bold;">tech</h3>
-            <p class="fs-4">The latest tech news about the world's best
-                (and sometimes worst) hardware, apps, and much more. From
-                top companies like Google and Apple to tiny startups vying
-                for your attention, Verge Tech has the latest in what matters in technology daily.</p>
-        </div>
-    </div>
-
     <div class="content">
         <div class="row" style="background-color: white;">
             <div class="col-sm-8">
@@ -202,6 +117,6 @@
 
         </div>
     </div>
-</div>
 
+</div>
 @include('footer')

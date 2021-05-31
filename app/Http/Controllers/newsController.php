@@ -100,7 +100,9 @@ class newsController extends Controller
 
         $news->save();
 
-        return redirect()->back()->with('status', 'Message: Success');
+        // return redirect()->back()->with('status', 'Message: Success');
+        return $this->index()->with('status', 'Message: Updated success');
+
     }
 
     /**
@@ -184,7 +186,7 @@ class newsController extends Controller
 
 
         $getnews_img = '';
-// dd($request->hasFile("news_img"));
+
         if ($request->hasFile('news_img')) {
 
             //Lưu file vào thư mục public/upload/news_img
@@ -198,7 +200,7 @@ class newsController extends Controller
 
         $news->news_img = $getnews_img;
         $news->save();
-        return redirect()->back()->with('status', 'Message: Updated success');
+        return $this->index()->with('status', 'Message: Updated success');
     }
 
     /**

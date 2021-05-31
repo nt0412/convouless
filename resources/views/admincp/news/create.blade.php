@@ -99,53 +99,56 @@
 
             </div>
 
-            <div class="form-group">
-                <label>Post's Category</label>
-                <select class="custom-select" name="category_id">
-                    @foreach($cate as $key => $muc)
-                    <option value="{{$muc->category_id}}">{{$muc->category_name}}</option>
-                    @endforeach
-                </select>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Post's Category</label>
+                        <select class="custom-select" name="category_id">
+                            @foreach ($cate as $key => $muc)
+                                <option value="{{ $muc->category_id }}">{{ $muc->category_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Choose image</label>
+                        <input type="file" accept="image/*" name="news_img" onchange="loadFile(event)">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Status</label>
+                        <select class="custom-select" name="news_enable">
+                            <option value="1">Enable</option>
+                            <option value="0">Disable</option>
+                        </select>
+                    </div>
+                </div>
+
+                    <div class="col-6 ">
+                        <img class="tex" id="output" style="border: 2px #38c172 solid;" height="172px" src="#" alt="">
+                        {{-- <p>{{$news->news_img}}</p> --}}
+                    </div>
+                </div>
+                <div class="col-12">
+
+                    <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add">Add</button>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label>Choose spotlight image <span class="attention">*</span></label>
-                <input class="form-control-file" type="file" accept="image/*" name="news_img">
-            </div>
-
-            <div class="form-group">
-                <label>Status</label>
-                <select class="custom-select" name="news_enable">
-                    <option value="1">Enable</option>
-                    <option value="0">Disable</option>
-                </select>
-            </div>
-
-            <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add">Add</button>
         </form>
 </body>
 
 <script>
-CKEDITOR.replace('news_content', {
-            language: 'vi',
-            filebrowserBrowseUrl: '{{ asset('/public/ckfinder/ckfinder.html') }}',
-            filebrowserImageBrowseUrl: '{{ asset('/public/ckfinder/ckfinder.html?type=Images') }}',
-            filebrowserFlashBrowseUrl: '{{ asset('/public/ckfinder/ckfinder.html?type=Flash') }}',
-            filebrowserUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
-            filebrowserImageUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
-            filebrowserFlashUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flas') }}h'
+    var loadFile = function(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('output');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };
 
-        });
-
-    function autosize() {
-        var el = this;
-        setTimeout(function() {
-            el.style.cssText = 'height:auto; padding:0';
-            // for box-sizing other than "content-box" use:
-            // el.style.cssText = '-moz-box-sizing:content-box';
-            el.style.cssText = 'height:' + el.scrollHeight + 'px';
-        }, 0);
-    }
 </script>
-
 @endsection

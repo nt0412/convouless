@@ -134,11 +134,12 @@
                         </div>
                     </div>
 
-                        <div class="col-6">
-                            <img id="output" style="border: 2px #38c172 solid;" height="172px" src="#" alt="">
-
+                        <div class="col-6 ">
+                            <img class="tex" id="output" style="border: 2px #38c172 solid;" height="172px" src="{{asset('public/images')}}/{{$news->news_img}}" alt="">
+                            <p>{{$news->news_img}}</p>
                         </div>
                     </div>
+                </div>
 
 
                     <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add">Update</button>

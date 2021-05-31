@@ -20,8 +20,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     {{-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script> --}}
 
     <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
@@ -32,6 +32,15 @@
     .attention {
         color: #cc165c;
         font-size: 1.5rem;
+    }
+    body::-webkit-scrollbar{
+        width: 0.25rem;
+    }
+    body::-webkit-scrollbar-track{
+        background: goldenrod;
+    }
+    body::-webkit-scrollbar-thumb{
+        background: black;
     }
     </style>
 </head>

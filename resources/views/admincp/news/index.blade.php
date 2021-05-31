@@ -2,7 +2,7 @@
 @section('content')
 @include('layouts.nav')
 <style>
-    @media only screen and (max-width: 1439px) {
+    @media only screen and (max-width: 870px) {
         .container-fluid {
             overflow-x: scroll;
         }
@@ -37,11 +37,6 @@
             width: 5px;
         }
 
-        /* Track */
-        ::-webkit-scrollbar-track {
-            border-radius: 5px;
-        }
-
         /* Handle */
         ::-webkit-scrollbar-thumb {
             background: goldenrod;
@@ -65,6 +60,22 @@
         overflow: hidden;
         display: -webkit-box;
     }
+
+    @media (min-width: 768px) {
+        #news-list{
+            margin-left: 3em;
+        }
+    }
+    @media (max-width: 769px) {
+        #news-list{
+            padding: 0;
+            margin: 0;
+        }
+        .container-fluid{
+            padding: 0;
+            margin: 0;
+        }
+    }
 </style>
 <div class="container-fluid">
     <div class="card-header" style="color: gold; text-align: center;">
@@ -75,16 +86,15 @@
         {{ session('status') }}
     </div>
     @endif
-    <table class="table" style="border-top: goldenrod solid 2px;">
+    <table class="table" id="news-list" style="border-top: goldenrod solid 2px;">
         <thead class="thead-light">
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">News's Title</th>
-                <th scope="col">News's Slug</th>
                 <th scope="col">Category</th>
                 <th scope="col">Metatile</th>
                 <th scope="col" style="width: 20%;">Summary</th>
-                <th scope="col"style="width: 20%;">Image</th>
+                <th scope="col" style="width: 20%;">Image</th>
                 <th scope="col">Author</th>
                 <th scope="col">Date Posted</th>
                 <th scope="col">Date Updated</th>
@@ -100,9 +110,6 @@
                     <a href="{{$item->news_slug}}">
                         <p>{{$item->news_title}}</p>
                     </a>
-                </td>
-                <td>
-                    <p>{{$item->news_slug}}</p>
                 </td>
                 <td>{{$item->category->category_name}}</td>
                 <td>

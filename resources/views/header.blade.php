@@ -1,11 +1,11 @@
 @php
-    use App\Models\Category;
-    use App\Models\MainCategory;
-    $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
-    // dd($list_main_cate[0]->main_cate_id);
+use App\Models\Category;
+use App\Models\MainCategory;
+$list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
+// dd($list_main_cate[0]->main_cate_id);
 
-    // dd($list_cate);
-    // print_r($list_cate);
+// dd($list_cate);
+// print_r($list_cate);
 @endphp
 
 <!DOCTYPE html>
@@ -162,6 +162,16 @@
             color: #cc165c;
             text-decoration: none;
         }
+
+        .dropdown:hover>.dropdown-menu{
+            display: block;
+        }
+
+        @media (max-width: 767px) {
+            ul{
+                text-align: center;
+            }
+    }
     </style>
 </head>
 
@@ -179,25 +189,23 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
-                    @foreach ($list_main_cate as $main)
+                        @foreach ($list_main_cate as $main)
                         <li class='nav-item dropdown'>
                             <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
                                 {{$main->main_cate_name}}
                             </a>
                             <div class='dropdown-menu' style='text-align: center; transition: all 1s ease-in;'>
+                                @php
+                                $list_cate = Category::where('main_cate_id', $main->main_cate_id)->orderBy('category_name','ASC')->get();
+                                @endphp
+                                @foreach ($list_cate as $item)
                                 <a class='nav-link' href='#'>
-                                    @php
-                                         $list_cate = Category::where('main_cate_id', $main->main_cate_id)->orderBy('category_name','ASC')->get();
-                                    @endphp
-                                    @foreach ($list_cate as $item)
-                                    <a class='nav-link' href='#'>
-                                        {{$item->category_name}}
-                                    </a>
-                                    @endforeach
+                                    {{$item->category_name}}
                                 </a>
+                                @endforeach
                             </div>
                         </li>
-                    @endforeach
+                        @endforeach
 
 
                         <!-- {{-- <li class='nav-item dropdown'>

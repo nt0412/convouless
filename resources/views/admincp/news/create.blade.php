@@ -74,68 +74,82 @@
             {{ session('status') }}
         </div>
         @endif
-        <form class="box" method="POST" action="{{route('news.store')}}"  enctype="multipart/form-data" style="padding: 0 5%;">
+        <form class="box" method="POST" action="{{route('news.store')}}" enctype="multipart/form-data" style="padding: 0 5%;">
             @csrf
-            <div class="form-group">
-                <label>Post's Name <span class="attention">*</span></label>
-                <input type="text" class="form-control" value="{{old('news_title')}}" onkeyup="ChangeToSlug();" id="slug" name="news_title" placeholder="Posts's name">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Post's Name <span class="attention">*</span></label>
+                        <input type="text" class="form-control" value="{{old('news_title')}}" onkeyup="ChangeToSlug();" id="slug" name="news_title" placeholder="Posts's name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Post's Slug <span class="attention">*</span></label>
+                        <input type="text" class="form-control" value="{{old('news_slug')}}" id="convert_slug" name="news_slug" placeholder="Posts's slug">
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Post's Slug <span class="attention">*</span></label>
-                <input type="text" class="form-control" value="{{old('news_slug')}}" id="convert_slug" name="news_slug" placeholder="Posts's slug">
-            </div>
-            <div class="form-group">
-                <label>Post's Metatile <span class="attention">*</span></label>
-                <input type="text" class="form-control" value="{{old('news_metatile')}}" name="news_metatile" placeholder="Posts's name">
-            </div>
-            <div class="form-group">
-                <label>Post's Summary <span class="attention">*</span></label>
-                <input type="text" class="form-control" value="{{old('news_summary')}}" name="news_summary" placeholder="Posts's name">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Post's Metatile <span class="attention">*</span></label>
+                        <input type="text" class="form-control" value="{{old('news_metatile')}}" name="news_metatile" placeholder="Posts's name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Post's Summary <span class="attention">*</span></label>
+                        <input type="text" class="form-control" value="{{old('news_summary')}}" name="news_summary" placeholder="Posts's name">
+                    </div>
+                </div>
             </div>
 
             <div class="form-group content">
                 <label>Post's Content <span class="attention">*</span></label>
+                <div class="form-group">
+                    <label>Choose spotlight image <span class="attention">*</span></label>
+                    <input class="form-control-file" type="file" accept="image/*" name="news_img">
+                </div>
                 <textarea class=" ckeditor form-control" name="news_content" placeholder="Content" cols="30" rows="10">{{old('news_content')}}</textarea>
-
             </div>
 
-            <div class="form-group">
-                <label>Post's Category</label>
-                <select class="custom-select" name="category_id">
-                    @foreach($cate as $key => $muc)
-                    <option value="{{$muc->category_id}}">{{$muc->category_name}}</option>
-                    @endforeach
-                </select>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Post's Category</label>
+                        <select class="custom-select" name="category_id">
+                            @foreach($cate as $key => $muc)
+                            <option value="{{$muc->category_id}}">{{$muc->category_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="custom-select" name="news_enable">
+                            <option value="1">Enable</option>
+                            <option value="0">Disable</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label>Choose spotlight image <span class="attention">*</span></label>
-                <input class="form-control-file" type="file" accept="image/*" name="news_img">
-            </div>
-
-            <div class="form-group">
-                <label>Status</label>
-                <select class="custom-select" name="news_enable">
-                    <option value="1">Enable</option>
-                    <option value="0">Disable</option>
-                </select>
-            </div>
-
             <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add">Add</button>
         </form>
 </body>
 
 <script>
-CKEDITOR.replace('news_content', {
-            language: 'vi',
-            filebrowserBrowseUrl: '{{ asset('/public/ckfinder/ckfinder.html') }}',
-            filebrowserImageBrowseUrl: '{{ asset('/public/ckfinder/ckfinder.html?type=Images') }}',
-            filebrowserFlashBrowseUrl: '{{ asset('/public/ckfinder/ckfinder.html?type=Flash') }}',
-            filebrowserUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
-            filebrowserImageUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
-            filebrowserFlashUploadUrl: '{{ asset('/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flas') }}h'
+    CKEDITOR.replace('news_content', {
+        language: 'vi',
+        filebrowserBrowseUrl: '{{ asset(' / public / ckfinder / ckfinder.html ') }}',
+        filebrowserImageBrowseUrl: '{{ asset(' / public / ckfinder / ckfinder.html ? type = Images ') }}',
+        filebrowserFlashBrowseUrl: '{{ asset(' / public / ckfinder / ckfinder.html ? type = Flash ') }}',
+        filebrowserUploadUrl: '{{ asset(' / public / ckfinder / core / connector / php / connector.php ? command = QuickUpload & type = Files ') }}',
+        filebrowserImageUploadUrl: '{{ asset(' / public / ckfinder / core / connector / php / connector.php ? command = QuickUpload & type = Images ') }}',
+        filebrowserFlashUploadUrl: '{{ asset(' / public / ckfinder / core / connector / php / connector.php ? command = QuickUpload & type = Flas ') }}h'
 
-        });
+    });
 
     function autosize() {
         var el = this;

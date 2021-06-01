@@ -140,26 +140,14 @@
 </body>
 
 <script>
-    CKEDITOR.replace('news_content', {
-        language: 'vi',
-        filebrowserBrowseUrl: '{{ asset(' / public / ckfinder / ckfinder.html ') }}',
-        filebrowserImageBrowseUrl: '{{ asset(' / public / ckfinder / ckfinder.html ? type = Images ') }}',
-        filebrowserFlashBrowseUrl: '{{ asset(' / public / ckfinder / ckfinder.html ? type = Flash ') }}',
-        filebrowserUploadUrl: '{{ asset(' / public / ckfinder / core / connector / php / connector.php ? command = QuickUpload & type = Files ') }}',
-        filebrowserImageUploadUrl: '{{ asset(' / public / ckfinder / core / connector / php / connector.php ? command = QuickUpload & type = Images ') }}',
-        filebrowserFlashUploadUrl: '{{ asset(' / public / ckfinder / core / connector / php / connector.php ? command = QuickUpload & type = Flas ') }}h'
+    var loadFile = function(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('output');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };
 
-    });
-
-    function autosize() {
-        var el = this;
-        setTimeout(function() {
-            el.style.cssText = 'height:auto; padding:0';
-            // for box-sizing other than "content-box" use:
-            // el.style.cssText = '-moz-box-sizing:content-box';
-            el.style.cssText = 'height:' + el.scrollHeight + 'px';
-        }, 0);
-    }
 </script>
-
 @endsection

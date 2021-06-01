@@ -110,6 +110,8 @@
                 <div class="form-group">
                     <label>Choose spotlight image <span class="attention">*</span></label>
                     <input class="form-control-file" type="file" accept="image/*" name="news_img">
+                    <img class="" id="output" style="border: 2px #38c172 solid;" height="172px" src="#" alt="">
+                    <p></p>
                 </div>
                 <textarea class=" ckeditor form-control" name="news_content" placeholder="Content" cols="30" rows="10">{{old('news_content')}}</textarea>
             </div>

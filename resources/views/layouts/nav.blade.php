@@ -108,7 +108,7 @@
         color: white;
     }
 
-    .side-bar ul li i{
+    .side-bar ul li i {
         font-size: 1.4rem;
     }
 
@@ -137,13 +137,14 @@
     }
 
     .toggle {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         width: 60px;
         height: 60px;
         background: #454e5c;
         cursor: pointer;
+        z-index: 10;
     }
 
     .toggle.active {
@@ -176,9 +177,33 @@
             width: 100%;
         }
     }
+    @media (max-width: 1050px) {
+        #search_box_nav {
+            display: none;
+        }
+    }
+    @media (min-width: 1051px) {
+        #search_box_sidebar {
+            display: none;
+        }
+    }
 </style>
 <div class="side-bar">
     <ul>
+        <li class="nav-item dropdown">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="icon"><i class="fas fa-user-tie"></i></span>
+                <span class="title">{{ Auth::user()->name }} <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
+            </a>
+            <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </li>
         <li>
             <a href="{{ url('/admin') }}">
                 <span class="icon"><i class="fas fa-clipboard"></i></span>
@@ -208,7 +233,7 @@
             </div>
         </li>
 
-        <div class="search-box">
+        <div class="search-box" id="search_box_sidebar">
             <input class="search-txt" type="text" placeholder="Type to search" aria-label="Search">
             <a class="search-btn" type=" submit"><i class="fas fa-search" style="padding: 6px;"></i></a>
         </div>

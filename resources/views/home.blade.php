@@ -23,7 +23,6 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
 @endphp
 <div class="container" id="grad">
     <div id="newshot1">
-
         <div class="row">
             <div class="col-md-8 " style="padding: 1px;">
                 <img src="{{ asset('public/images') }}/{{ $newshot1_1->news_img }}" class="img-fluid">

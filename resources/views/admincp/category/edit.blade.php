@@ -1,14 +1,61 @@
 @extends('layouts.app')
 @section('content')
 @include('layouts.nav')
+<style>
+    .box {
+        color: white;
+        font-family: Sans-serif;
+    }
 
+    .box input[type="text"] {
+        border: 0;
+        background: none;
+        display: block;
+        border: 2px solid goldenrod;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.3s;
+    }
+
+    .box input[type="text"]:focus {
+        border-color: #cc165c;
+    }
+
+    .box button {
+        border: 0;
+        background: none;
+        display: block;
+        margin: 5px auto;
+        text-align: center;
+        border: 2px solid goldenrod;
+        padding: 10px 40px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.3s;
+    }
+
+    .box button:hover {
+        background-color: goldenrod;
+        border-color: black;
+    }
+
+    .custom-select {
+        border: 2px solid goldenrod;
+        border-radius: 24px;
+        background-color: whitesmoke;
+        width: 10rem;
+    }
+</style>
 <body style="background-color: black;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card" style="background-color: #343a40; color: whitesmoke;">
-                    <div class="card-header" style="color: gold;">Edit Category</div>
-
+                    <div class="card-header" style="color: gold; text-align: center; border-bottom: 2px solid white;">
+                        <h2>Edit Category</h2>
+                    </div>
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -46,7 +93,9 @@
                             <div class="form-group">
                                 <label>Main Category</label>
                                 <select class="custom-select" name="main_cate_id">
-
+                                    @foreach($main_cate as $key => $muc)
+                                    <option value="{{$muc->main_cate_id}}">{{$muc->main_cate_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
 

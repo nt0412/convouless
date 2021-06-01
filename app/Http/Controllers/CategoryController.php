@@ -20,7 +20,7 @@ class CategoryController extends Controller
         $this->middleware('auth');
     }
 
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -99,7 +99,10 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $cate = Category::find($id);
-        return view('admincp.category.edit')->with(compact('cate'));
+        $main_cate = MainCategory::orderBy('main_cate_name','ASC')->get();
+        return view('admincp.category.edit')->with(compact('cate','main_cate'));
+
+
     }
 
     /**
@@ -117,6 +120,7 @@ class CategoryController extends Controller
                 'category_slug' => 'required|max:255',
                 'category_description' => 'required|max:255',
                 'category_enable' => 'required',
+                'main_cate_id' => 'required',
             ],
             [
                 'category_name.required' => 'Message: Need to fill the Name of Category',
@@ -129,6 +133,7 @@ class CategoryController extends Controller
         $category->category_slug = $data['category_slug'];
         $category->category_description = $data['category_description'];
         $category->category_enable = $data['category_enable'];
+        $category->main_cate_id = $data['main_cate_id'];
         $category->save();
         return redirect()->back()->with('status', 'Message: Updated success');
     }

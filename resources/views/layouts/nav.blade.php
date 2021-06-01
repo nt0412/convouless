@@ -177,6 +177,11 @@
             width: 100%;
         }
     }
+
+    #search_box_nav:hover>.search-txt {
+        width: 300px;
+    }
+
     @media (max-width: 1050px) {
         #search_box_nav {
             display: none;

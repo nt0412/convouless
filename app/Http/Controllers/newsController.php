@@ -167,9 +167,6 @@ class newsController extends Controller
         );
         // return $data;
 
-
-
-
         $news = new News();
 
         $news = News::find($id);

@@ -187,10 +187,15 @@
             display: none;
         }
     }
+
     @media (min-width: 1051px) {
         #search_box_sidebar {
             display: none;
         }
+    }
+
+    .dropdown:hover>.dropdown-menu {
+        display: block;
     }
 </style>
 <div class="side-bar">

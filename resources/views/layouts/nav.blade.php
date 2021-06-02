@@ -207,6 +207,7 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
+                <a style="font-weight: bold; color: goldenrod;" class="dropdown-item" href="{{route('main-category.create')}}">Info</a>
             </div>
         </li>
         <li>
@@ -236,6 +237,39 @@
                 <a class="dropdown-item" href="{{route('news.create')}}">Add post</a>
                 <a class="dropdown-item" href="{{route('news.index')}}">Post list</a>
             </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="icon"><i class="far fa-file-word"></i></span>
+                <span class="title">Page's <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
+            </a>
+            <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Home Page</a>
+                <a class="dropdown-item" href="#">Post Page</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="icon"><i class="fas fa-chart-bar"></i></span>
+                <span class="title">statistics's <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
+            </a>
+            <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Home</a>
+                <a class="dropdown-item" href="#">Page</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="icon"><i class="fas fa-solar-panel"></i></span>
+                <span class="title">Footer's</span>
+            </a>
+            {{-- <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Home</a>
+                <a class="dropdown-item" href="#">Page</a>
+            </div> --}}
         </li>
 
         <div class="search-box" id="search_box_sidebar">

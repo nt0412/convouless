@@ -32,6 +32,11 @@ class Newshot1Controller extends Controller
         // resources\views\home.blade.php
     }
 
+    public function update(Request $request, $id)
+    {
+        
+    }
+
     public function destroy($id)
     {
         Newshot1::find($id)->delete();

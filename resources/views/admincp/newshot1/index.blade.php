@@ -12,9 +12,9 @@
 
 <style>
     @media only screen and (max-width: 1439px) {
-        .container-fluid {
+        /* .container-fluid {
             overflow-x: scroll;
-        }
+        } */
 
         /* width */
         ::-webkit-scrollbar {
@@ -85,7 +85,7 @@
         display: -webkit-box;
     }
 </style>
-<div class="container-fluid">
+<div class="container">
     <div class="card-header" style="color: gold; text-align: center;">
         <h2>News Hot's list</h2>
     </div>

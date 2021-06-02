@@ -5,6 +5,7 @@ use App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\newsController;
 use App\Http\Controllers\Newshot1Controller;
+use App\Http\Controllers\SearchController;
 use App\Models\Newshot1;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,9 +43,12 @@ Route::get('/test', function () {
 Route::get('/admin/manager/newshot', [Newshot1Controller::class,'index']);
 // quản lý các bai viet nổi bật PREVIEW
 Route::get('/admin/manager/newshot/preview', [Newshot1Controller::class,'preview']);
+// quản lý các bai viet nổi bật PREVIEW
+// Route::get('/admin/manager/newshot/edit', [SearchController::class,'action']);
+// Route::post('/admin/manager/newshot/edit', [SearchController::class,'search']);
 
-Route::get('search', 'SearchController@index')->name('search.index');
-Route::get('search-results', 'SearchController@search')->name('search.result');
+Route::get('search', [SearchController::class,'getSearch']);
+Route::post('search/name', [SearchController::class,'getSearchAjax'])->name('search');
 
 
 

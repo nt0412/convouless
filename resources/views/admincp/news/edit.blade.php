@@ -74,7 +74,7 @@
             {{ session('status') }}
         </div>
         @endif
-        <form class="box" method="POST" action="{{route('news.update',[$news->news_id])}}" style="padding: 0 5%;">
+        <form class="box" method="POST" action="{{route('news.update',[$news->news_id])}}" style="padding: 0 5%;" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="row">
@@ -105,14 +105,20 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group content">
-                <label>Post's Content</label>
-                <div class="form-group">
-                    <label>Choose spotlight image</label>
-                    <input type="file" accept="image/*" class="form-control-file" name="news_img" id="exampleFormControlFile1">
-                    <img class="tex" id="output" style="border: 2px #38c172 solid;" height="172px" src="{{asset('public/images')}}/{{$news->news_img}}" alt="">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Choose spotlight image</label>
+                        <input type="file" accept="image/*" class="form-control-file" name="news_img" id="exampleFormControlFile1">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <img class="tex" id="output_img" style="border: 2px #38c172 solid;" height="172px" src="{{asset('public/images')}}/{{$news->news_img}}" alt="">
                     <p>{{$news->news_img}}</p>
                 </div>
+            </div>
+            <div class="form-group content">
+                <label>Post's Content</label>
                 {{-- <textarea class="form-control" name="news_content" placeholder="Content" cols="30" rows="10">{{$news->news_content}}</textarea> --}}
                 <textarea class=" ckeditor form-control" name="news_content" placeholder="Content" cols="30" rows="10">
                     @php
@@ -145,15 +151,6 @@
         </form>
 </body>
 
-<script>
-    var loadFile = function(event) {
-        var reader = new FileReader();
-        reader.onload = function() {
-            var output = document.getElementById('output');
-            output.src = reader.result;
-        };
-        reader.readAsDataURL(event.target.files[0]);
-    };
-</script>
+
 
 @endsection

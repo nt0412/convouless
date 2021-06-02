@@ -94,10 +94,21 @@ class newsController extends Controller
         $news->author_id = Auth::id();
         // $news->author_id = 1;
 
-        $image = $request->file('news_img');
-        $image->move(public_path('images'), $image->getClientOriginalName());
-        $news->news_img = $image->getClientOriginalName();
+        // $image = $request->file('news_img');
+        // $image->move(public_path('images'), $image->getClientOriginalName());
+        // $news->news_img = $image->getClientOriginalName();
 
+        $getnews_img = '';
+
+        if ($request->hasFile('news_img')) {
+
+            //Lưu file vào thư mục public/upload/news_img
+            $news_img = $request->file('news_img');
+            $getnews_img = time() . '_' . $news_img->getClientOriginalName();
+            $destinationPath = public_path('images');
+            $news_img->move($destinationPath, $getnews_img);
+        }
+        $news->news_img = $getnews_img;
         $news->save();
 
         // return redirect()->back()->with('status', 'Message: Success');

@@ -1,11 +1,8 @@
 @php
-use App\Models\Category;
-use App\Models\MainCategory;
-$list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
-// dd($list_main_cate[0]->main_cate_id);
+    use App\Models\Category;
+    use App\Models\MainCategory;
+    $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
 
-// dd($list_cate);
-// print_r($list_cate);
 @endphp
 
 <!DOCTYPE html>

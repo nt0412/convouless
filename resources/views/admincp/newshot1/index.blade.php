@@ -37,6 +37,12 @@
         ::-webkit-scrollbar-thumb:hover {
             background: gold;
         }
+
+        #preview{
+            position: absolute;top: 200px;
+            /* transform: scale(0.7); */
+        }
+
     }
 
     @media only screen and (min-width: 1440px) {
@@ -60,6 +66,10 @@
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
             background: gold;
+        }
+        #preview{
+            position: absolute;top: -400px;
+            transform: scale(0.7);
         }
     }
 
@@ -85,7 +95,7 @@
     </div>
     @endif
     <div class="row">
-        <div class="col-6">
+        <div class="col-xl-6 col-md-12" >
             <table class="table" style="border-top: goldenrod solid 2px;">
                 <thead class="thead-light">
                     <tr>
@@ -111,18 +121,19 @@
                         <td>
                             <a style="color: blue;" class="btn btn-primary" href="{{route('news.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
 
+                            <input class="popwindow"  type="button" value="edit" onclick="window.open('{{asset('/admin/manager/newshot/edit')}}','preview','fullscreen=yes');">
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-        <div class="col-6" style="    position: relative;">
+        <div class="col-xl-6 col-md-12" style="    position: relative;">
             <div class="d-flex justify-content-around">
                 <h3 class="text-center  text-white">preview </h3>
                 <input type="button" value="Open a Popup Window" onclick="window.open('{{asset('/admin/manager/newshot/preview')}}','preview','fullscreen=yes');">
             </div>
-            <div style="position: absolute;top: -200px;transform: scale(0.7);">
+            <div id="preview" style="">
                 @include('admincp.newshot1.preview')
             </div>
 

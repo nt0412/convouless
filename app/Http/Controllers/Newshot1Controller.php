@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\News;
 use App\Models\Newshot1;
-
+use App\Models\Author;
+use Illuminate\Support\Facades\Auth;
 
 class Newshot1Controller extends Controller
 {
@@ -44,6 +45,13 @@ class Newshot1Controller extends Controller
 
         $newshot1s = $newshots;
         return view('admincp.newshot1.preview')->with(compact('newshot1s'));
+    }
+
+    public function edit(){
+        $list_news = News::orderBy("date_posted","DESC")->get();
+        $list_newshot1 = Newshot1::get();
+        $list_author = Author::get();
+        return view('admincp.newshot1.edit')->with(compact('list_news', "list_newshot1", 'list_author'));
     }
 
 

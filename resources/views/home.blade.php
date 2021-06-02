@@ -25,7 +25,9 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
     <div id="newshot1">
         <div class="row">
             <div class="col-md-8 " style="padding: 1px;">
-                <img src="{{ asset('public/images') }}/{{ $newshot1_1->news_img }}" class="img-fluid">
+                <a href="{{$newshot1_1->news_slug}}">
+                    <img src="{{ asset('public/images') }}/{{ $newshot1_1->news_img }}" class="img-fluid">
+                </a>
                 <div class="title" style="padding: 10px; background-color: black;">
                     <a href="#" style="color: white">
                         <h4 style="font-weight: bold;">{{ $newshot1_1->news_title }}
@@ -34,8 +36,9 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
                 </div>
             </div>
             <div class="col-sm-4" id="newshot1_2" style="padding: 1px;">
-                <img src="{{ asset('public/images') }}/{{ $newshot1_2->news_img }}" class="img-fluid">
-                <div class="title" style="padding: 10px; background-color: black;">
+                <a href="{{$newshot1_2->news_slug}}">
+                    <img src="{{ asset('public/images') }}/{{ $newshot1_2->news_img }}" class="img-fluid">
+                </a>                <div class="title" style="padding: 10px; background-color: black;">
                     <a href="#" style="color: white">
                         <h4 style="font-weight: bold;">{{ $newshot1_2->news_title }}
                         </h4>
@@ -46,8 +49,9 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
 
         <div class="row">
             <div class="col-sm-4" style="padding: 1px;">
-                <img src="{{ asset('public/images') }}/{{ $newshot1_3->news_img }}" class="img-fluid">
-                <div class="title" style="padding: 10px; background-color: black;">
+                <a href="{{$newshot1_3->news_slug}}">
+                    <img src="{{ asset('public/images') }}/{{ $newshot1_3->news_img }}" class="img-fluid">
+                </a>                <div class="title" style="padding: 10px; background-color: black;">
                     <a href="#" style="color: white">
                         <h4 style="font-weight: bold;">{{ $newshot1_3->news_title }}
                     </a>
@@ -55,8 +59,9 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
             </div>
 
             <div class="col-sm-8" style="padding: 1px;">
-                <img src="{{ asset('public/images') }}/{{ $newshot1_4->news_img }}" class="img-fluid">
-                <div class="title" style="padding: 10px; background-color: black;">
+                <a href="{{$newshot1_4->news_slug}}">
+                    <img src="{{ asset('public/images') }}/{{ $newshot1_4->news_img }}" class="img-fluid">
+                </a>                <div class="title" style="padding: 10px; background-color: black;">
                     <a href="#" style="color: white">
                         <h4 style="font-weight: bold;">{{ $newshot1_4->news_title }}
 
@@ -67,8 +72,9 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
 
         <div class="row">
             <div class="col-sm-4" style="padding: 1px;">
-                <img src="{{ asset('public/images') }}/{{ $newshot1_5->news_img }}" class="img-fluid">
-                <div class="title" style="padding: 10px; background-color: black;">
+                <a href="{{$newshot1_5->news_slug}}">
+                    <img src="{{ asset('public/images') }}/{{ $newshot1_5->news_img }}" class="img-fluid">
+                </a>                <div class="title" style="padding: 10px; background-color: black;">
                     <a href="#" style="color: white">
                         <h4 style="font-weight: bold;">{{ $newshot1_5->news_title }}
                     </a>
@@ -76,8 +82,9 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
             </div>
 
             <div class="col-sm-4" style="padding: 1px;">
-                <img src="{{ asset('public/images') }}/{{ $newshot1_6->news_img }}" class="img-fluid">
-                <div class="title" style="padding: 10px; background-color: black;">
+                <a href="{{$newshot1_6->news_slug}}">
+                    <img src="{{ asset('public/images') }}/{{ $newshot1_6->news_img }}" class="img-fluid">
+                </a>                <div class="title" style="padding: 10px; background-color: black;">
                     <a href="#" style="color: white">
                         <h4 style="font-weight: bold;">{{ $newshot1_6->news_title }}
                     </a>
@@ -85,8 +92,9 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
             </div>
 
             <div class="col-sm-4" style="padding: 1px;">
-                <img src="{{ asset('public/images') }}/{{ $newshot1_7->news_img }}" class="img-fluid">
-                <div class="title" style="padding: 10px; background-color: black;">
+                <a href="{{$newshot1_7->news_slug}}">
+                    <img src="{{ asset('public/images') }}/{{ $newshot1_7->news_img }}" class="img-fluid">
+                </a>                <div class="title" style="padding: 10px; background-color: black;">
                     <a href="#" style="color: white">
                         <h4 style="font-weight: bold;">{{ $newshot1_7->news_title }}
                     </a>
@@ -97,8 +105,9 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
             <div class="row">
                 <div class="col-sm-6 p-0">
                     <div class="card bg-dark text-white">
-                        <img src="{{ asset('public/images') }}/{{ $newshot1_8->news_img }}" class="img-fluid">
-                        <div class="card-body">
+                        <a href="{{$newshot1_8->news_slug}}">
+                            <img src="{{ asset('public/images') }}/{{ $newshot1_8->news_img }}" class="img-fluid">
+                        </a>                        <div class="card-body">
                             <h5 class="card-title"
                                 style="font-family: nunito;font-weight: bold;text-transform: uppercase;">
                                 {{ $newshot1_8->news_title }}
@@ -109,8 +118,9 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
                 </div>
                 <div class="col-sm-6 p-0">
                     <div class="card bg-dark text-white">
-                        <img src="{{ asset('public/images') }}/{{ $newshot1_9->news_img }}" class="img-fluid">
-                        <div class="card-body">
+                        <a href="{{$newshot1_9->news_slug}}">
+                            <img src="{{ asset('public/images') }}/{{ $newshot1_9->news_img }}" class="img-fluid">
+                        </a>                        <div class="card-body">
                             <h5 class="card-title"
                                 style="font-family: nunito;font-weight: bold;text-transform: uppercase;">
                                 {{ $newshot1_9->news_title }}
@@ -122,7 +132,7 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
             </div>
         </div>
     </div>
-    <div class="tinthuong">
+    <div id="tinthuong">
         <div class="mota" style="text-align: center;">
             <h3 class="fs-1 text-uppercase " style="font-weight: bold;">tech</h3>
             <p class="fs-4">The latest tech news about the world's best
@@ -130,113 +140,114 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
                 top companies like Google and Apple to tiny startups vying
                 for your attention, Verge Tech has the latest in what matters in technology daily.</p>
         </div>
-    </div>
-
-    <div class="content">
-        <div class="row" style="background-color: white;">
-            <div class="col-sm-8">
-                <br>
-                <div class="news">
-                    @foreach ($news as $item)
-
-                        <div class="news_items_noibat">
-                            {{-- news --}}
-
-                            <div class="row" style="margin: 16px 0; ">
-                                <div class="col-sm-7" style="text-align: right;">
-                                    <h4>{{ $item->news_summary }}</h4>
-                                    <div class="author">
-                                        <a
-                                            href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
-                                            <h5>{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}
-                                            </h5>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-5 author">
-                                    <a href="{{ asset('/') }}{{ $item->news_slug }}">
-                                        <h4 style="font-weight: bold;">{{ $item->news_title }}</h4>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
 
 
-                    @foreach ($news as $item)
-                        <div class="news_items">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <br>
-                                    <div class="news_image">
-                                        <a href="{{ asset('/') }}{{ $item->news_slug }}">
-                                            <img src="{{ asset('public/images') }}/{{ $item->news_img }}"
-                                                class="img-fluid">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-8">
-                                    <br>
-                                    <div class="title">
-                                        <a href="#">
-                                            <h4 style="font-weight: bold;">
-                                                {{ $item->news_title }}
-                                            </h4>
-                                        </a>
-                                    </div>
+        <div class="content">
+            <div class="row" style="background-color: white;">
+                <div class="col-sm-8">
+                    <br>
+                    <div class="news">
+                        @foreach ($news as $item)
 
-                                    <div class=" news_static d-flex justify-content-start">
+                            <div class="news_items_noibat">
+                                {{-- news --}}
+
+                                <div class="row" style="margin: 16px 0; ">
+                                    <div class="col-sm-7" style="text-align: right;">
+                                        <h4>{{ $item->news_summary }}</h4>
                                         <div class="author">
-                                            by <a href="#">John Thomas</a>
-                                        </div>
-
-                                        <div style="border-left: 1px solid; margin: 5px;"></div>
-                                        <div class="time">
-                                            Today at 11:12am
-                                        </div>
-                                        <div style="border-left: 1px solid; margin: 5px;"></div>
-
-                                        <div class="comment">
-                                            <a href="#">
-                                                123 comments
+                                            <a
+                                                href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
+                                                <h5>{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}
+                                                </h5>
                                             </a>
                                         </div>
                                     </div>
+                                    <div class="col-sm-5 author">
+                                        <a href="{{ asset('/') }}{{ $item->news_slug }}">
+                                            <h4 style="font-weight: bold;">{{ $item->news_title }}</h4>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
+                        @endforeach
 
-            <div class="col-sm-4">
-                <div class="video">
-                    <h4 class="text-center fs-1"
-                        style="border-bottom: 2px solid #b973ff; font-family: sans-serif; margin-top: 2%;">News video
-                    </h4>
-                    <div class="video_items">
-                        <ul style="padding-left: 0px;">
-                            <li style="position: relative;">
-                                <div style="overflow: hidden;">
-                                    <img class="img-fluid"
-                                        src="{{ url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg') }}" alt="">
+
+                        @foreach ($news as $item)
+                            <div class="news_items">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <br>
+                                        <div class="news_image">
+                                            <a href="{{ asset('/') }}{{ $item->news_slug }}">
+                                                <img src="{{ asset('public/images') }}/{{ $item->news_img }}"
+                                                    class="img-fluid">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <br>
+                                        <div class="title">
+                                            <a href="#">
+                                                <h4 style="font-weight: bold;">
+                                                    {{ $item->news_title }}
+                                                </h4>
+                                            </a>
+                                        </div>
+
+                                        <div class=" news_static d-flex justify-content-start">
+                                            <div class="author">
+                                                by <a href="#">John Thomas</a>
+                                            </div>
+
+                                            <div style="border-left: 1px solid; margin: 5px;"></div>
+                                            <div class="time">
+                                                Today at 11:12am
+                                            </div>
+                                            <div style="border-left: 1px solid; margin: 5px;"></div>
+
+                                            <div class="comment">
+                                                <a href="#">
+                                                    123 comments
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <i class="fas fa-play"
-                                    style="color:whitesmoke; position: absolute;top: 35%;font-size: 80px;right: 39%;"></i>
-                            </li>
-                            <li class="title">
-                                <a href="">
-                                    <h5 style="font-weight: bold;">Hardware, apps, and much more and much more. From
-                                        top companies like Google and Apple to tiny startups</h5>
-                                </a>
-                            </li>
-                        </ul>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
-            </div>
 
+                <div class="col-sm-4">
+                    <div class="video">
+                        <h4 class="text-center fs-1"
+                            style="border-bottom: 2px solid #b973ff; font-family: sans-serif; margin-top: 2%;">News
+                            video
+                        </h4>
+                        <div class="video_items">
+                            <ul style="padding-left: 0px;">
+                                <li style="position: relative;">
+                                    <div style="overflow: hidden;">
+                                        <img class="img-fluid"
+                                            src="{{ url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg') }}" alt="">
+                                    </div>
+                                    <i class="fas fa-play"
+                                        style="color:whitesmoke; position: absolute;top: 35%;font-size: 80px;right: 39%;"></i>
+                                </li>
+                                <li class="title">
+                                    <a href="">
+                                        <h5 style="font-weight: bold;">Hardware, apps, and much more and much more. From
+                                            top companies like Google and Apple to tiny startups</h5>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
-
 @include('footer')

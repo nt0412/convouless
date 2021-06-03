@@ -164,7 +164,7 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
                                         </div>
                                     </div>
                                     <div class="col-sm-5 author">
-                                        <a href="{{ asset('/') }}{{ $item->news_slug }}">
+                                        <a href="{{route('news.show',[$item->news_slug])}}">
                                             <h4 style="font-weight: bold;">{{ $item->news_title }}</h4>
                                         </a>
                                     </div>

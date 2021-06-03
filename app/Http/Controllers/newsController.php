@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\News;
+use App\Models\Author;
 use Illuminate\Support\Facades\Auth;
 
 class newsController extends Controller
@@ -113,7 +114,6 @@ class newsController extends Controller
 
         // return redirect()->back()->with('status', 'Message: Success');
         return $this->index()->with('status', 'Message: Updated success');
-
     }
 
     /**
@@ -122,9 +122,16 @@ class newsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        //fist take value first
+        $news = News::where('news_slug', $slug)->first();
+        $authors = Author::where('author_id', $news->author_id)->first();
+        // list các bài biết liên quan theo loại
+        $list_news_by_cate = News::where('category_id', $news->category_id)->get();
+        $list_news_by_author = News::where('author_id', $authors->author_id)->orderBy('date_posted','DESC')->get();
+        return view('enduser.page_slug')->with(compact('list_news_by_cate','list_news_by_author','news','authors'));
+
     }
 
     /**
@@ -137,7 +144,7 @@ class newsController extends Controller
     {
         $news = News::find($id);
         // $list_cate = news::with('category')->get();
-        $cate = Category::orderBy('category_name','ASC')->get();
+        $cate = Category::orderBy('category_name', 'ASC')->get();
 
         // print_r ($list_news);
         return view('admincp.news.edit')->with(compact('news', 'cate'));
@@ -157,8 +164,7 @@ class newsController extends Controller
 
         if ($request->hasFile('news_img')) {
             $news->news_img = $request->news_img;
-        }
-        else {
+        } else {
             $news->news_img =  $news->news_img;
         }
         $data = $request->validate(
@@ -202,7 +208,7 @@ class newsController extends Controller
             $getnews_img = time() . '_' . $news_img->getClientOriginalName();
             $news_img->move($destinationPath, $getnews_img);
             $news->news_img = $getnews_img;
-        }else{
+        } else {
             // nếu không thì lấy lai file cũ
             $news->news_img =  $news->news_img;
         }
@@ -249,4 +255,12 @@ class newsController extends Controller
         $apple_news = news::with('category')->orderBy('news_id', 'DESC')->get();
         return view('admincp.news.apple')->with(compact('apple_news'));;
     }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id123
+     * @return \Illuminate\Http\Response
+     */
 }

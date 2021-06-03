@@ -141,8 +141,26 @@
                     <div class="form-group">
                         <label>Status</label>
                         <select class="custom-select" name="news_enable">
-                            <option value="1">Enable</option>
-                            <option value="0">Disable</option>
+                            <?php
+                                if ($news->news_enable == 1)
+                                {
+                                    ?>
+                                    <option value="1" selected>Enable</option>
+                                    <option value="0">Disable</option>
+                                    <option value=""></option>
+
+                                    <?php
+                                }
+                                else {
+                                    ?>
+                                    <option value="0" selected>Disable</option>
+                                    <option value="1">Enable</option>
+                                    <option value=""></option>
+                                    <?php
+                                }
+                            ?>
+                            {{-- <option value="1" selected >Enable</option> --}}
+                            {{-- <option value="0">Disable</option> --}}
                         </select>
                     </div>
                 </div>

@@ -104,7 +104,9 @@
             //In slug ra textbox có id “slug”
             document.getElementById('convert_slug').value = slug;
         }
+
     </script>
+
 </body>
 
 </html>

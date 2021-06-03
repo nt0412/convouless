@@ -114,11 +114,11 @@
                     <div class="col-6">
                         <div class="form-group">
                             <label>Choose spotlight image <span class="attention">*</span></label>
-                            <input class="form-control-file" type="file" accept="image/*" name="news_img">
+                            <input class="form-control-file" id="imgInp" type="file" accept="image/*" name="news_img">
                         </div>
                     </div>
                     <div class="col-6">
-                        <img class="" id="output" style="border: 2px #38c172 solid;" height="172px" src="#" alt="">
+                        <img class="" id="imgOup" style="border: 2px #38c172 solid;" height="172px" src="#" alt="">
                         <p></p>
 
                     </div>
@@ -153,19 +153,18 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add">Add</button>
-                <script>
-                    var loadFile = function(event) {
-                        var reader = new FileReader();
-                        reader.onload = function() {
-                            var output = document.getElementById('output');
-                            output.src = reader.result;
-                        };
-                        reader.readAsDataURL(event.target.files[0]);
-                    };
 
-                </script>
             </form>
         </div>
     </body>
+    <script>
+        imgInp.onchange = evt => {
+            const [file] = imgInp.files
+            if (file) {
+                imgOup.src = URL.createObjectURL(file)
+            }
+        }
+    </script>
+
 
 @endsection

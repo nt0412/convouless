@@ -199,15 +199,19 @@
             display: none;
         }
     }
+
+    .dropdown-menu{
+        width: 100%;
+    }
 </style>
 <div class="side-bar">
     <ul>
         <li class="nav-item dropdown">
-            <a href="#" id="navbarDropdown" onclick="showDropdownMenu()" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="icon"><i class="fas fa-user-tie"></i></span>
                 <span class="title">{{ Auth::user()->name }} <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
             </a>
-            <div class="dropdown-menu" id="DropDownMenu" style="background: black;" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
                 </a>

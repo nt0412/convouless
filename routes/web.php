@@ -26,18 +26,14 @@ Route::resource('/main-category', MainCategoryController::class);
 Route::resource('/category', CategoryController::class);
 Route::resource('/news', newsController::class);
 
-// page read posts with link slug
-Route::get('/{slug}', function($slug){
-    // $slug = '{slug}';
-    // $slug = "ha-noi-them-1-ca-duong-tinh-sars-cov-2-lien-quan-bv-benh-nhiet-doi-tu";
+
+// page show by cate
+
+
+Route::get('/post/{slug}', function($slug){
     return view('posts', ['slug' => $slug]);
 });
 
-// page show by cate
-Route::get('/apple', [newsController::class, 'apple']);
-Route::get('/test', function () {
-    return view('form_sau_khi_chon_cate');
-});
 
 // quản lý các bai viet nổi bật
 Route::get('/admin/manager/newshot', [Newshot1Controller::class,'index']);

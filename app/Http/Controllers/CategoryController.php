@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\News;
@@ -39,7 +40,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $main_cate = MainCategory::orderBy('main_cate_name','ASC')->get();
+        $main_cate = MainCategory::orderBy('main_cate_name', 'ASC')->get();
 
         // return view('admincp.news.create')->with(compact('cate'));
         return view('admincp.category.create')->with(compact('main_cate'));
@@ -85,9 +86,13 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($cate_name)
     {
-        //
+         //fist take value first
+         $cate = Category::where('category_name', $cate_name)->first()->category_id;
+         $list_news = News::where('category_id', $cate)->get();
+         $authors =Author::get();
+         return view('enduser.page_by_cate')->with(compact('list_news', 'authors','cate_name'));
     }
 
     /**
@@ -99,10 +104,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $cate = Category::find($id);
-        $main_cate = MainCategory::orderBy('main_cate_name','ASC')->get();
-        return view('admincp.category.edit')->with(compact('cate','main_cate'));
-
-
+        $main_cate = MainCategory::orderBy('main_cate_name', 'ASC')->get();
+        return view('admincp.category.edit')->with(compact('cate', 'main_cate'));
     }
 
     /**
@@ -150,5 +153,10 @@ class CategoryController extends Controller
         Category::find($id)->delete();
 
         return redirect()->back()->with('status', 'Message: Deleted success');
+    }
+
+    public function page($cate_name)
+    {
+
     }
 }

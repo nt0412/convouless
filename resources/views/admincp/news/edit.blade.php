@@ -109,11 +109,11 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label>Choose spotlight image</label>
-                        <input type="file" accept="image/*" class="form-control-file" name="news_img" id="exampleFormControlFile1">
+                        <input id="imgInp" type="file" accept="image/*" class="form-control-file" name="news_img" >
                     </div>
                 </div>
                 <div class="col-6">
-                    <img class="tex" id="output_img" style="border: 2px #38c172 solid;" height="172px" src="{{asset('public/images')}}/{{$news->news_img}}" alt="">
+                    <img class="tex" id="imgOup" style="border: 2px #38c172 solid;" height="172px" src="{{asset('public/images')}}/{{$news->news_img}}" alt="">
                     <p>{{$news->news_img}}</p>
                 </div>
             </div>
@@ -141,8 +141,26 @@
                     <div class="form-group">
                         <label>Status</label>
                         <select class="custom-select" name="news_enable">
-                            <option value="1">Enable</option>
-                            <option value="0">Disable</option>
+                            <?php
+                                if ($news->news_enable == 1)
+                                {
+                                    ?>
+                                    <option value="1" selected>Enable</option>
+                                    <option value="0">Disable</option>
+                                    <option value=""></option>
+
+                                    <?php
+                                }
+                                else {
+                                    ?>
+                                    <option value="0" selected>Disable</option>
+                                    <option value="1">Enable</option>
+                                    <option value=""></option>
+                                    <?php
+                                }
+                            ?>
+                            {{-- <option value="1" selected >Enable</option> --}}
+                            {{-- <option value="0">Disable</option> --}}
                         </select>
                     </div>
                 </div>
@@ -150,6 +168,14 @@
             <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add">Update</button>
         </form>
 </body>
+<script>
+    imgInp.onchange = evt => {
+        const [file] = imgInp.files
+        if (file) {
+            imgOup.src = URL.createObjectURL(file)
+        }
+    }
+</script>
 
 
 

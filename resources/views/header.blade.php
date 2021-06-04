@@ -196,73 +196,13 @@
                                 $list_cate = Category::where('main_cate_id', $main->main_cate_id)->orderBy('category_name','ASC')->get();
                                 @endphp
                                 @foreach ($list_cate as $item)
-                                <a class='nav-link' href='#'>
+                                <a class='nav-link' href='{{route('category.show',[$item->category_name])}}'>
                                     {{$item->category_name}}
                                 </a>
                                 @endforeach
                             </div>
                         </li>
                         @endforeach
-
-
-                        <!-- {{-- <li class='nav-item dropdown'>
-                            <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                                Tech
-                            </a>
-                            <div class='dropdown-menu' style='text-align: center; transition: all 1s ease-in;'>
-                                <a class='nav-link' href='#'>
-                                    @php
-                                        use App\Models\Category;
-                                        $list_cate = Category::orderBy('category_name','ASC')->get();
-                                        // print_r($list_cate);
-                                    @endphp
-                                    @foreach ($list_cate as $item)
-                                    <a class='nav-link' href='#'>
-                                        {{$item->category_name}}
-                                    </a>
-                                    @endforeach
-                                </a>
-                            </div>
-                        </li>
-                        <li class='nav-item dropdown'>
-                            <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                                Reviews
-                            </a>
-                            <div class='dropdown-menu' style='text-align: center;'>
-                                @php
-                                    use App\Models\Category;
-                                    $list_cate = Category::orderBy('category_name','ASC')->get();
-                                    // print_r($list_cate);
-                                @endphp
-                                @foreach ($list_cate as $item)
-                                <a class='nav-link' href='#'>
-                                    {{$item->category_name}}
-                                </a>
-                                @endforeach
-                            </div>
-                        </li>
-                        <li class='nav-item dropdown'>
-                            <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                                Entertainment
-                            </a>
-                            <div class='dropdown-menu' style='text-align: center;'>
-                                <a class='nav-link' href='#'>
-                                    Film
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    TV
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    Games
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    Comics
-                                </a>
-                                <a class='nav-link' href='#'>
-                                    Books
-                                </a>
-                            </div>
-                        </li> --}} -->
 
                         <li class='nav-item dropdown'>
                             <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>

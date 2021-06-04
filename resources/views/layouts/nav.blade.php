@@ -143,18 +143,22 @@
 <div class="side-bar">
     <ul>
         <li class="nav-item dropdown">
-            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <span class="icon"><i class="fas fa-user-tie"></i></span>
-                <span class="title">{{ Auth::user()->name }} <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
+                <span class="title">{{ Auth::user()->name }} <i class="fas fa-caret-down"
+                        style="padding-left: 10px;"></i></span>
             </a>
             <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
-                <a style="font-weight: bold; color: goldenrod;" class="dropdown-item" href="{{route('main-category.create')}}">Info</a>
+                <a style="font-weight: bold; color: goldenrod;" class="dropdown-item"
+                    href="{{ route('main-category.create') }}">Info</a>
             </div>
         </li>
         <li>
@@ -164,30 +168,35 @@
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <span class="icon"><i class="fas fa-layer-group"></i></span>
                 <span class="title">Category <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
             </a>
             <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
-                <a style="font-weight: bold; color: goldenrod;" class="dropdown-item" href="{{route('main-category.create')}}">Add main category</a>
-                <a style="font-weight: bold; color: goldenrod;" class="dropdown-item" href="{{route('main-category.index')}}">Main Category list</a>
-                <a class="dropdown-item" href="{{route('category.create')}}">Add category</a>
-                <a class="dropdown-item" href="{{route('category.index')}}">Category list</a>
+                <a style="font-weight: bold; color: goldenrod;" class="dropdown-item"
+                    href="{{ route('main-category.create') }}">Add main category</a>
+                <a style="font-weight: bold; color: goldenrod;" class="dropdown-item"
+                    href="{{ route('main-category.index') }}">Main Category list</a>
+                <a class="dropdown-item" href="{{ route('category.create') }}">Add category</a>
+                <a class="dropdown-item" href="{{ route('category.index') }}">Category list</a>
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <span class="icon"><i class="fas fa-newspaper"></i></span>
                 <span class="title">Posts <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
             </a>
             <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{route('news.create')}}">Add post</a>
-                <a class="dropdown-item" href="{{route('news.index')}}">Post list</a>
+                <a class="dropdown-item" href="{{ route('news.create') }}">Add post</a>
+                <a class="dropdown-item" href="{{ route('news.index') }}">Post list</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <span class="icon"><i class="far fa-file-word"></i></span>
                 <span class="title">Pages <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
             </a>
@@ -198,7 +207,8 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <span class="icon"><i class="fas fa-chart-bar"></i></span>
                 <span class="title">Statistics <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
             </a>
@@ -209,7 +219,8 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <span class="icon"><i class="fas fa-solar-panel"></i></span>
                 <span class="title">Footer </span>
             </a>
@@ -226,20 +237,4 @@
     </ul>
 </div>
 <div class="toggle" onclick="toggleMenu()"></div>
-<script type="text/javascript">
-    function toggleMenu() {
-        let sidebar = document.querySelector('.side-bar');
-        let toggle = document.querySelector('.toggle');
-        sidebar.classList.toggle('active');
-        toggle.classList.toggle('active');
-    }
 
-    function showDropdownMenu() {
-        var x = document.getElementById("DropDownMenu");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-</script>

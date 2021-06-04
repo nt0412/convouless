@@ -23,9 +23,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script> --}}
 
     <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
@@ -48,6 +48,66 @@
 
         body::-webkit-scrollbar-thumb {
             background: black;
+        }
+
+        .search-box {
+            float: left;
+            height: 40px;
+            background-color: goldenrod;
+            border-radius: 40px;
+            margin-left: 0.6rem;
+            margin-top: 0.6rem;
+        }
+
+        .search-box:hover>.search-txt {
+            width: 150px;
+            padding: 0 6px;
+        }
+
+        .search-box:hover>.search-btn {
+            background-color: #343a40;
+            color: gold;
+        }
+
+        .search-btn {
+            float: right;
+            border-radius: 50%;
+            background-color: goldenrod;
+            align-items: center;
+            transition: 0.5s;
+            color: #343a40;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+        }
+
+        #navbarNav>div>a {
+            position: relative;
+        }
+
+        #navbarNav>div>a>i {
+            position: absolute;
+            left: 7px;
+        }
+
+        .search-btn>i {
+            font-size: 25px;
+        }
+
+        .search-txt {
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0;
+            color: black;
+            transition: 0.5s;
+            width: 0px;
+            line-height: 40px;
+        }
+
+        #search_box_nav .search-txt {
+            width: 300px;
         }
     </style>
 </head>

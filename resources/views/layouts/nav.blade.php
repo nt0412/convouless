@@ -13,62 +13,6 @@
         font-size: medium;
     }
 
-    .search-box {
-        float: left;
-        height: 40px;
-        background-color: goldenrod;
-        border-radius: 40px;
-        margin-left: 0.6rem;
-        margin-top: 0.6rem;
-    }
-
-    .search-box:hover>.search-txt {
-        width: 150px;
-        padding: 0 6px;
-    }
-
-    .search-box:hover>.search-btn {
-        background-color: #343a40;
-        color: gold;
-    }
-
-    .search-btn {
-        float: right;
-        border-radius: 50%;
-        background-color: goldenrod;
-        align-items: center;
-        transition: 0.5s;
-        color: #343a40;
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-    }
-
-    #navbarNav>div>a {
-        position: relative;
-    }
-
-    #navbarNav>div>a>i {
-        position: absolute;
-        left: 7px;
-    }
-
-    .search-btn>i {
-        font-size: 25px;
-    }
-
-    .search-txt {
-        border: none;
-        background: none;
-        outline: none;
-        float: left;
-        padding: 0;
-        color: black;
-        transition: 0.5s;
-        width: 0px;
-        line-height: 40px;
-    }
-
     a:hover {
         color: gold;
     }
@@ -184,10 +128,6 @@
         }
     }
 
-    #search_box_nav:hover>.search-txt {
-        width: 300px;
-    }
-
     @media (max-width: 1050px) {
         #search_box_nav {
             display: none;
@@ -198,10 +138,6 @@
         #search_box_sidebar {
             display: none;
         }
-    }
-
-    .dropdown-menu{
-        width: 100%;
     }
 </style>
 <div class="side-bar">
@@ -253,7 +189,7 @@
         <li class="nav-item dropdown">
             <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="icon"><i class="far fa-file-word"></i></span>
-                <span class="title">Page's <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
+                <span class="title">Pages <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
             </a>
             <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Home Page</a>
@@ -264,7 +200,7 @@
         <li class="nav-item dropdown">
             <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="icon"><i class="fas fa-chart-bar"></i></span>
-                <span class="title">statistics's <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
+                <span class="title">Statistics <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
             </a>
             <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Home</a>
@@ -275,7 +211,7 @@
         <li class="nav-item dropdown">
             <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="icon"><i class="fas fa-solar-panel"></i></span>
-                <span class="title">Footer's</span>
+                <span class="title">Footer </span>
             </a>
             {{-- <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Home</a>

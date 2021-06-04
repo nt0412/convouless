@@ -274,8 +274,8 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
                                     <br>
                                     <div class="news_image">
                                         <a href="{{ asset('/') }}{{ $item->news_slug }}">
-                                            <img height="50px" src="{{ asset('public/images') }}/{{ $item->news_img }}"
-                                                class="">
+                                            <img height="" src="{{ asset('public/images') }}/{{ $item->news_img }}"
+                                                class="img-fluid">
                                         </a>
                                     </div>
                                 </div>

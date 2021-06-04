@@ -53,7 +53,7 @@
             @foreach ($list_news_by_author as $key => $item)
                 <li class="list-group-item">
                     <a href="{{route('news.show',[$item->news_slug])}}">{{$item->news_title}}</a>
-                    <p class="float-right fs-6 m-0">{{$item->date_posted}}</p>
+                    {{-- <p class="float-right fs-6 m-0">{{$item->date_posted}}</p> --}}
                 </li>
                 @if ($key == 4 )
                 @php

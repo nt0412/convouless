@@ -266,7 +266,7 @@
                 <span class="title">Page's <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
             </a>
             <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Home Page</a>
+                <a class="dropdown-item" href="{{route('newshot1.index')}}">Home Page</a>
                 <a class="dropdown-item" href="#">Post Page</a>
             </div>
         </li>
@@ -281,6 +281,30 @@
                 <a class="dropdown-item" href="#">Home</a>
                 <a class="dropdown-item" href="#">Page</a>
             </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <span class="icon"><i class="fab fa-autoprefixer"></i></span>
+                <span class="title">Authors's</span>
+            </a>
+            {{-- <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Home</a>
+                <a class="dropdown-item" href="#">Page</a>
+            </div> --}}
+        </li>
+
+        <li class="nav-item dropdown">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <span class="icon"><i class="fas fa-users"></i></span>
+                <span class="title">User's</span>
+            </a>
+            {{-- <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Home</a>
+                <a class="dropdown-item" href="#">Page</a>
+            </div> --}}
         </li>
 
         <li class="nav-item dropdown">

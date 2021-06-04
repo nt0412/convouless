@@ -7,7 +7,7 @@
 </style>
 
 <div class="container">
-    <h1 style="text-align: center; font-family: sans-serif;">NEWS {{$cate_name}}</h1>
+    <h1 style="text-align: center; font-family: sans-serif; text-transform: capitalize">NEWS {{$cate_name}}</h1>
     <!-- Những bài viết cùng danh mục -->
     <div class="row" id="grad">
         <div class="col-sm-6" style="padding: 1px;">

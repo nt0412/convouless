@@ -25,11 +25,10 @@ Route::get('/admin', [HomeController::class, 'index'])->name('admin');
 Route::resource('/main-category', MainCategoryController::class);
 Route::resource('/category', CategoryController::class);
 Route::resource('/news', newsController::class);
+Route::resource('/newshot1', Newshot1Controller::class);
 
 
 // page show by cate
-
-
 Route::get('/post/{slug}', function($slug){
     return view('posts', ['slug' => $slug]);
 });

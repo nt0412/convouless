@@ -119,7 +119,7 @@
                             <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt=""  height="172px">
                         </td>
                         <td>
-                            <a style="color: blue;" class="btn btn-primary" href="{{route('news.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
+                            <a style="color: blue;" class="btn btn-primary" href="{{route('newshot1.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
 
                             <input class="popwindow"  type="button" value="edit" onclick="window.open('{{asset('/admin/manager/newshot/edit')}}','preview','fullscreen=yes');">
                         </td>

@@ -196,7 +196,7 @@
                                 $list_cate = Category::where('main_cate_id', $main->main_cate_id)->orderBy('category_name','ASC')->get();
                                 @endphp
                                 @foreach ($list_cate as $item)
-                                <a class='nav-link' href='{{route('category.show',[$item->category_name])}}'>
+                                <a class='nav-link' href='{{route('category.show',[$item->category_slug])}}'>
                                     {{$item->category_name}}
                                 </a>
                                 @endforeach

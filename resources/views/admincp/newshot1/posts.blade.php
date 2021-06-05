@@ -18,9 +18,6 @@
    </div>
    <div class="body_content"></div>
    <div class="more_from"></div>
- 
-   
-   
 </div>
 @include('footer')
 @endsection

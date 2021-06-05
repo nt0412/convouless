@@ -141,7 +141,7 @@
     }
 </style>
 <div class="side-bar">
-    <ul>
+    <ul style="padding: 0;">
         <li class="nav-item dropdown">
             <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
@@ -201,7 +201,7 @@
                 <span class="title">Pages <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
             </a>
             <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Home Page</a>
+                <a class="dropdown-item" href="{{ url('admin/manager/newshot') }}">Home Page</a>
                 <a class="dropdown-item" href="#">Post Page</a>
             </div>
         </li>
@@ -237,4 +237,11 @@
     </ul>
 </div>
 <div class="toggle" onclick="toggleMenu()"></div>
-
+<script type="text/javascript">
+    function toggleMenu() {
+        let sidebar = document.querySelector('.side-bar');
+        let toggle = document.querySelector('.toggle');
+        sidebar.classList.toggle('active');
+        toggle.classList.toggle('active');
+    }
+</script>

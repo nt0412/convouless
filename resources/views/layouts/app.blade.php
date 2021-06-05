@@ -33,6 +33,9 @@
     <script src="{{asset('public/ckfinder/ckfinder.js')}}"></script>
 
     <style>
+        body{
+            overflow-x: hidden;
+        }
         .attention {
             color: #cc165c;
             font-size: 1.5rem;

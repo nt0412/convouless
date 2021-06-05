@@ -23,7 +23,6 @@ class newsController extends Controller
      */
     public function index()
     {
-
         $list_news = news::with('category')->orderBy('news_id', 'DESC')->get();
         return view('admincp.news.index')->with(compact('list_news'));
     }

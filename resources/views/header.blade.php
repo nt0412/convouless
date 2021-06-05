@@ -168,7 +168,7 @@
             ul{
                 text-align: center;
             }
-    }
+        }
     </style>
 </head>
 
@@ -181,7 +181,7 @@
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                    <img src="{{url('image/view_headline_white_24dp.svg')}}" alt="">
+                    <img src="{{url('image/view_headline_white_24dp.svg')}}">
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -210,16 +210,16 @@
                             </a>
                             <div class='dropdown-menu' style='text-align: center;'>
                                 <a class='nav-link' href='#'>
-                                    <img src="../../Convouless/image/social_media_icon/facebook.png" class='img-fluid'> Facebook
+                                    <img src="{{url('image/social_media_icon/facebook.png')}}" class='img-fluid'> Facebook
                                 </a>
                                 <a class='nav-link' href='#'>
-                                    <img src="../../Convouless/image/social_media_icon/instagram.png" class='img-fluid'> Instagram
+                                    <img src="{{url('image/social_media_icon/instagram.png')}}" class='img-fluid'> Instagram
                                 </a>
                                 <a class='nav-link' href='#'>
-                                    <img src="../../Convouless/image/social_media_icon/twitter.png" class='img-fluid'> Twitter
+                                    <img src="{{url('image/social_media_icon/twitter.png')}}" class='img-fluid'> Twitter
                                 </a>
                                 <a class='nav-link' href='#'>
-                                    <img src="../../Convouless/image/social_media_icon/youtube.png" class='img-fluid'> Youtube
+                                    <img src="{{url('image/social_media_icon/youtube.png')}}" class='img-fluid'> Youtube
                                 </a>
                             </div>
                         </li>

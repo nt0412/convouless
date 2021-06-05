@@ -18,7 +18,7 @@ $newshot1_6 = $news->where('news_id', $newshot1s[5]->news_id)->first();
 $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
 $newshot1_8 = $news->where('news_id', $newshot1s[7]->news_id)->first();
 $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
-$newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
+
 // dd($newshot1_2->news_id);
 @endphp
 <div class="container" id="grad">
@@ -180,8 +180,7 @@ $newshot1_10 = $news->where('news_id', $newshot1s[9]->news_id)->first();
                                         <br>
                                         <div class="news_image">
                                             <a href="{{ asset('/') }}{{ $item->news_slug }}">
-                                                <img src="{{ asset('public/images') }}/{{ $item->news_img }}"
-                                                    class="img-fluid">
+                                                <img src="{{ asset('public/images') }}/{{ $item->news_img }}" class="img-fluid">
                                             </a>
                                         </div>
                                     </div>

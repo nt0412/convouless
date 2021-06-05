@@ -90,22 +90,22 @@
         <thead class="thead-light">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">News's Title</th>
-                <th scope="col">Category</th>
-                <th scope="col">Metatile</th>
-                <th scope="col" style="width: 20%;">Summary</th>
-                <th scope="col" style="width: 20%;">Image</th>
+                <th scope="col" style="width: 10%;">News's Title</th>
+                <th scope="col" style="width: 10%;">Category</th>
+                <th scope="col" style="width: 10%;">Metatile</th>
+                <th scope="col" style="width: 10%;">Summary</th>
+                <th scope="col" style="width: 10%;">Image</th>
                 <th scope="col">Author</th>
-                <th scope="col">Date Posted</th>
-                <th scope="col">Date Updated</th>
-                <th scope="col">Status</th>
-                <th scope="col">Tools</th>
+                <th scope="col" style="width: 5%;">Date Posted</th>
+                <th scope="col" style="width: 10%;">Date Updated</th>
+                <th scope="col" style="width: 10%;">Status</th>
+                <th scope="col" style="width: 10%;">Tools</th>
             </tr>
         </thead>
         <tbody style="color: whitesmoke;">
             @foreach($list_news as $key => $item)
             <tr>
-                <td>{{$key+1}}</td>
+                <th scope="row">{{$key+1}}</th>
                 <td>
                     <a href="{{$item->news_slug}}">
                         <p>{{$item->news_title}}</p>

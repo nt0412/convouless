@@ -2,92 +2,55 @@
 @section('content')
 @include('layouts.nav')
 @php
-    use App\Models\News;
+use App\Models\News;
 
-    $news = News::get();
-    // dd($newshot1s);
+$news = News::get();
+// dd($newshot1s);
 
-    // dd($newshot->news_slug);
+// dd($newshot->news_slug);
 @endphp
 
 <style>
-    @media only screen and (max-width: 1439px) {
-        /* .container-fluid {
-            overflow-x: scroll;
-        } */
-
-        /* width */
-        ::-webkit-scrollbar {
-            width: 3px;
+    @media (max-width: 1000px) {
+        .side-bar {
+            left: -60px;
         }
 
-        /* Track */
-        ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 2px goldenrod;
-            border-radius: 5px;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: goldenrod;
-            border-radius: 5px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: gold;
-        }
-
-        #preview{
-            position: absolute;top: 200px;
-            /* transform: scale(0.7); */
-        }
-
-    }
-
-    @media only screen and (min-width: 1440px) {
-
-        /* width */
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            border-radius: 5px;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: goldenrod;
-            border-radius: 5px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: gold;
-        }
-        #preview{
-            position: absolute;top: -400px;
-            transform: scale(0.7);
+        .side-bar.active {
+            left: 0px;
+            width: 100%;
         }
     }
 
-    table
-    {
+    .container-fluid {
+        padding-left: 60px !important;
+    }
+
+    @media (max-width: 768px) {
+        .container-fluid {
+            padding-left: 0px !important;
+            padding-right: 0px;
+        }
+    }
+
+    #btn-preview {
+        border: linear-gradient(90deg, #f7c626 15%, #f68c2f 40%, #e5127d 85%);
+        padding: 15px 32px;
         text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
     }
 
-    table tbody tr td p {
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        display: -webkit-box;
+    #btn-preview:hover {
+        background: linear-gradient(90deg, #f7c626 15%, #f68c2f 40%, #e5127d 85%);
     }
 </style>
-<div class="container">
-    <div class="card-header" style="color: gold; text-align: center;">
-        <h2>News Hot's list</h2>
+<div class="container-fluid">
+    <div class="card-header" style="color: gold; text-align: center; border-bottom: #e5127d solid 2px;">
+        <h2>Hot news list</h2>
     </div>
     @if (session('status'))
     <div class="alert alert-success" role="alert">
@@ -95,20 +58,20 @@
     </div>
     @endif
     <div class="row">
-        <div class="col-xl-6 col-md-12" >
+        <div class="col-sm-4">
             <table class="table" style="border-top: goldenrod solid 2px;">
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">News's Title</th>
-                        <th scope="col"style="width: 20%;">Image</th>
+                        <th scope="col">Image</th>
                         <th scope="col">Tools</th>
                     </tr>
                 </thead>
                 <tbody style="color: whitesmoke;">
-                    @foreach($newshot1s  as $key => $item)
+                    @foreach($newshot1s as $key => $item)
                     <tr>
-                        <td>{{(integer)$key+1}}</td>
+                        <th scope="row">{{(integer)$key+1}}</th>
                         <td>
                             <a href="{{$item->news_slug}}">
                                 <p>{{$item->news_title}}</p>
@@ -116,28 +79,37 @@
                         </td>
                         <td>
                             {{-- <img class=""  src="{{asset('public/images/')}}/{{$item->news_img}}" alt="{{$item->news_img}}" height="172px"> --}}
-                            <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt=""  height="172px">
+                            <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="" height="172px">
                         </td>
                         <td>
                             <a style="color: blue;" class="btn btn-primary" href="{{route('news.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
-
-                            <input class="popwindow"  type="button" value="edit" onclick="window.open('{{asset('/admin/manager/newshot/edit')}}','preview','fullscreen=yes');">
+                            <!-- <form action="{{route('news.destroy',[$item->news_id])}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button onclick="return confirm('Are you sure you want to delete ?');" class="btn btn-danger"><img src="{{url('image\delete_icon.png')}}" alt=""></button>
+                            </form> -->
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-        <div class="col-xl-6 col-md-12" style="    position: relative;">
-            <div class="d-flex justify-content-around">
-                <h3 class="text-center  text-white">preview </h3>
-                <input type="button" value="Open a Popup Window" onclick="window.open('{{asset('/admin/manager/newshot/preview')}}','preview','fullscreen=yes');">
-            </div>
-            <div id="preview" style="">
+        <div class="col-sm-8">
+            <h3 style="text-align: center;">
+                <input id="btn-preview" class="btn btn-dark btn-outline-warning" type="button" value="Preview" onclick="window.open('{{asset('/admin/manager/newshot/preview/')}}','preview','fullscreen=yes');">
+            </h3>
+            <div id="preview">
                 @include('admincp.newshot1.preview')
             </div>
-
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function toggleMenu() {
+        let sidebar = document.querySelector('.side-bar');
+        let toggle = document.querySelector('.toggle');
+        sidebar.classList.toggle('active');
+        toggle.classList.toggle('active');
+    }
+</script>
 @endsection

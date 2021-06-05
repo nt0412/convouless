@@ -1,5 +1,5 @@
+@include('home')
 <style>
-
     #tinthuong{
         display: none;
     }
@@ -7,4 +7,3 @@
         display: none;
     }
 </style>
-@include('home')

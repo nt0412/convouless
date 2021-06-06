@@ -249,17 +249,4 @@ class newsController extends Controller
         );
         return view('admincp.news.file_brower')->with($data);
     }
-    public function apple()
-    {
-        $apple_news = news::with('category')->orderBy('news_id', 'DESC')->get();
-        return view('admincp.news.apple')->with(compact('apple_news'));;
-    }
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id123
-     * @return \Illuminate\Http\Response
-     */
 }

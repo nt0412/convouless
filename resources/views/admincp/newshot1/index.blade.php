@@ -82,7 +82,7 @@ $news = News::get();
                             <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="" height="172px">
                         </td>
                         <td>
-                            <a style="color: blue;" class="btn btn-primary" href="{{route('news.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
+                        <a style="color: blue;" class="btn btn-primary" href="{{route('newshot1.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
                             <!-- <form action="{{route('news.destroy',[$item->news_id])}}" method="POST">
                                 @method('DELETE')
                                 @csrf

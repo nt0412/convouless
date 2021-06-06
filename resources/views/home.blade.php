@@ -22,7 +22,7 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
 // dd($newshot1_2->news_id);
 @endphp
 <div class="container" id="grad">
-    <div id="newshot1">
+    {{-- <div id="newshot1">
         <div class="row">
             <div class="col-md-8 " style="padding: 1px;">
                 <a href="{{$newshot1_1->news_slug}}">
@@ -131,7 +131,7 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div id="tinthuong">
         <div class="mota" style="text-align: center;">
             <h3 class="fs-1 text-uppercase " style="font-weight: bold;">tech</h3>

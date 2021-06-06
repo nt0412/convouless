@@ -27,8 +27,6 @@ Route::resource('/news', newsController::class);
 // Route::resource('/newshot', Newshot1Controller::class);
 
 // page show by cate
-
-
 Route::get('/post/{slug}', function($slug){
     return view('posts', ['slug' => $slug]);
 });

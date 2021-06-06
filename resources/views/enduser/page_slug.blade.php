@@ -69,7 +69,7 @@
     <h1 style="font-family: sans-serif; font-weight: bold; text-align: center; color: black;">Relate News</h1>
     <div class="relate_news" id="grad">
         <div class="owl-carousel owl-theme">
-            <div class="item">
+            <!-- <div class="item">
                 @foreach ($list_news_by_cate as $item)
                 <img src="{{ asset('images') }}/{{ $item->news_img }}" class="img-fluid">
                 <div class="title" style="padding: 10px; background-color: black;">
@@ -80,7 +80,19 @@
                     </a>
                 </div>
                 @endforeach
-            </div>
+            </div> -->
+            <div class="item"><h4>1</h4></div>
+            <div class="item"><h4>2</h4></div>
+            <div class="item"><h4>3</h4></div>
+            <div class="item"><h4>4</h4></div>
+            <div class="item"><h4>5</h4></div>
+            <div class="item"><h4>6</h4></div>
+            <div class="item"><h4>7</h4></div>
+            <div class="item"><h4>8</h4></div>
+            <div class="item"><h4>9</h4></div>
+            <div class="item"><h4>10</h4></div>
+            <div class="item"><h4>11</h4></div>
+            <div class="item"><h4>12</h4></div>
         </div>
     </div>
 </div>

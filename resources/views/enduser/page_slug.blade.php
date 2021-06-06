@@ -11,14 +11,14 @@
     h4:hover {
         color: #cc165c;
     }
-    img{
+
+    img {
         max-width: 100%;
         height: auto;
     }
-
 </style>
 </style>
-<div class="container-fluid">
+<div class="container-fluid" style="background: white; padding: 0; margin: 0;">
     <div class="news-main-image text-center">
         <!-- ĐỂ XUẤT RA MAIN IMAGE CỦA BÀI VIẾT -->
         <img src="{{ asset('images') }}/@php echo $news->news_img; @endphp" class="img-fluid">
@@ -36,17 +36,17 @@
             <!-- NỘI DUNG BÀI VIẾT -->
             <p>
                 @php
-                    echo $news->news_content;
+                echo $news->news_content;
                 @endphp
             </p>
             <!-- Đây là chữ kết thúc để kết thúc bài viết đừng sửa nhé -->
-            <p style="text-align: center; font-family: sans-serif;">
+            <p style="text-align: center; font-family: sans-serif; font-weight: bold;">
                 END.
             </p>
         </div>
     </div>
 
-    {{-- bài viết cùng tác giả --}}
+    <!-- {{-- bài viết cùng tác giả --}}
     <div id="news_author">
         <h2>bài viết cùng tác giả </h2>
         <ul class="list-group">
@@ -62,14 +62,15 @@
                 @endif
             @endforeach
         </ul>
-    </div>
+    </div> -->
 
 
     <!-- CÁC TIN TỨC LIÊN QUAN -->
-    <h1 style="font-family: sans-serif; font-weight: bold; text-align: center;">Relate news</h1>
-    <div class="relate_news row" id="grad">
-        @foreach ($list_news_by_cate as $item)
-            <div class="col-sm-4">
+    <h1 style="font-family: sans-serif; font-weight: bold; text-align: center; color: black;">Relate News</h1>
+    <div class="relate_news" id="grad">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                @foreach ($list_news_by_cate as $item)
                 <img src="{{ asset('images') }}/{{ $item->news_img }}" class="img-fluid">
                 <div class="title" style="padding: 10px; background-color: black;">
                     <a href="#" style="color: white">
@@ -78,11 +79,28 @@
                         </h4>
                     </a>
                 </div>
+                @endforeach
             </div>
-        @endforeach
-
+        </div>
     </div>
-
-
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsive: {
+            1440: {
+                items: 4
+            }
+        }
+    })
+</script>
 @include('footer')
+

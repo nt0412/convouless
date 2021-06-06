@@ -31,6 +31,12 @@ $news = News::get();
             padding-left: 0px !important;
             padding-right: 0px;
         }
+        #preview {
+            padding-right: 0px;
+        }
+        #table-manage{
+            padding-right: 0px;
+        }
     }
 
     #btn-preview {
@@ -49,8 +55,9 @@ $news = News::get();
     }
 </style>
 <div class="container-fluid">
-    <div class="card-header" style="color: gold; text-align: center; border-bottom: #e5127d solid 2px;">
+    <div class="card-header" style="color: gold; text-align: center;">
         <h2>Hot news list</h2>
+        <hr>
     </div>
     @if (session('status'))
     <div class="alert alert-success" role="alert">
@@ -58,7 +65,7 @@ $news = News::get();
     </div>
     @endif
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4" id="table-manage">
             <table class="table" style="border-top: goldenrod solid 2px;">
                 <thead class="thead-light">
                     <tr>
@@ -82,7 +89,7 @@ $news = News::get();
                             <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="" height="172px">
                         </td>
                         <td>
-                        <a style="color: blue;" class="btn btn-primary" href="{{route('newshot1.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
+                        <a style="color: blue;" class="btn btn-primary" href="{{route('newshot.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
                             <!-- <form action="{{route('news.destroy',[$item->news_id])}}" method="POST">
                                 @method('DELETE')
                                 @csrf
@@ -94,7 +101,7 @@ $news = News::get();
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-8" id="preview">
             <h3 style="text-align: center;">
                 <input id="btn-preview" class="btn btn-dark btn-outline-warning" type="button" value="Preview" onclick="window.open('{{asset('/admin/manager/newshot/preview/')}}','preview','fullscreen=yes');">
             </h3>

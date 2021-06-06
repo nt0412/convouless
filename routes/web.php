@@ -24,7 +24,7 @@ Route::get('/admin', [HomeController::class, 'index'])->name('admin');
 Route::resource('/main-category', MainCategoryController::class);
 Route::resource('/category', CategoryController::class);
 Route::resource('/news', newsController::class);
-// Route::resource('/newshot', Newshot1Controller::class);
+Route::resource('/newshot', Newshot1Controller::class);
 
 // page show by cate
 Route::get('/post/{slug}', function($slug){
@@ -33,7 +33,7 @@ Route::get('/post/{slug}', function($slug){
 
 
 // quản lý các bai viet nổi bật
-Route::get('/admin/manager/newshot', [Newshot1Controller::class,'index']);
+// Route::get('/admin/manager/newshot', [Newshot1Controller::class,'index']);
 // quản lý các bai viet nổi bật PREVIEW
 Route::get('/admin/manager/newshot/preview', [Newshot1Controller::class,'preview']);
 // quản lý các bai viet nổi bật PREVIEW

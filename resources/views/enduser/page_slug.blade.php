@@ -1,21 +1,67 @@
 @php
-
 // dd($news->date_posted->format());
 @endphp
 @include('header')
 <style>
-    .relate_news .col-sm-4 {
-        padding: 1px;
+    body::-webkit-scrollbar {
+        width: 0.25rem;
     }
 
-    h4:hover {
+    body::-webkit-scrollbar-track {
+        background: black;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: goldenrod;
+    }
+    .relate_news img {
+        max-width: 40rem;
+        max-height: 40rem;
+    }
+
+    .img-title{
+        position: absolute;
+        bottom: 0;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.75);
+        color: #f1f1f1;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .img-title a{
+        color: whitesmoke;
+        text-decoration: none;
+        font-size: 1.25rem;
+    }
+
+    .img-title a:hover{
         color: #cc165c;
     }
-
-    img {
-        max-width: 100%;
-        height: auto;
+    .img-title:hover{
+        background: rgb(0, 0, 0);
     }
+
+    @media (max-width: 640px) {
+        .img-title a{
+            font-size: 0.7rem;
+        }
+        .relate_news img{
+            width: 30rem;
+            height: 30rem;
+        }
+    }
+    @media (max-width: 610px) {
+        .img-title a{
+            font-size: 0.7rem;
+        }
+        .relate_news img{
+            max-width: 20rem;
+            max-height: 14rem;
+        }
+    }
+
 </style>
 </style>
 <div class="container-fluid" style="background: white; padding: 0; margin: 0;">
@@ -69,30 +115,16 @@
     <h1 style="font-family: sans-serif; font-weight: bold; text-align: center; color: black;">Relate News</h1>
     <div class="relate_news" id="grad">
         <div class="owl-carousel owl-theme">
-            <!-- <div class="item">
-                @foreach ($list_news_by_cate as $item)
-                <img src="{{ asset('images') }}/{{ $item->news_img }}" class="img-fluid">
-                <div class="title" style="padding: 10px; background-color: black;">
-                    <a href="#" style="color: white">
-                        <h4 style="font-weight: bold;">
+            @foreach ($list_news_by_cate as $item)
+                <div class="item">
+                    <img src="{{ asset('images') }}/{{ $item->news_img }}">
+                    <div class="img-title">
+                        <a href="#">
                             {{ $item->news_title }}
-                        </h4>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-                @endforeach
-            </div> -->
-            <div class="item"><h4>1</h4></div>
-            <div class="item"><h4>2</h4></div>
-            <div class="item"><h4>3</h4></div>
-            <div class="item"><h4>4</h4></div>
-            <div class="item"><h4>5</h4></div>
-            <div class="item"><h4>6</h4></div>
-            <div class="item"><h4>7</h4></div>
-            <div class="item"><h4>8</h4></div>
-            <div class="item"><h4>9</h4></div>
-            <div class="item"><h4>10</h4></div>
-            <div class="item"><h4>11</h4></div>
-            <div class="item"><h4>12</h4></div>
+            @endforeach
         </div>
     </div>
 </div>

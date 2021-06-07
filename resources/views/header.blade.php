@@ -20,7 +20,8 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -202,6 +203,46 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         #newshot1 .card{
             border-radius: 0px;
         }
+
+        .news_image_type_3 img{
+            width: 100%;
+            height: 30rem;
+        }
+
+        .type_3_title a{
+            color: whitesmoke;
+            text-decoration: none;
+            font-family: 'Anton', sans-serif;
+            margin-top: 2rem;
+        }
+        .type_3_title a:hover{
+            color: #cc165c;
+        }
+        .type_3_summary{
+            color: #e0e0e0;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0;
+        }
+        .type_3_info{
+            color: white;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+        .type_3_info a{
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0;
+            color: #cc165c;
+        }
+        .type_3_info a:hover{
+            color: darkred;
+        }
+
+        .type_3_title
+        {
+            padding-left: 1rem;
+            padding-top: 1rem;
+        }
+
     </style>
 </head>
 

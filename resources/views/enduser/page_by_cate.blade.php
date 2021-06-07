@@ -1,4 +1,10 @@
 @include('header')
+@php
+use App\Models\News;
+use App\Models\Author;
+$news = News::get();
+$auth = Author::where('author_id', 1)->first()->author_display_name;
+@endphp
 <style>
     h4:hover {
         color: #cc165c;
@@ -68,7 +74,7 @@
                             <div class="col-sm-8">
                                 <br>
                                 <div class="title">
-                                    <a href="#">
+                                    <a href="{{ route('news.show', [$item->news_slug]) }}">
                                         <h4 style="font-weight: bold;">
                                             {{$item->news_title}}
                                         </h4>
@@ -77,61 +83,16 @@
 
                                 <div class=" news_static d-flex justify-content-start">
                                     <div class="author">
-                                        {{-- by <a href="#">{{$authors[$item->author_id]->author_display_name}}</a> --}}
+                                        by <a href="#">{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a>
                                     </div>
-
                                     <div style="border-left: 1px solid; margin: 5px;"></div>
                                     <div class="time">
                                         {{$item->date_posted}}
-                                    </div>
-                                    <div style="border-left: 1px solid; margin: 5px;"></div>
-
-                                    <div class="comment">
-                                        <a href="#">
-                                            123 comments
-                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         @endforeach
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <br>
-                                <div class="news_image">
-                                    <img src="{{ url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg') }}"
-                                        class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <br>
-                                <div class="title">
-                                    <a href="#">
-                                        <h4 style="font-weight: bold;">Hardware, apps, and much more and much more. From
-                                            top companies like Google and Apple to tiny startups
-                                        </h4>
-                                    </a>
-                                </div>
-
-                                <div class=" news_static d-flex justify-content-start">
-                                    <div class="author">
-                                        by <a href="#">John Thomas</a>
-                                    </div>
-
-                                    <div style="border-left: 1px solid; margin: 5px;"></div>
-                                    <div class="time">
-                                        Today at 11:12am
-                                    </div>
-                                    <div style="border-left: 1px solid; margin: 5px;"></div>
-
-                                    <div class="comment">
-                                        <a href="#">
-                                            123 comments
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

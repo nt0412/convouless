@@ -79,7 +79,7 @@
             <h1>{{ $news->news_title }}</h1>
             <div class="author">
                 <!-- TÁC GIÀ, KÈM NGÀY THÁNG NĂM NẾU CÓ -->
-                <p>by <a href="#" style="color: #cc165c;">{{ $authors->author_display_name }}</a></p>
+                <p>by <a href="#" style="color: #cc165c;">{{ $authors->author_display_name }}</a> | {{ $news->date_updated }}</p>
             </div>
         </div>
         <div class="content">

@@ -112,7 +112,7 @@ class newsController extends Controller
         $news->save();
 
         // return redirect()->back()->with('status', 'Message: Success');
-        return view('admincp.newshot.index');
+        return view('admincp.newshot1.index');
     }
 
     /**

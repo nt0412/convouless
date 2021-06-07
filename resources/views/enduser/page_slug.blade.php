@@ -36,7 +36,7 @@
             <!-- NỘI DUNG BÀI VIẾT -->
             <p>
                 @php
-                echo $news->news_content;
+                    echo $news->news_content;
                 @endphp
             </p>
             <!-- Đây là chữ kết thúc để kết thúc bài viết đừng sửa nhé -->
@@ -46,47 +46,40 @@
         </div>
     </div>
 
-    <!-- {{-- bài viết cùng tác giả --}}
-    <div id="news_author">
-        <h2>bài viết cùng tác giả </h2>
-        <ul class="list-group">
-            @foreach ($list_news_by_author as $key => $item)
-                <li class="list-group-item">
-                    <a href="{{route('news.show',[$item->news_slug])}}">{{$item->news_title}}</a>
-                    {{-- <p class="float-right fs-6 m-0">{{$item->date_posted}}</p> --}}
-                </li>
-                @if ($key == 4 )
-                @php
-                    break;
-                @endphp
-                @endif
-            @endforeach
-        </ul>
-    </div> -->
 
 
     <!-- CÁC TIN TỨC LIÊN QUAN -->
     <h1 style="font-family: sans-serif; font-weight: bold; text-align: center; color: black;">Relate News</h1>
     <div class="relate_news" id="grad">
         <div class="owl-carousel owl-theme">
-            <div class="item">
-                @foreach ($list_news_by_cate as $item)
-                <img src="{{ asset('images') }}/{{ $item->news_img }}" class="img-fluid">
-                <div class="title" style="padding: 10px; background-color: black;">
-                    <a href="#" style="color: white">
-                        <h4 style="font-weight: bold;">
-                            {{ $item->news_title }}
-                        </h4>
-                    </a>
-                </div>
-                @endforeach
-            </div>
+            @foreach ($list_news_by_cate as $item)
+                @if ($item->news_id == $news->news_id)
+                    @php
+                        continue;
+                    @endphp
+                @else
+                    <div class="item">
+                        <img src="{{ asset('images') }}/{{ $item->news_img }}" class="img-fluid">
+                        <div class="title" style="padding: 10px; background-color: black;">
+                            <a href="#" style="color: white">
+                                <h4 style="font-weight: bold;">
+                                    {{ $item->news_title }}
+                                </h4>
+                            </a>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
         </div>
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
     $('.owl-carousel').owlCarousel({
         loop: true,
@@ -101,6 +94,6 @@
             }
         }
     })
+
 </script>
 @include('footer')
-

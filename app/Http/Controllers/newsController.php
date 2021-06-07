@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class newsController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // func kiểm tra đã đăng nhập chưa
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -112,7 +112,7 @@ class newsController extends Controller
         $news->save();
 
         // return redirect()->back()->with('status', 'Message: Success');
-        return $this->index()->with('status', 'Message: Updated success');
+        return view('admincp.newshot.index');
     }
 
     /**
@@ -128,9 +128,8 @@ class newsController extends Controller
         $authors = Author::where('author_id', $news->author_id)->first();
         // list các bài biết liên quan theo loại
         $list_news_by_cate = News::where('category_id', $news->category_id)->get();
-        $list_news_by_author = News::where('author_id', $authors->author_id)->orderBy('date_posted','DESC')->get();
-        return view('enduser.page_slug')->with(compact('list_news_by_cate','list_news_by_author','news','authors'));
-
+        $list_news_by_author = News::where('author_id', $authors->author_id)->orderBy('date_posted', 'DESC')->get();
+        return view('enduser.page_slug')->with(compact('list_news_by_cate', 'list_news_by_author', 'news', 'authors'));
     }
 
     /**
@@ -158,6 +157,7 @@ class newsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request);
         // kiểm tra trong reqest có up file không
         $news = News::find($id);
 

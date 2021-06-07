@@ -65,7 +65,7 @@ $news = News::get();
     </div>
     @endif
     <div class="row">
-        <div class="col-sm-4" id="table-manage">
+        <div class="col-sm-6" id="table-manage">
             <table class="table" style="border-top: goldenrod solid 2px;">
                 <thead class="thead-light">
                     <tr>
@@ -101,7 +101,7 @@ $news = News::get();
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-8" id="preview">
+        <div class="col-sm-6" id="preview" style="">
             <h3 style="text-align: center;">
                 <input id="btn-preview" class="btn btn-dark btn-outline-warning" type="button" value="Preview" onclick="window.open('{{asset('/admin/manager/newshot/preview/')}}','preview','fullscreen=yes');">
             </h3>

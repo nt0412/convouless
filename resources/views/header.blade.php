@@ -1,5 +1,5 @@
 @php
-use App\Models\Category;
+    use App\Models\Category;
 use App\Models\MainCategory;
 $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
 

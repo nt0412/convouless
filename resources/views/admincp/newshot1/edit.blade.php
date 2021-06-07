@@ -1,138 +1,217 @@
-{{-- @section('content') --}}
+@include('layouts.nav')
+
 <header>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Convouless</title>
-    <link rel="shortcut icon" href="{{ url('/image/logo.ico') }}}" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     {{-- search --}}
     <title>Ajax search</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <style type="text/css">
         .box {
-            width: 600px;
+            width: 600 px;
             margin: 0 auto;
+        }
+
+        .button:hover {
+            background-color: goldenrod;
+            border-color: black;
+        }
+
+
+        .side-bar:hover,
+        .side-bar.active {
+            width: 200px;
+            opacity: .95;
         }
 
     </style>
 
 </header>
 
-@php
 
-// dd();
-@endphp
-<div class="row">
+<div class="container-fluid" style="margin: 50px">
+    <div class="row">
+        <div class="col-12">
+            @php
 
+                $news_curen = $list_news->where('news_id', '32')->first();
+                // dd($id,$news_curen);
+            @endphp
+            <div class="row">
+                <div class="col-9">
+                    <div>
+                        <p>ID: {{ $id }}</p>
+                        <p>Category:
+                            {{ $cate->where('category_id', $news_curen->category_id)->first()->category_name }}</p>
+                        <p>Title: {{ $news_curen->news_title }}</p>
+                        <th>
+                            <p>{{ $author->where('author_id', $news_curen->author_id)->first()->author_display_name }}
+                            </p>
+                        </th>
 
-    {{-- tìm kiếm bài viết --}}
-    <div class="col-xl-12 col-md-6" style="position: relative">
+                    </div>
 
-        <div class="">
-            <h3 align="center">Gợi ý tìm kiếm với ajax</h3><br />
-            <div class="form-group" style="margin: 10px">
-                <form action="">
-                    <input type="text" name="search_name" id="search_name" class="form-control input-lg" placeholder="Enter Country Name" />
-                </form>
-                <div id="newsList" style="position: absolute"><br>
+                </div>
+                <div class="col-3">
+                    <div>
+                        <img class="" height="172px" src="{{ asset('public/images') }}/{{ $news_curen->news_img }}"
+                            alt="">
+
+                    </div>
                 </div>
             </div>
-            {{ csrf_field() }}
         </div>
-        <div class="">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <div class="input-group mb-3">
+    </div>
+    <div class="row">
+        {{-- tìm kiếm bài viết --}}
+        <div class="col-xl-6 col-md-12" style="position: relative">
+
+            <div class="">
+                <h3 align="center">Gợi ý tìm kiếm với ajax</h3><br />
+                <div class="form-group" style="margin: 10px">
+                    <form action="">
+                        <input type="text" name="search_name" id="search_name" class="form-control input-lg"
+                            placeholder="Enter Country Name" />
+                    </form>
+                    <div id="newsList" style="position: absolute"><br>
+                    </div>
+                </div>
+                {{ csrf_field() }}
+            </div>
+            <div class="">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <div class="input-group mb-3">
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option selected>Choose.</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="nav-item">
                         <select class="custom-select" id="inputGroupSelect01">
                             <option selected>Choose.</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Choose.</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </li>
-                <li class="nav-item">
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Choose.</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </li>
-                <li class="nav-item">
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Choose.</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </li>
-            </ul>
+                    </li>
+                    <li class="nav-item">
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>Choose.</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </li>
+                    <li class="nav-item">
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>Choose.</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+
+            @php
+
+                // dd($list_news);
+            @endphp
+            <table class="table" id="news-list" style="border-top: goldenrod solid 2px;">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" style="width: 10%;">News's Title</th>
+                        <th scope="col" style="width: 10%;">News's ID</th>
+                        <th scope="col" style="width: 10%;">Category</th>
+                        <th scope="col">Author</th>
+                        <th scope="col" style="width: 5%;">Date Posted</th>
+                        <th scope="col" style="width: 10%;">Date Updated</th>
+                        <th scope="col" style="width: 10%;">Status</th>
+                        <th scope="col" style="width: 10%;">Tools</th>
+                    </tr>
+                </thead>
+                <tbody style="color: whitesmoke;">
+                        @foreach ($list_news as $key => $item)
+                            {{-- loại bọ id đang chỉnh sửa, hoặc các item bị ẩn --}}
+                            @if ($item->news_id != $id && $item->news_enable == 1)
+                                <tr>
+                                    <form class="box" method="POST"
+                                        action="{{ route('newshot.update', [$item->news_id]) }}" style="padding: 0 5%;"
+                                        enctype="multipart/form-data">
+                                        @method('PUT')
+                                        @csrf
+                                        <th scope="">
+                                            <p class="text-dark">
+                                                {{ $key + 1 }}
+                                            </p>
+                                        </th>
+                                        <th>
+                                            <p class="text-dark">{{ $item->news_id }}</p>
+                                        </th>
+                                        <td>
+                                            <a href="{{ $item->news_slug }}">
+                                                <p>{{ $item->news_title }}</p>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#">
+                                                {{ $cate->where('category_id', $item->category_id)->first()->category_name }}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#">
+                                                {{ $author->where('author_id', $item->author_id)->first()->author_display_name }}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <p class="text-dark">
+                                                {{ $item->date_posted }}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="text-dark">
+                                                {{ $item->date_updated }}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            @if ($item->news_enable == 1)
+                                                <span class="text text-success">Enable</span>
+                                            @elseif($item->news_enable == 0)
+                                                <span class="text text-danger">Disenable</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <input style="display: none" type="text" name="news_select" value="{{$item->news_id}}">
+                                            <input style="display: none" type="text" name="id_curen" value="{{$id}}">
+                                            <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add" value="{{$item->news_id}}">Update</button>
+                                        </td>
+                                    </form>
+                                </tr>
+                            @else
+                                @php
+                                    continue;
+                                @endphp
+                            @endif
+
+                        @endforeach
+                </tbody>
+            </table>
+
         </div>
 
-
-        {{-- table resul --}}
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">title</th>
-                    <th scope="col">author</th>
-                    <th scope="col">date Create</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-
-            </tbody>
-        </table>
-
-    </div>
-
-    {{-- preview bài viết --}}
-    <div class="col-xl-12 col-md-6">
-
-
-
+        {{-- preview bài viết --}}
+        {{-- <div class="col-xl-6  col-md-2"></div> --}}
     </div>
 </div>
-{{--
-<script>
+{{-- <script>
     $(document).ready(function() {
 
         $('#news_name').keyup(function() { //bắt sự kiện keyup khi người dùng gõ từ khóa tim kiếm
@@ -168,32 +247,34 @@
 
     });
 
-</script>
- --}}
+</script> --}}
 
 <script type="text/javascript">
-	$(document).ready(function(){
-		var action = "search";
-		$("#search_name").keyup(function(){
-			var search_name = $("#search_name").val();
-			if ($("#search_name").val() != '') {
-			$.ajax({
-				url:"edit",
-				method:"POST",
-				data:{action:action,search_name:search_name},
-				success:function(data){
-					$("#output_search").html(data);
-				}
-			});
-            console.log(action);
+    $(document).ready(function() {
+        var action = "search";
+        $("#search_name").keyup(function() {
+            var search_name = $("#search_name").val();
+            if ($("#search_name").val() != '') {
+                $.ajax({
+                    url: "edit",
+                    method: "POST",
+                    data: {
+                        action: action,
+                        search_name: search_name
+                    },
+                    success: function(data) {
+                        $("#output_search").html(data);
+                    }
+                });
+                console.log(action);
 
-			}
-			else{
-					$("#output_search").html("");
+            } else {
+                $("#output_search").html("");
 
-			}
+            }
 
-		});
-	});
+        });
+    });
+
 </script>
 {{-- @endsection --}}

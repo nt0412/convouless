@@ -77,7 +77,7 @@
 
                                 <div class=" news_static d-flex justify-content-start">
                                     <div class="author">
-                                        by <a href="#">{{$authors[$item->author_id]->author_display_name}}</a>
+                                        {{-- by <a href="#">{{$authors[$item->author_id]->author_display_name}}</a> --}}
                                     </div>
 
                                     <div style="border-left: 1px solid; margin: 5px;"></div>

@@ -1,7 +1,7 @@
 @php
     use App\Models\Category;
-    use App\Models\MainCategory;
-    $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
+use App\Models\MainCategory;
+$list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
 
 @endphp
 
@@ -160,14 +160,47 @@
             text-decoration: none;
         }
 
-        .dropdown:hover>.dropdown-menu{
+        .dropdown:hover>.dropdown-menu {
             display: block;
         }
 
         @media (max-width: 767px) {
-            ul{
+            ul {
                 text-align: center;
             }
+        }
+
+        #newshot1 img {
+            height: 30rem;
+        }
+
+        .hot-title {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.75);
+            color: #f1f1f1;
+            width: 100%;
+            text-align: center;
+            padding: 0;
+        }
+
+        .hot-title a {
+            color: whitesmoke;
+            text-decoration: none;
+            font-size: 1.25rem;
+        }
+
+        .hot-title a:hover {
+            color: #cc165c;
+        }
+
+        .hot-title:hover {
+            background: rgb(0, 0, 0);
+        }
+
+        #newshot1 .card{
+            border-radius: 0px;
         }
     </style>
 </head>

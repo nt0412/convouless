@@ -9,6 +9,8 @@ use App\Models\News;
 use App\Models\Category;
 use App\Models\Author;
 use App\Models\Newshot1;
+use Illuminate\Support\Facades\DB;
+use League\CommonMark\Inline\Element\Newline;
 
 class Newshot1Controller extends Controller
 {
@@ -53,10 +55,7 @@ class Newshot1Controller extends Controller
      */
     public function show($id)
     {
-        $list_news = News::orderBy("date_posted","DESC")->get();
-        $list_newshot1 = Newshot1::get();
-        $list_author = Author::get();
-        return view('admincp.newshot1.edit')->with(compact('list_news', "list_newshot1", 'list_author'));
+
     }
 
     /**
@@ -67,9 +66,14 @@ class Newshot1Controller extends Controller
      */
     public function edit($id)
     {
-        // thiếu cái lệnh
-
-        return view('admincp.newshot1.edit');
+        $list_newshot1 = Newshot1::get();
+        // $list_news = DB::table('tblnews')
+        //     ->leftJoin('tblnewshot1', 'tblnews.news_id', '=', 'tblnewshot1.news_id')
+        //     ->get();
+        $list_news = News::orderBy('date_updated','DESC')->get();
+        $cate = Category::get();
+        $author = Author::get();
+        return view('admincp.newshot1.edit')->with(compact('list_news','id','cate','author'));
     }
 
     /**
@@ -81,7 +85,16 @@ class Newshot1Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request->news_select,$request->news_curen,$id );
+        $id_curen = $request->id_curen;
+        $news_select = $request->news_select;
+        // $news_curen = Newshot1::where('news_id',$id_curen);
+        $newshot = Newshot1::where('news_id', $id_curen)->first();
+        $newshot->news_id = $news_select;
+        // dd($id_curen,$news_select,$newshot);
+        $newshot->update();
+        return $this->index()->with('status', 'Message: Updated success');
+
     }
 
     /**

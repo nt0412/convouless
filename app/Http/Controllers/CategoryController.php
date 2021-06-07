@@ -16,10 +16,11 @@ class CategoryController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // func kiểm tra đã đăng nhập chưa
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
 
     /**

@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class newsController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // func kiểm tra đã đăng nhập chưa
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -112,7 +112,7 @@ class newsController extends Controller
         $news->save();
 
         // return redirect()->back()->with('status', 'Message: Success');
-        return $this->index()->with('status', 'Message: Updated success');
+        return view('admincp.newshot.index');
     }
 
     /**
@@ -157,6 +157,7 @@ class newsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request);
         // kiểm tra trong reqest có up file không
         $news = News::find($id);
 

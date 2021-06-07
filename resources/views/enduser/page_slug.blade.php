@@ -14,12 +14,13 @@
     body::-webkit-scrollbar-thumb {
         background: goldenrod;
     }
+
     .relate_news img {
         max-width: 40rem;
         max-height: 40rem;
     }
 
-    .img-title{
+    .img-title {
         position: absolute;
         bottom: 0;
         background: rgb(0, 0, 0);
@@ -30,38 +31,41 @@
         padding: 0;
     }
 
-    .img-title a{
+    .img-title a {
         color: whitesmoke;
         text-decoration: none;
         font-size: 1.25rem;
     }
 
-    .img-title a:hover{
+    .img-title a:hover {
         color: #cc165c;
     }
-    .img-title:hover{
+
+    .img-title:hover {
         background: rgb(0, 0, 0);
     }
 
     @media (max-width: 640px) {
-        .img-title a{
+        .img-title a {
             font-size: 0.7rem;
         }
-        .relate_news img{
+
+        .relate_news img {
             width: 30rem;
             height: 30rem;
         }
     }
+
     @media (max-width: 610px) {
-        .img-title a{
+        .img-title a {
             font-size: 0.7rem;
         }
-        .relate_news img{
+
+        .relate_news img {
             max-width: 20rem;
             max-height: 14rem;
         }
     }
-
 </style>
 </style>
 <div class="container-fluid" style="background: white; padding: 0; margin: 0;">
@@ -116,14 +120,14 @@
     <div class="relate_news" id="grad">
         <div class="owl-carousel owl-theme">
             @foreach ($list_news_by_cate as $item)
-                <div class="item">
-                    <img src="{{ asset('images') }}/{{ $item->news_img }}">
-                    <div class="img-title">
-                        <a href="#">
-                            {{ $item->news_title }}
-                        </a>
-                    </div>
+            <div class="item">
+                <img src="{{ asset('images') }}/{{ $item->news_img }}">
+                <div class="img-title">
+                    <a href="#">
+                        {{ $item->news_title }}
+                    </a>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
@@ -147,4 +151,3 @@
     })
 </script>
 @include('footer')
-

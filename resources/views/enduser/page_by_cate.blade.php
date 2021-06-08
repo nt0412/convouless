@@ -65,8 +65,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                             </div>
                             <div class="col-sm-5 author">
                                 <a href="#">
-                                    <h4 style="font-weight: bold;">THE DIGITAL PLATFORM SEEMS TO HAVE LOST ACTIVISTS’
-                                        POSTS</h4>
+                                    <h4 style="font-weight: bold;">THE DIGITAL PLATFORM SEEMS TO HAVE LOST ACTIVISTS’POSTS</h4>
                                 </a>
                             </div>
                         </div>
@@ -91,7 +90,6 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                                         </h4>
                                     </a>
                                 </div>
-
                                 <div class=" news_static d-flex justify-content-start">
                                     <div class="author">
                                         by <a href="#">{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a>
@@ -107,7 +105,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                     </div>
                 </div>
             </div>
-
+            <!-- Tin có video -->
             <div class="col-sm-4">
                 <div class="video">
                     <h4 class="text-center fs-1"

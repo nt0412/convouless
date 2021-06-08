@@ -1,5 +1,5 @@
 @php
-    use App\Models\Category;
+use App\Models\Category;
 use App\Models\MainCategory;
 $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
 
@@ -21,7 +21,9 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -172,77 +174,126 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         }
 
         #newshot1 img {
-            height: 30rem;
+            height: 400px;
+            width: 100%;
         }
 
         .hot-title {
             position: absolute;
-            bottom: 0;
-            background: rgb(0, 0, 0);
-            background: rgba(0, 0, 0, 0.75);
-            color: #f1f1f1;
-            width: 100%;
-            text-align: center;
-            padding: 0;
+            bottom: 1px;
+            background: rgba(0, 0, 0);
+            width: auto;
+            text-align: left;
+            padding-left: 16px;
+            padding-top: 16px;
+        }
+
+        .title-big {
+            padding: 32px;
+            font-family: 'Anton', sans-serif;
+            padding-bottom: 0;
+        }
+
+        .title-main a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .title-main a:hover {
+            color: #cc165c;
+        }
+
+        .title-mini:hover {
+            color: #cc165c;
+        }
+
+        .title-mini{
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        .hot-news-author {
+            padding: 32px;
+            font-family: 'Anton', sans-serif;
+            padding-top: 0;
+        }
+
+        .hot-news-author a {
+            color: #cc165c;
+        }
+
+        .hot-news-author a:hover {
+            color: darkred;
+        }
+
+        .hot-news-author-mini {
+            font-family: 'Anton', sans-serif;
+            padding-top: 0;
         }
 
         .hot-title a {
-            color: whitesmoke;
+            color: white;
             text-decoration: none;
             font-size: 1.25rem;
         }
 
-        .hot-title a:hover {
+        .hot-news-author-mini a {
             color: #cc165c;
+        }
+
+        .hot-news-author-mini a:hover {
+            color: darkred;
         }
 
         .hot-title:hover {
             background: rgb(0, 0, 0);
         }
 
-        #newshot1 .card{
+        #newshot1 .card {
             border-radius: 0px;
         }
 
-        .news_image_type_3 img{
+        .news_image_type_3 img {
             width: 100%;
             height: 30rem;
         }
 
-        .type_3_title a{
+        .type_3_title a {
             color: whitesmoke;
             text-decoration: none;
             font-family: 'Anton', sans-serif;
             margin-top: 2rem;
         }
-        .type_3_title a:hover{
+
+        .type_3_title a:hover {
             color: #cc165c;
         }
-        .type_3_summary{
+
+        .type_3_summary {
             color: #e0e0e0;
             font-family: 'Poppins', sans-serif;
             margin-bottom: 0;
         }
-        .type_3_info{
+
+        .type_3_info {
             color: white;
             font-weight: bold;
             margin-bottom: 0;
         }
-        .type_3_info a{
+
+        .type_3_info a {
             font-family: 'Poppins', sans-serif;
             margin-bottom: 0;
             color: #cc165c;
         }
-        .type_3_info a:hover{
+
+        .type_3_info a:hover {
             color: darkred;
         }
 
-        .type_3_title
-        {
+        .type_3_title {
             padding-left: 1rem;
             padding-top: 1rem;
         }
-
     </style>
 </head>
 

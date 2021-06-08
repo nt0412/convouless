@@ -51,7 +51,7 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
                 <div class="card bg-dark">
                     <img src="{{ asset('public/images') }}/{{ $newshot1_3->news_img }}" class="img-fluid">
                     <div class="hot-title">
-                        <a href="{{$newshot1_3->news_slug}}">
+                        <a href="{{route('news.show',[$newshot1_3->news_slug])}}">
                             <h4 style="font-weight: bold;">{{ $newshot1_3->news_title }}</h4>
                         </a>
                     </div>
@@ -61,7 +61,7 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
                 <div class="card bg-dark">
                     <img src="{{ asset('public/images') }}/{{ $newshot1_4->news_img }}" class="img-fluid">
                     <div class="hot-title">
-                        <a href="{{$newshot1_4->news_slug}}">
+                        <a href="{{route('news.show',[$newshot1_4->news_slug])}}">
                             <h4 style="font-weight: bold;">{{ $newshot1_4->news_title }}</h4>
                         </a>
                     </div>
@@ -73,7 +73,7 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
                 <div class="card bg-dark">
                     <img src="{{ asset('public/images') }}/{{ $newshot1_5->news_img }}" class="img-fluid">
                     <div class="hot-title">
-                        <a href="{{$newshot1_5->news_slug}}">
+                        <a href="{{route('news.show',[$newshot1_5->news_slug])}}">
                             <h4 style="font-weight: bold;">{{ $newshot1_5->news_title }}
                         </a>
                     </div>
@@ -84,7 +84,7 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
                 <div class="card bg-dark">
                     <img src="{{ asset('public/images') }}/{{ $newshot1_6->news_img }}" class="img-fluid">
                     <div class="hot-title">
-                        <a href="{{$newshot1_6->news_slug}}">
+                        <a href="{{route('news.show',[$newshot1_6->news_slug])}}">
                             <h4 style="font-weight: bold;">{{ $newshot1_6->news_title }}
                         </a>
                     </div>
@@ -94,7 +94,7 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
                 <div class="card bg-dark">
                     <img src="{{ asset('public/images') }}/{{ $newshot1_7->news_img }}" class="img-fluid">
                     <div class="hot-title">
-                        <a href="{{$newshot1_7->news_slug}}">
+                        <a href="{{route('news.show',[$newshot1_7->news_slug])}}">
                             <h4 style="font-weight: bold;">{{ $newshot1_7->news_title }}
                         </a>
                     </div>
@@ -107,7 +107,7 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
                     <div class="card bg-dark">
                         <img src="{{ asset('public/images') }}/{{ $newshot1_8->news_img }}" class="img-fluid">
                         <div class="hot-title">
-                            <a href="{{$newshot1_8->news_slug}}">
+                            <a href="{{route('news.show',[$newshot1_8->news_slug])}}">
                                 <h4 style="font-weight: bold;">
                                     {{ $newshot1_8->news_title }}
                                 </h4>
@@ -120,7 +120,7 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
                     <div class="card bg-dark">
                         <img src="{{ asset('public/images') }}/{{ $newshot1_9->news_img }}" class="img-fluid">
                         <div class="hot-title">
-                            <a href="{{$newshot1_9->news_slug}}">
+                            <a href="{{route('news.show',[$newshot1_9->news_slug])}}">
                                 <h4 style="font-weight: bold;">
                                     {{ $newshot1_9->news_title }}
                                 </h4>
@@ -227,7 +227,7 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
                                             <div class="col-sm-8">
                                                 <br>
                                                 <div class="title">
-                                                    <a href="#">
+                                                    <a href="{{ route('news.show', [$item->news_slug]) }}">
                                                         <h4 style="font-weight: bold;">
                                                             {{ $item->news_title }}
                                                         </h4>
@@ -236,19 +236,12 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
 
                                                 <div class=" news_static d-flex justify-content-start">
                                                     <div class="author">
-                                                        by <a href="#">John Thomas</a>
+                                                        by <a href="#">{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a>
                                                     </div>
 
                                                     <div style="border-left: 1px solid; margin: 5px;"></div>
                                                     <div class="time">
-                                                        Today at 11:12am
-                                                    </div>
-                                                    <div style="border-left: 1px solid; margin: 5px;"></div>
-
-                                                    <div class="comment">
-                                                        <a href="#">
-                                                            123 comments
-                                                        </a>
+                                                        {{ $item->date_updated }}
                                                     </div>
                                                 </div>
                                             </div>

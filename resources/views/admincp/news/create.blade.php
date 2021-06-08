@@ -126,9 +126,8 @@
 
                 <div class="form-group content">
                     <label>Post's Content <span class="attention">*</span></label>
+                        <textarea cols="80" id="news_content" name="news_content" rows="10" data-sample-short>{{ old('news_content') }}</textarea>
 
-                    <textarea class=" ckeditor form-control" name="news_content" placeholder="Content" cols="30"
-                        rows="10">{{ old('news_content') }}</textarea>
                 </div>
 
                 <div class="row">
@@ -164,6 +163,78 @@
                 imgOup.src = URL.createObjectURL(file)
             }
         }
+        // ckeditor
+        var editor = CKEDITOR.replace('news_content', {
+
+            toolbarGroups: [{
+                    name: 'document',
+                    groups: ['mode', 'document', 'doctools']
+                },
+                {
+                    name: 'clipboard',
+                    groups: ['clipboard', 'undo']
+                },
+                {
+                    name: 'editing',
+                    groups: ['find', 'selection', 'spellchecker', 'editing']
+                },
+                {
+                    name: 'forms',
+                    groups: ['forms']
+                },
+                {
+                    name: 'basicstyles',
+                    groups: ['basicstyles', 'cleanup']
+                },
+                {
+                    name: 'paragraph',
+                    groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph']
+                },
+                {
+                    name: 'links',
+                    groups: ['links']
+                },
+                '/',
+                {
+                    name: 'insert',
+                    groups: ['insert', 'ckfinder']
+                },
+                {
+                    name: 'styles',
+                    groups: ['styles']
+                },
+                {
+                    name: 'colors',
+                    groups: ['colors']
+                },
+                {
+                    name: 'tools',
+                    groups: ['tools']
+                },
+                {
+                    name: 'others',
+                    groups: ['others']
+                },
+                {
+                    name: 'about',
+                    groups: ['about']
+                },
+
+            ],
+            // toolbar: [ 'ckfinder'],
+
+            // ckfinder uload file
+            filebrowserBrowseUrl: '<?php asset('
+            public '); ?>/ckfinder/ckfinder.html',
+            filebrowserUploadUrl: '<?php asset('
+            public '); ?>/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=image',
+            filebrowserWindowWidth: '1000',
+            filebrowserWindowHeight: '700',
+
+        });
+
+        CKFinder.setupCKEditor(editor);
+
     </script>
 
 

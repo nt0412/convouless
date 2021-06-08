@@ -1,5 +1,22 @@
 @include('header')
+@php
+use App\Models\News;
+use App\Models\Author;
+$news = News::get();
+$auth = Author::where('author_id', 1)->first()->author_display_name;
+@endphp
 <style>
+    body::-webkit-scrollbar {
+        width: 0.25rem;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: black;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: goldenrod;
+    }
     h4:hover {
         color: #cc165c;
     }

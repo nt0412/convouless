@@ -58,8 +58,6 @@ class newsController extends Controller
                 'news_slug' => 'required|unique:tblnews|max:255',
                 'news_metatile' => 'required',
                 'news_summary' => 'required',
-
-                'news_img' => 'required',
                 'news_content' => 'required',
                 'news_enable' => 'required',
             ],
@@ -92,14 +90,7 @@ class newsController extends Controller
 
 
         $news->author_id = Auth::id();
-        // $news->author_id = 1;
-
-        // $image = $request->file('news_img');
-        // $image->move(public_path('images'), $image->getClientOriginalName());
-        // $news->news_img = $image->getClientOriginalName();
-
         $getnews_img = '';
-
         if ($request->hasFile('news_img')) {
 
             //Lưu file vào thư mục public/upload/news_img
@@ -111,8 +102,7 @@ class newsController extends Controller
         $news->news_img = $getnews_img;
         $news->save();
 
-        // return redirect()->back()->with('status', 'Message: Success');
-        return view('admincp.newshot.index');
+        return $this->index();
     }
 
     /**

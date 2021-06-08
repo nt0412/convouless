@@ -1,5 +1,6 @@
-@include('layouts.nav')
 
+@section('content')
+@include('layouts.nav')
 <header>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -20,13 +21,9 @@
             border-color: black;
         }
 
-
-        .side-bar:hover,
-        .side-bar.active {
-            width: 200px;
-            opacity: .95;
+        .side-bar .icon{
+            margin-top: 1rem;
         }
-
     </style>
 
 </header>
@@ -70,7 +67,7 @@
         <div class="col-xl-6 col-md-12" style="position: relative">
 
             <div class="">
-                <h3 align="center">Gợi ý tìm kiếm với ajax</h3><br />
+                <h3 align="center">Edit Hot News</h3><br />
                 <div class="form-group" style="margin: 10px">
                     <form action="">
                         <input type="text" name="search_name" id="search_name" class="form-control input-lg"

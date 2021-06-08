@@ -101,7 +101,7 @@ $news = News::get();
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-6" id="preview" style="">
+        <div class="col-sm-6" id="preview">
             <h3 style="text-align: center;">
                 <input id="btn-preview" class="btn btn-dark btn-outline-warning" type="button" value="Preview" onclick="window.open('{{asset('/admin/manager/newshot/preview/')}}','preview','fullscreen=yes');">
             </h3>

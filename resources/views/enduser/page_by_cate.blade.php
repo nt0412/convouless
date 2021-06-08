@@ -20,6 +20,12 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
     h4:hover {
         color: #cc165c;
     }
+    .lamgon {
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+    }
 
 </style>
 
@@ -35,7 +41,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                 </a>
                 <div class="title" style="padding: 10px; background-color: black;">
                     <a href="{{ route('news.show', [$item->news_slug]) }}" style="color: white">
-                        <h4 style="font-weight: bold;">{{ $item->news_title }}</h4>
+                        <h4 class="lamgon" style="font-weight: bold;">{{ $item->news_title }}</h4>
                     </a>
                 </div>
             </div>
@@ -80,7 +86,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                         <div class="type_3" style="background: black;">
                             <div class="type_3_title">
                                 <a href="{{ route('news.show', [$item->news_slug]) }}">
-                                    <h4>{{ $item->news_title }}</h4>
+                                    <h4 class="lamgon">{{ $item->news_title }}</h4>
                                 </a>
                                 <p class="type_3_summary">{{ $item->news_summary }}</p>
                                 {{-- <p class="type_3_info">By <a href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
@@ -109,7 +115,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                                     </div>
                                     <div class="col-sm-5 author">
                                         <a href="{{ route('news.show', [$item->news_slug]) }}">
-                                            <h4 style="font-weight: bold;">{{ $item->news_title }}</h4>
+                                            <h4 class="lamgon" style="font-weight: bold;">{{ $item->news_title }}</h4>
                                         </a>
                                     </div>
                                 </div>
@@ -130,7 +136,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                                         <br>
                                         <div class="title">
                                             <a href="#">
-                                                <h4 style="font-weight: bold;">
+                                                <h4 class="lamgon" style="font-weight: bold;">
                                                     {{ $item->news_title }}
                                                 </h4>
                                             </a>

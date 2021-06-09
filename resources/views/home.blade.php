@@ -66,12 +66,12 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
         <div class="row">
             <div class="col-sm-4" style="padding: 1px;">
                 <div class="card">
-                    <img src="{{ asset('public/images') }}/{{ $newshot1_2->news_img }}" class="img-fluid">
+                    <img src="{{ asset('public/images') }}/{{ $newshot1_3->news_img }}" class="img-fluid">
                     <div class="hot-title">
-                        <a href="{{route('news.show',[$newshot1_2->news_slug])}}">
-                            <h4 class="title-mini">{{ $newshot1_2->news_title }}</h4>
+                        <a href="{{route('news.show',[$newshot1_3->news_slug])}}">
+                            <h4 class="title-mini">{{ $newshot1_3->news_title }}</h4>
                         </a>
-                        <h5 class="hot-news-author-mini">By <a href="#">{{ Author::where('author_id', $newshot1_2->author_id)->first()->author_display_name }}</a></h5>
+                        <h5 class="hot-news-author-mini">By <a href="#">{{ Author::where('author_id', $newshot1_3->author_id)->first()->author_display_name }}</a></h5>
                     </div>
                 </div>
             </div>
@@ -80,14 +80,14 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                     <div class="row" style="margin-right: 0; margin-left: 0;">
                         <div class="col-sm-6 p-0" style="background: black;">
                             <div class="title-main">
-                                <a href="{{route('news.show',[$newshot1_1->news_slug])}}">
-                                    <h2 class="title-big">{{ $newshot1_1->news_title }} </h2>
+                                <a href="{{route('news.show',[$newshot1_4->news_slug])}}">
+                                    <h2 class="title-big">{{ $newshot1_4->news_title }} </h2>
                                 </a>
-                                <h5 class="hot-news-author">By <a href="#">{{ Author::where('author_id', $newshot1_1->author_id)->first()->author_display_name }}</a></h5>
+                                <h5 class="hot-news-author">By <a href="#">{{ Author::where('author_id', $newshot1_4->author_id)->first()->author_display_name }}</a></h5>
                             </div>
                         </div>
                         <div class="col-sm-6 p-0">
-                            <img src="{{ asset('public/images') }}/{{ $newshot1_1->news_img }}">
+                            <img src="{{ asset('public/images') }}/{{ $newshot1_4->news_img }}">
                         </div>
                     </div>
                 </div>

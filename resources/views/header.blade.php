@@ -128,16 +128,6 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
             overflow: hidden;
         }
 
-        .comment a {
-            color: #cc165c;
-            text-decoration: none;
-        }
-
-        .comment a:hover {
-            color: darkred;
-            text-decoration: none;
-        }
-
         .author a {
             color: #cc165c;
             text-decoration: none;
@@ -186,6 +176,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
             text-align: left;
             padding-left: 16px;
             padding-top: 16px;
+            margin-right: 1px;
         }
 
         .title-big {

@@ -25,8 +25,6 @@ $newshot1_4 = $news->where('news_id', $newshot1s[3]->news_id)->first();
 $newshot1_5 = $news->where('news_id', $newshot1s[4]->news_id)->first();
 $newshot1_6 = $news->where('news_id', $newshot1s[5]->news_id)->first();
 $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
-$newshot1_8 = $news->where('news_id', $newshot1s[7]->news_id)->first();
-$newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
 
 // dd($newshot1_2->news_id);
 @endphp
@@ -127,40 +125,6 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
                 </div>
             </div>
         </div>
-        <!-- <div class="noibat">
-            <div class="row">
-                <div class="col-sm-6 p-0">
-                    <div class="card bg-dark">
-                        {{-- <a href="{{route('news.show',[$newshot1_8->news_slug])}}"> --}}
-                            <img src="{{ asset('public/images') }}/{{ $newshot1_8->news_img }}" class="img-fluid">
-                        {{-- </a> --}}
-                        <div class="hot-title">
-                            <a href="{{route('news.show',[$newshot1_8->news_slug])}}">
-                                <h4 style="font-weight: bold;">
-                                    {{ $newshot1_8->news_title }}
-                                </h4>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-sm-6 p-0">
-                    <div class="card bg-dark">
-                        {{-- <a href="{{route('news.show',[$newshot1_9->news_slug])}}"> --}}
-                            <img src="{{ asset('public/images') }}/{{ $newshot1_9->news_img }}" class="img-fluid">
-                        {{-- </a> --}}
-                        <div class="hot-title">
-                            <a href="{{route('news.show',[$newshot1_9->news_slug])}}">
-                                <h4 style="font-weight: bold;">
-                                    {{ $newshot1_9->news_title }}
-                                </h4>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 
     <div id="tinthuong">

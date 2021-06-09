@@ -1,5 +1,14 @@
 @include('banner')
 @include('header')
+
+<style>
+    .lamgon {
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+    }
+</style>
 @php
 use App\Models\News;
 use App\Models\Author;
@@ -79,7 +88,9 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
         <div class="row">
             <div class="col-sm-4" style="padding: 1px;">
                 <div class="card bg-dark">
+                    {{-- <a href="{{route('news.show',[$newshot1_5->news_slug])}}"> --}}
                     <img src="{{ asset('public/images') }}/{{ $newshot1_5->news_img }}" class="img-fluid">
+                    {{-- </a> --}}
                     <div class="hot-title">
                         <a href="{{route('news.show',[$newshot1_5->news_slug])}}">
                             <h4 class="title-mini">{{ $newshot1_5->news_title }}</h4>
@@ -91,7 +102,9 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
 
             <div class="col-sm-4" style="padding: 1px;">
                 <div class="card bg-dark">
+                    {{-- <a href="{{route('news.show',[$newshot1_6->news_slug])}}"> --}}
                     <img src="{{ asset('public/images') }}/{{ $newshot1_6->news_img }}" class="img-fluid">
+                    {{-- </a> --}}
                     <div class="hot-title">
                         <a href="{{route('news.show',[$newshot1_6->news_slug])}}">
                             <h4 class="title-mini">{{ $newshot1_6->news_title }}</h4>
@@ -102,7 +115,9 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
             </div>
             <div class="col-sm-4" style="padding: 1px;">
                 <div class="card bg-dark">
+                    {{-- <a href="{{route('news.show',[$newshot1_7->news_slug])}}"> --}}
                     <img src="{{ asset('public/images') }}/{{ $newshot1_7->news_img }}" class="img-fluid">
+                    {{-- </a> --}}
                     <div class="hot-title">
                         <a href="{{route('news.show',[$newshot1_7->news_slug])}}">
                             <h4 class="title-mini">{{ $newshot1_7->news_title }}</h4>
@@ -116,7 +131,9 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
             <div class="row">
                 <div class="col-sm-6 p-0">
                     <div class="card bg-dark">
-                        <img src="{{ asset('public/images') }}/{{ $newshot1_8->news_img }}" class="img-fluid">
+                        {{-- <a href="{{route('news.show',[$newshot1_8->news_slug])}}"> --}}
+                            <img src="{{ asset('public/images') }}/{{ $newshot1_8->news_img }}" class="img-fluid">
+                        {{-- </a> --}}
                         <div class="hot-title">
                             <a href="{{route('news.show',[$newshot1_8->news_slug])}}">
                                 <h4 style="font-weight: bold;">
@@ -129,7 +146,9 @@ $newshot1_9 = $news->where('news_id', $newshot1s[8]->news_id)->first();
                 </div>
                 <div class="col-sm-6 p-0">
                     <div class="card bg-dark">
-                        <img src="{{ asset('public/images') }}/{{ $newshot1_9->news_img }}" class="img-fluid">
+                        {{-- <a href="{{route('news.show',[$newshot1_9->news_slug])}}"> --}}
+                            <img src="{{ asset('public/images') }}/{{ $newshot1_9->news_img }}" class="img-fluid">
+                        {{-- </a> --}}
                         <div class="hot-title">
                             <a href="{{route('news.show',[$newshot1_9->news_slug])}}">
                                 <h4 style="font-weight: bold;">

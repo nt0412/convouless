@@ -8,24 +8,24 @@
         overflow: hidden;
         display: -webkit-box;
     }
+    .w-5{
+        display: none;
+    }
+
 </style>
 @php
-use App\Models\News;
 use App\Models\Author;
-// use Illuminate\Support\Facades\Auth;
+// dd($news->where('news_id', $newshot1s[0]->news_id)->first()->news_img);
+// dd($news->where('news_id', $newshot1s[1]->news_id));
+// dd($news, $news[0]);
 
-$news = News::get();
-$auth = Author::where('author_id', 1)->first()->author_display_name;
-// dd($auth);
-
-$newshot1_1 = $news->where('news_id', $newshot1s[0]->news_id)->first();
-$newshot1_2 = $news->where('news_id', $newshot1s[1]->news_id)->first();
-$newshot1_3 = $news->where('news_id', $newshot1s[2]->news_id)->first();
-$newshot1_4 = $news->where('news_id', $newshot1s[3]->news_id)->first();
-$newshot1_5 = $news->where('news_id', $newshot1s[4]->news_id)->first();
-$newshot1_6 = $news->where('news_id', $newshot1s[5]->news_id)->first();
-$newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
-
+$newshot1_1 = $news[0]->where('news_id', $newshot1s[0]->news_id)->first();
+$newshot1_2 = $news[1]->where('news_id', $newshot1s[1]->news_id)->first();
+$newshot1_3 = $news[2]->where('news_id', $newshot1s[2]->news_id)->first();
+$newshot1_4 = $news[3]->where('news_id', $newshot1s[3]->news_id)->first();
+$newshot1_5 = $news[4]->where('news_id', $newshot1s[4]->news_id)->first();
+$newshot1_6 = $news[5]->where('news_id', $newshot1s[5]->news_id)->first();
+$newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
 // dd($newshot1_2->news_id);
 @endphp
 <div class="container" id="grad">
@@ -244,7 +244,8 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
 
                                     <div style="border-left: 1px solid; margin: 5px;"></div>
                                     <div class="time">
-                                        {{ $item->date_updated }}
+                                        {{Carbon\Carbon::parse($item->date_updated)->format('l jS \of F Y')}}
+
                                     </div>
                                 </div>
                             </div>
@@ -281,7 +282,9 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                         </div>
                     </div>
                 </div>
-
+                <div class="mx-auto" style="width: 400px;">
+                    {{ $news->links('pagination::bootstrap-4') }}
+                </div>
             </div>
         </div>
     </div>

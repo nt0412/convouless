@@ -91,7 +91,7 @@ class CategoryController extends Controller
     {
          //fist take value first
          $cate = Category::where('category_name', $cate_name)->first()->category_id;
-         $list_news = News::where('category_id', $cate)->get();
+         $list_news = News::where('category_id', $cate)->paginate(25);
          $authors =Author::get();
          return view('enduser.page_by_cate')->with(compact('list_news', 'authors','cate_name'));
     }

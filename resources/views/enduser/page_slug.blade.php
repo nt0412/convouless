@@ -82,9 +82,9 @@
                 <p>by <a href="#" style="color: #cc165c;">{{ $authors->author_display_name }}</a> | {{ $news->date_updated }}</p>
             </div>
         </div>
-        <div class="content">
+        <div class="content fs-4" >
             <!-- NỘI DUNG BÀI VIẾT -->
-            <p>
+            <p >
                 @php
                     echo $news->news_content;
                 @endphp

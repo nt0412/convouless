@@ -110,11 +110,11 @@ class Newshot1Controller extends Controller
 
     public function showhome(){
 
-        $newshots = Newshot1::orderBy('id')->get();
         // $newshots = News::has('news_id')->get();
-
-        $newshot1s = $newshots;
-        return view('home')->with(compact('newshot1s'));
+        $news = News::paginate(25);
+        $auth = Author::get();
+        $newshot1s = Newshot1::orderBy('id')->get();
+        return view('home')->with(compact('newshot1s','news','auth'));
         // resources\views\home.blade.php
     }
 

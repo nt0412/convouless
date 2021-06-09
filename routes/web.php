@@ -9,12 +9,6 @@ use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Auth;
 
 // home page
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/home', function () {
-    return view('home');
-});
 Route::get('/home', [Newshot1Controller::class, 'showhome']);
 Route::get('/', [Newshot1Controller::class, 'showhome']);
 

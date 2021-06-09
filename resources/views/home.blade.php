@@ -3,7 +3,7 @@
 
 <style>
     .lamgon {
-        -webkit-line-clamp: 5;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
         display: -webkit-box;
@@ -54,7 +54,7 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                     <img src="{{ asset('public/images') }}/{{ $newshot1_2->news_img }}" class="img-fluid">
                     <div class="hot-title">
                         <a href="{{route('news.show',[$newshot1_2->news_slug])}}">
-                            <h4 class="title-mini">{{ $newshot1_2->news_title }}</h4>
+                            <h4 class="title-mini lamgon lamgon">{{ $newshot1_2->news_title }}</h4>
                         </a>
                         <h5 class="hot-news-author-mini">By <a href="#">{{ Author::where('author_id', $newshot1_2->author_id)->first()->author_display_name }}</a></h5>
                     </div>
@@ -69,7 +69,7 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                     <img src="{{ asset('public/images') }}/{{ $newshot1_3->news_img }}" class="img-fluid">
                     <div class="hot-title">
                         <a href="{{route('news.show',[$newshot1_3->news_slug])}}">
-                            <h4 class="title-mini">{{ $newshot1_3->news_title }}</h4>
+                            <h4 class="title-mini lamgon">{{ $newshot1_3->news_title }}</h4>
                         </a>
                         <h5 class="hot-news-author-mini">By <a href="#">{{ Author::where('author_id', $newshot1_3->author_id)->first()->author_display_name }}</a></h5>
                     </div>
@@ -81,7 +81,7 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                         <div class="col-sm-6 p-0" style="background: black;">
                             <div class="title-main">
                                 <a href="{{route('news.show',[$newshot1_4->news_slug])}}">
-                                    <h2 class="title-big">{{ $newshot1_4->news_title }} </h2>
+                                    <h2 class="title-big lamgon">{{ $newshot1_4->news_title }} </h2>
                                 </a>
                                 <h5 class="hot-news-author">By <a href="#">{{ Author::where('author_id', $newshot1_4->author_id)->first()->author_display_name }}</a></h5>
                             </div>
@@ -102,7 +102,7 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                     {{-- </a> --}}
                     <div class="hot-title">
                         <a href="{{route('news.show',[$newshot1_5->news_slug])}}">
-                            <h4 class="title-mini">{{ $newshot1_5->news_title }}</h4>
+                            <h4 class="title-mini lamgon">{{ $newshot1_5->news_title }}</h4>
                         </a>
                         <h5 class="hot-news-author-mini">By <a href="#">{{ Author::where('author_id', $newshot1_5->author_id)->first()->author_display_name }}</a></h5>
                     </div>
@@ -116,7 +116,7 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                     {{-- </a> --}}
                     <div class="hot-title">
                         <a href="{{route('news.show',[$newshot1_6->news_slug])}}">
-                            <h4 class="title-mini">{{ $newshot1_6->news_title }}</h4>
+                            <h4 class="title-mini lamgon">{{ $newshot1_6->news_title }}</h4>
                         </a>
                         <h5 class="hot-news-author-mini">By <a href="#">{{ Author::where('author_id', $newshot1_6->author_id)->first()->author_display_name }}</a></h5>
                     </div>
@@ -129,7 +129,7 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                     {{-- </a> --}}
                     <div class="hot-title">
                         <a href="{{route('news.show',[$newshot1_7->news_slug])}}">
-                            <h4 class="title-mini">{{ $newshot1_7->news_title }}</h4>
+                            <h4 class="title-mini lamgon">{{ $newshot1_7->news_title }}</h4>
                         </a>
                         <h5 class="hot-news-author-mini">By <a href="#">{{ Author::where('author_id', $newshot1_6->author_id)->first()->author_display_name }}</a></h5>
                     </div>
@@ -175,17 +175,17 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
 
                     @foreach ($news as $key => $item)
                     @if ($key >= 25)
-                    @php
-                    break;
-                    @endphp
+                        @php
+                            break;
+                        @endphp
                     @else
                     @if ($index_news[$key] == 3)
                     <div class="type_3" style="background: black;">
                         <div class="type_3_title">
                             <a href="{{ route('news.show', [$item->news_slug]) }}">
-                                <h2>{{ $item->news_title }}</h2>
+                                <h2 class="lamgon">{{ $item->news_title }}</h2>
                             </a>
-                            <p class="type_3_summary">{{ $item->news_summary }}</p>
+                            <p class="type_3_summary lamgon">{{ $item->news_summary }}</p>
                             <p class="type_3_info">By <a href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
                                     {{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a> | {{ $item->date_updated }}
                             </p>
@@ -202,7 +202,7 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                     <div class="news_items_noibat">
                         <div class="row" style="margin: 16px 0; ">
                             <div class="col-sm-7" style="text-align: right;">
-                                <h4>{{ $item->news_summary }}</h4>
+                                <h4 class="lamgon">{{ $item->news_summary }}</h4>
                                 <div class="author">
                                     <a href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
                                         <h5>{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</h5>
@@ -211,7 +211,7 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                             </div>
                             <div class="col-sm-5 type_2_title">
                                 <a href="{{ route('news.show', [$item->news_slug]) }}">
-                                    <h4 style="font-weight: bold;">{{ $item->news_title }}</h4>
+                                    <h4 class="lamgon" style="font-weight: bold;">{{ $item->news_title }}</h4>
                                 </a>
                             </div>
                         </div>
@@ -231,7 +231,7 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                                 <br>
                                 <div class="title">
                                     <a href="{{ route('news.show', [$item->news_slug]) }}">
-                                        <h4 style="font-weight: bold;">
+                                        <h4 class="lamgon" style="font-weight: bold;">
                                             {{ $item->news_title }}
                                         </h4>
                                     </a>

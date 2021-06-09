@@ -21,7 +21,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
         color: #cc165c;
     }
     .lamgon {
-        -webkit-line-clamp: 5;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
         display: -webkit-box;
@@ -88,7 +88,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                                 <a href="{{ route('news.show', [$item->news_slug]) }}">
                                     <h4 class="lamgon">{{ $item->news_title }}</h4>
                                 </a>
-                                <p class="type_3_summary">{{ $item->news_summary }}</p>
+                                <p  class=" lamgon type_3_summary">{{ $item->news_summary }}</p>
                                 {{-- <p class="type_3_info">By <a href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
                                     {{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a> |
                                     {{ $item->date_updated }}
@@ -106,7 +106,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                             <div class="news_items_noibat">
                                 <div class="row" style="margin: 16px 0; ">
                                     <div class="col-sm-7" style="text-align: right;">
-                                        <h4>{{ $item->news_summary }}</h4>
+                                        <h4 class="lamgon">{{ $item->news_summary }}</h4>
                                         {{-- <div class="author">
                                             <a href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
                                                 <h5>{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</h5>

@@ -187,7 +187,6 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                                         </h4>
                                     </a>
                                 </div>
-
                                 <div class=" news_static d-flex justify-content-start">
                                     <div class="author">
                                         by <a href="#">John Thomas</a>
@@ -210,7 +209,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                     </div>
                 </div>
             </div>
-
+            <!-- Tin có video -->
             <div class="col-sm-4">
                 <div class="video">
                     <h4 class="text-center fs-1"

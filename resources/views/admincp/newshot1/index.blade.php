@@ -31,10 +31,12 @@ $news = News::get();
             padding-left: 0px !important;
             padding-right: 0px;
         }
+
         #preview {
             padding-right: 0px;
         }
-        #table-manage{
+
+        #table-manage {
             padding-right: 0px;
         }
     }
@@ -89,12 +91,7 @@ $news = News::get();
                             <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="" height="172px">
                         </td>
                         <td>
-                        <a style="color: blue;" class="btn btn-primary" href="{{route('newshot.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
-                            <!-- <form action="{{route('news.destroy',[$item->news_id])}}" method="POST">
-                                @method('DELETE')
-                                @csrf
-                                <button onclick="return confirm('Are you sure you want to delete ?');" class="btn btn-danger"><img src="{{url('image\delete_icon.png')}}" alt=""></button>
-                            </form> -->
+                            <a style="color: blue;" class="btn btn-primary" href="{{route('newshot.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
                         </td>
                     </tr>
                     @endforeach

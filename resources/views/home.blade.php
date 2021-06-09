@@ -32,60 +32,71 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
     <div id="newshot1">
         <div class="row">
             <div class="col-sm-8" style="padding: 1px;">
-                <div class="row" style="margin-right: 0;">
-                    <div class="col-sm-6" style="padding-right: 0;">
-                        <img src="{{ asset('public/images') }}/{{ $newshot1_1->news_img }}">
-                    </div>
-                    <div class="col-sm-6" style="background: black;">
-                        <div class="title-main">
-                            <a href="{{route('news.show',[$newshot1_1->news_slug])}}">
-                                <h2 class="title-big">{{ $newshot1_1->news_title }} </h2>
-                            </a>
-                            <h5 class="hot-news-author">By <a href="#">{{ Author::where('author_id', $newshot1_1->author_id)->first()->author_display_name }}</a></h5>
+                <div class="card">
+                    <div class="row" style="margin-right: 0;">
+                        <div class="col-sm-6" style="padding-right: 0;">
+                            <img src="{{ asset('public/images') }}/{{ $newshot1_1->news_img }}">
+                        </div>
+                        <div class="col-sm-6" style="background: black;">
+                            <div class="title-main">
+                                <a href="{{route('news.show',[$newshot1_1->news_slug])}}">
+                                    <h2 class="title-big">{{ $newshot1_1->news_title }} </h2>
+                                </a>
+                                <h5 class="hot-news-author">By <a href="#">{{ Author::where('author_id', $newshot1_1->author_id)->first()->author_display_name }}</a></h5>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="col-sm-4" style="padding: 1px;">
-                <img src="{{ asset('public/images') }}/{{ $newshot1_2->news_img }}" class="img-fluid">
-                <div class="hot-title" style="border-right: 1px solid #e5127d; border-left: 1px solid #f68c2f; margin-right: 0;right: 0px;">
-                    <a href="{{route('news.show',[$newshot1_2->news_slug])}}">
-                        <h4 class="title-mini">{{ $newshot1_2->news_title }}</h4>
-                    </a>
-                    <h5 class="hot-news-author-mini">By <a href="#">{{ Author::where('author_id', $newshot1_2->author_id)->first()->author_display_name }}</a></h5>
+                <div class="card">
+                    <img src="{{ asset('public/images') }}/{{ $newshot1_2->news_img }}" class="img-fluid">
+                    <div class="hot-title">
+                        <a href="{{route('news.show',[$newshot1_2->news_slug])}}">
+                            <h4 class="title-mini">{{ $newshot1_2->news_title }}</h4>
+                        </a>
+                        <h5 class="hot-news-author-mini">By <a href="#">{{ Author::where('author_id', $newshot1_2->author_id)->first()->author_display_name }}</a></h5>
+                    </div>
                 </div>
+
             </div>
         </div>
 
-        <div class="row" style="margin-right: 0;">
+        <div class="row">
             <div class="col-sm-4" style="padding: 1px;">
-                <img src="{{ asset('public/images') }}/{{ $newshot1_3->news_img }}" class="img-fluid">
-                <div class="hot-title" style="border-right: 1.99px solid #f68c2f;">
-                    <a href="{{route('news.show',[$newshot1_3->news_slug])}}">
-                        <h4 class="title-mini">{{ $newshot1_3->news_title }}</h4>
-                    </a>
-                    <h5 class="hot-news-author-mini">By <a href="#">{{ Author::where('author_id', $newshot1_3->author_id)->first()->author_display_name }}</a></h5>
+                <div class="card">
+                    <img src="{{ asset('public/images') }}/{{ $newshot1_2->news_img }}" class="img-fluid">
+                    <div class="hot-title">
+                        <a href="{{route('news.show',[$newshot1_2->news_slug])}}">
+                            <h4 class="title-mini">{{ $newshot1_2->news_title }}</h4>
+                        </a>
+                        <h5 class="hot-news-author-mini">By <a href="#">{{ Author::where('author_id', $newshot1_2->author_id)->first()->author_display_name }}</a></h5>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-8" style="padding: 1px;">
-                <div class="row" style="margin-left: 0px;">
-                    <div class="col-sm-6 p-0" style="background: black;">
-                        <div class="title-main">
-                            <a href="{{route('news.show',[$newshot1_4->news_slug])}}">
-                                <h2 class="title-big">{{ $newshot1_4->news_title }} </h2>
-                            </a>
-                            <h5 class="hot-news-author" style="padding-top: 0;">By <a href="#">{{ Author::where('author_id', $newshot1_4->author_id)->first()->author_display_name }}</a></h5>
+                <div class="card">
+                    <div class="row" style="margin-right: 0; margin-left: 0;">
+                        <div class="col-sm-6 p-0" style="background: black;">
+                            <div class="title-main">
+                                <a href="{{route('news.show',[$newshot1_1->news_slug])}}">
+                                    <h2 class="title-big">{{ $newshot1_1->news_title }} </h2>
+                                </a>
+                                <h5 class="hot-news-author">By <a href="#">{{ Author::where('author_id', $newshot1_1->author_id)->first()->author_display_name }}</a></h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 p-0">
+                            <img src="{{ asset('public/images') }}/{{ $newshot1_1->news_img }}">
                         </div>
                     </div>
-                    <div class="col-sm-6" style="padding: 0;">
-                        <img src="{{ asset('public/images') }}/{{ $newshot1_4->news_img }}">
-                    </div>
                 </div>
+
             </div>
         </div>
         <div class="row">
             <div class="col-sm-4" style="padding: 1px;">
-                <div class="card bg-dark">
+                <div class="card">
                     {{-- <a href="{{route('news.show',[$newshot1_5->news_slug])}}"> --}}
                     <img src="{{ asset('public/images') }}/{{ $newshot1_5->news_img }}" class="img-fluid">
                     {{-- </a> --}}
@@ -99,7 +110,7 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
             </div>
 
             <div class="col-sm-4" style="padding: 1px;">
-                <div class="card bg-dark">
+                <div class="card">
                     {{-- <a href="{{route('news.show',[$newshot1_6->news_slug])}}"> --}}
                     <img src="{{ asset('public/images') }}/{{ $newshot1_6->news_img }}" class="img-fluid">
                     {{-- </a> --}}
@@ -112,7 +123,7 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                 </div>
             </div>
             <div class="col-sm-4" style="padding: 1px;">
-                <div class="card bg-dark">
+                <div class="card">
                     {{-- <a href="{{route('news.show',[$newshot1_7->news_slug])}}"> --}}
                     <img src="{{ asset('public/images') }}/{{ $newshot1_7->news_img }}" class="img-fluid">
                     {{-- </a> --}}
@@ -146,19 +157,19 @@ $newshot1_7 = $news->where('news_id', $newshot1s[6]->news_id)->first();
                     // tạo một mảng với các vị trí đánh số dạng trình bày
                     $index_news;
                     foreach ($news as $key => $value){
-                        // $key = $key_i + 1;
-                        // $index_news[$key] = rand(1,4);
-                        if (($key + 1) % (5 + rand(0, 2)) == 0 && $index_news[$key - 1] != 3){
-                            $index_news[$key] = 3;
-                        }
-                        else{
-                            if (($key + 1) % (3 + rand(0, 2)) == 0 && $index_news[$key - 1] != 2){
-                                $index_news[$key] = 2;
-                            }
-                            else{
-                                $index_news[$key] = 1;
-                            }
-                        }
+                    // $key = $key_i + 1;
+                    // $index_news[$key] = rand(1,4);
+                    if (($key + 1) % (5 + rand(0, 2)) == 0 && $index_news[$key - 1] != 3){
+                    $index_news[$key] = 3;
+                    }
+                    else{
+                    if (($key + 1) % (3 + rand(0, 2)) == 0 && $index_news[$key - 1] != 2){
+                    $index_news[$key] = 2;
+                    }
+                    else{
+                    $index_news[$key] = 1;
+                    }
+                    }
                     }
                     @endphp
 

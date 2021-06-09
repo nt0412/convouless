@@ -171,7 +171,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
 
         .hot-title {
             position: absolute;
-            bottom: 1px;
+            bottom: 0px;
             background: rgba(0, 0, 0);
             width: 100%;
             text-align: left;
@@ -246,6 +246,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
 
         #newshot1 .card {
             border-radius: 0px;
+            background: transparent;
         }
 
         .news_image_type_3 img {

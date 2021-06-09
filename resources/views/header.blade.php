@@ -141,6 +141,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         .title a {
             color: black;
             text-decoration: none;
+            text-transform: uppercase;
         }
 
         .title a:hover {
@@ -172,22 +173,26 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
             position: absolute;
             bottom: 1px;
             background: rgba(0, 0, 0);
-            width: auto;
+            width: 100%;
             text-align: left;
             padding-left: 16px;
             padding-top: 16px;
             margin-right: 1px;
+            text-transform: uppercase;
         }
 
         .title-big {
             padding: 32px;
             font-family: 'Anton', sans-serif;
             padding-bottom: 0;
+            text-transform: uppercase;
+
         }
 
         .title-main a {
             color: white;
             text-decoration: none;
+            text-transform: uppercase;
         }
 
         .title-main a:hover {
@@ -253,6 +258,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
             text-decoration: none;
             font-family: 'Anton', sans-serif;
             margin-top: 2rem;
+            text-transform: uppercase;
         }
 
         .type_3_title a:hover {
@@ -284,7 +290,24 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         .type_3_title {
             padding-left: 1rem;
             padding-top: 1rem;
+            text-transform: uppercase;
         }
+        .type_2_title {
+            text-transform: uppercase;
+        }
+        .type_2_title a {
+            text-transform: uppercase;
+            color: #cc165c;
+            text-decoration: none;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 0.15rem;
+            font-style: italic;
+        }
+
+        .type_2_title a:hover {
+            color: darkred;
+        }
+
     </style>
 </head>
 

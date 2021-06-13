@@ -67,7 +67,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
             color: whitesmoke;
         }
 
-        .contact :hover {
+        .contact a:hover {
             color: #cc165c;
         }
 

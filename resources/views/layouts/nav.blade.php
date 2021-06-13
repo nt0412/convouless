@@ -230,15 +230,12 @@
             </div> --}}
         </li>
 
-        <li class="nav-item dropdown">
-            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item ">
+            <a href="{{route('footer.index')}}" >
                 <span class="icon"><i class="fas fa-solar-panel"></i></span>
                 <span class="title">Footer </span>
             </a>
-            {{-- <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Home</a>
-                <a class="dropdown-item" href="#">Page</a>
-            </div> --}}
+
         </li>
 
         <div class="search-box" id="search_box_sidebar">

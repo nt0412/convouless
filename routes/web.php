@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainCategoryController;
@@ -22,24 +24,10 @@ Route::resource('/news', newsController::class);
 Route::resource('/newshot', Newshot1Controller::class);
 Route::resource('/footer', FooterController::class);
 
+// trả về kết quả search
 Route::get('/search',[SearchController::class,'search'])->name('search');
 
-
-// page show by cate
-Route::get('/post/{slug}', function($slug){
-    return view('posts', ['slug' => $slug]);
-});
-
-
-// quản lý các bai viet nổi bật
-// Route::get('/admin/manager/newshot', [Newshot1Controller::class,'index']);
-// quản lý các bai viet nổi bật PREVIEW
-Route::get('/admin/manager/newshot/preview', [Newshot1Controller::class,'preview']);
-// quản lý các bai viet nổi bật PREVIEW
-// Route::get('/admin/manager/newshot/edit', [SearchController::class,'action']);
-// Route::post('/admin/manager/newshot/edit', [SearchController::class,'search']);
-
-
-// search
+// trả về giá trị api covid19
+Route::get('covid',[ApiController::class,'covid']);
 
 

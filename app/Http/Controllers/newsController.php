@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\News;
 use App\Models\Author;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class newsController extends Controller
 {

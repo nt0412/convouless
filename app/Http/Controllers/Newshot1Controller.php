@@ -11,6 +11,7 @@ use App\Models\Author;
 use App\Models\Newshot1;
 use Illuminate\Support\Facades\DB;
 use League\CommonMark\Inline\Element\Newline;
+use Illuminate\Support\Facades\Http;
 
 class Newshot1Controller extends Controller
 {
@@ -21,6 +22,7 @@ class Newshot1Controller extends Controller
      */
     public function index()
     {
+
         $newshots = Newshot1::join('tblnews', 'tblnews.news_id', '=', 'tblnewshot1.news_id' )->get();
         $newshot1s = $newshots;
         return view('admincp.newshot1.index')->with(compact('newshot1s'));
@@ -114,7 +116,10 @@ class Newshot1Controller extends Controller
         $news = News::paginate(25);
         $auth = Author::get();
         $newshot1s = Newshot1::orderBy('id')->get();
-        return view('home')->with(compact('newshot1s','news','auth'));
+        $covid =  Http::get('https://api.apify.com/v2/key-value-stores/EaCBL1JNntjR3EakU/records/LATEST?disableRedirect=true');
+        $covid_world =  Http::get('https://api.apify.com/v2/key-value-stores/SmuuI0oebnTWjRTUh/records/LATEST?disableRedirect=true');
+
+        return view('home')->with(compact('newshot1s','news','auth','covid','covid_world'));
         // resources\views\home.blade.php
     }
 

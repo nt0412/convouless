@@ -20,6 +20,9 @@ Route::resource('/category', CategoryController::class);
 Route::resource('/news', newsController::class);
 Route::resource('/newshot', Newshot1Controller::class);
 
+Route::get('/search',[SearchController::class,'search'])->name('search');
+
+
 // page show by cate
 Route::get('/post/{slug}', function($slug){
     return view('posts', ['slug' => $slug]);
@@ -34,8 +37,7 @@ Route::get('/admin/manager/newshot/preview', [Newshot1Controller::class,'preview
 // Route::get('/admin/manager/newshot/edit', [SearchController::class,'action']);
 // Route::post('/admin/manager/newshot/edit', [SearchController::class,'search']);
 
-Route::get('search', [SearchController::class,'getSearch']);
-Route::post('search/name', [SearchController::class,'getSearchAjax'])->name('search');
 
+// search
 
 

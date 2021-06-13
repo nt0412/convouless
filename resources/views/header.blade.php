@@ -366,6 +366,14 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
                     </ul>
 
                     <ul class="navbar-nav ml-auto">
+                        <div class="d-flex align-items-center">
+                            <form method="get" action="{{url('/search')}}">
+                                <input name="query" class="" type="text" placeholder="Type to search" aria-label="Search" style="width:300px; height: 41px;">
+                                <button type="submit" class="btn btn-success" >Search</button>
+                            </form>
+                        </div>
+
+
                         <!-- Authentication Links -->
                         @guest
                         @if (Route::has('login'))

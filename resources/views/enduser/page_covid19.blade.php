@@ -7,7 +7,7 @@
     // echo number_format("160469213");
 @endphp
 <div class="container">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000" >
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row mx-auto" style="width: 800px; ">

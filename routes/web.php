@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\AuthorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainCategoryController;
@@ -23,11 +24,9 @@ Route::resource('/category', CategoryController::class);
 Route::resource('/news', newsController::class);
 Route::resource('/newshot', Newshot1Controller::class);
 Route::resource('/footer', FooterController::class);
+Route::resource('/author', AuthorController::class);
 
 // trả về kết quả search
 Route::get('/search',[SearchController::class,'search'])->name('search');
-
-// trả về giá trị api covid19
-Route::get('covid',[ApiController::class,'covid']);
 
 

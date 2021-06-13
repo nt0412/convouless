@@ -47,7 +47,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                                     <tr>
                                     <th scope="col">author</th>
                                     <th scope="col">
-                                        <a href="#">
+                                        <a href="{{ asset('/author') }}/{{$item->author_display_name}}">
                                             {{$item->author_display_name}}
                                         </a>
                                     </th>

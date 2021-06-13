@@ -242,7 +242,7 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
 
                                 <div class=" news_static d-flex justify-content-start">
                                     <div class="author">
-                                        by <a href="#">{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a>
+                                        by <a href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a>
                                     </div>
 
                                     <div style="border-left: 1px solid; margin: 5px;"></div>

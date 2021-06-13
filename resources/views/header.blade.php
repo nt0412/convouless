@@ -12,7 +12,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Convouless</title>
-    <link rel="shortcut icon" href="{{url('/image/logo.ico')}}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{url('/image/logo.ico')}}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -203,7 +203,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
             color: #cc165c;
         }
 
-        .title-mini{
+        .title-mini {
             font-family: 'Barlow Condensed', sans-serif;
         }
 
@@ -293,9 +293,11 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
             padding-top: 1rem;
             text-transform: uppercase;
         }
+
         .type_2_title {
             text-transform: uppercase;
         }
+
         .type_2_title a {
             text-transform: uppercase;
             color: #cc165c;
@@ -309,6 +311,61 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
             color: darkred;
         }
 
+        .search-box {
+            float: left;
+            height: 40px;
+            background-color: #cc165c;
+            border-radius: 40px;
+            margin-left: 0.6rem;
+            margin-top: 0.6rem;
+        }
+
+        .search-btn {
+            float: right;
+            border-radius: 50%;
+            background-color: black;
+            align-items: center;
+            transition: 0.5s;
+            color: #343a40;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border: 0.25px solid #cc165c;
+        }
+
+
+        .search-btn>i {
+            font-size: 25px;
+        }
+
+        .search-txt {
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0;
+            color: white;
+            transition: 0.5s;
+            width: 0px;
+            line-height: 40px;
+            width: 11em;
+        }
+
+        ::placeholder {
+            color: black;
+            opacity: 1;
+        }
+        body::-webkit-scrollbar {
+            width: 0.25rem;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: black;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #cc165c;
+        }
     </style>
 </head>
 
@@ -366,13 +423,13 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
                     </ul>
 
                     <ul class="navbar-nav ml-auto">
-                        <div class="d-flex align-items-center">
+                        <!-- Search engine -->
+                        <div class="search-box">
                             <form method="get" action="{{url('/search')}}">
-                                <input name="query" class="" type="text" placeholder="Type to search" aria-label="Search" style="width:300px; height: 41px;">
-                                <button type="submit" class="btn btn-success" >Search</button>
+                                <input class="search-txt" name="query" type="text" placeholder="Searching for ..." aria-label="Search">
+                                <a class="search-btn" type="submit"><i class="fas fa-search" style="padding: 6px;"></i></a>
                             </form>
                         </div>
-
 
                         <!-- Authentication Links -->
                         @guest

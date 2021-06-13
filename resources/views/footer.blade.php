@@ -11,7 +11,7 @@ use App\Models\Footer;
                 <h3 style="color: white;"><strong>CONTACTS</strong></h3>
                 <div class="contact">
                     <p>
-                        <a href="{{$footer[7]->desitions}}">
+                        <a href="#">
                             {{$footer[2]->desitions}}
                         </a>
                     </p>

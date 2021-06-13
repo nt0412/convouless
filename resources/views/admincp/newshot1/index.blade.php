@@ -4,7 +4,7 @@
 @php
 use App\Models\News;
 
-$news = News::get();
+$news = News::paginate(25);
 // dd($newshot1s);
 
 // dd($newshot->news_slug);

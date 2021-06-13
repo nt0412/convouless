@@ -1,3 +1,4 @@
+@can('isAdmin')
 @extends('layouts.app')
 @section('content')
 @include('layouts.nav')
@@ -11,3 +12,8 @@
     </div>
 </div>
 @endsection
+@endcan
+
+@can('isClient')
+<h1 style="color: red;">Tuổi loz</h1>
+@endcan

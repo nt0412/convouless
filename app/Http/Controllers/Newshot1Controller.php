@@ -114,7 +114,7 @@ class Newshot1Controller extends Controller
         $news = News::paginate(25);
         $auth = Author::get();
         $newshot1s = Newshot1::orderBy('id')->get();
-        return view('home')->with(compact('newshot1s','news','auth'));
+        return view('home')->with(compact('newshot1s','auth'));
         // resources\views\home.blade.php
     }
 

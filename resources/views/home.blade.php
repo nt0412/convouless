@@ -15,6 +15,9 @@
 </style>
 @php
 use App\Models\Author;
+use App\Models\News;
+
+$news = News::paginate(25);
 // dd($news->where('news_id', $newshot1s[0]->news_id)->first()->news_img);
 // dd($news->where('news_id', $newshot1s[1]->news_id));
 // dd($news, $news[0]);
@@ -211,7 +214,7 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
                             </div>
                             <div class="col-sm-5 type_2_title">
                                 <a href="{{ route('news.show', [$item->news_slug]) }}">
-                                    <h4 class="lamgon" style="font-weight: bold;">{{ $item->news_title }}</h4>
+                                    <h2 class="lamgon" style="font-weight: bold;">{{ $item->news_title }}</h2>
                                 </a>
                             </div>
                         </div>
@@ -282,7 +285,7 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
                         </div>
                     </div>
                 </div>
-                <div class="mx-auto" style="width: 400px;">
+                <div id="pagination-bar" class="mx-auto" style="width: 400px;">
                     {{ $news->links('pagination::bootstrap-4') }}
                 </div>
             </div>

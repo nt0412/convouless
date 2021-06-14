@@ -192,7 +192,7 @@
                 <span class="title">Pages <i class="fas fa-caret-down" style="padding-left: 10px;"></i></span>
             </a>
             <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{route('newshot.index')}}">Home Page</a>
+                <a class="dropdown-item" href="{{route('newshot.index')}}">Hot News</a>
                 <a class="dropdown-item" href="#">Post Page</a>
             </div>
         </li>

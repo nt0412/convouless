@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
 @include('layouts.nav')
+@php
+use App\Models\Author;
+$auth = Author::where('author_id', 1)->first()->author_display_name;
+@endphp
 <style>
     @media only screen and (max-width: 870px) {
         .container-fluid {
@@ -79,7 +83,7 @@
 </style>
 <div class="container-fluid">
     <div class="card-header" style="color: gold; text-align: center;">
-        <h2>Post list</h2>
+        <h2>News list</h2>
     </div>
     @if (session('status'))
     <div class="alert alert-success" role="alert">
@@ -119,10 +123,9 @@
                     <p>{{$item->news_summary}}</p>
                 </td>
                 <td>
-                    {{-- <img class=""  src="{{asset('public/images/')}}/{{$item->news_img}}" alt="{{$item->news_img}}" height="172px"> --}}
-                    <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt=""  height="172px">
+                    <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="Post image" width="150px" height="150px">
                 </td>
-                <td>{{$item->author_id}}</td>
+                <td>{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</td>
                 <td>{{$item->date_posted}}</td>
                 <td>{{$item->date_updated}}</td>
                 <td>

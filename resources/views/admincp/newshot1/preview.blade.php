@@ -1,4 +1,4 @@
-@extends('home')
+@include('home')
 <style>
     #tinthuong{
         display: none;

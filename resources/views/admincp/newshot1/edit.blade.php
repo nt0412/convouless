@@ -34,7 +34,7 @@
         <div class="col-12">
             @php
 
-                $news_curen = $list_news->where('news_id', '32')->first();
+                $news_curen = $list_news->where('news_id', $id)->first();
                 // dd($id,$news_curen);
             @endphp
             <div class="row">

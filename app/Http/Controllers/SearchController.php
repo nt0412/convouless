@@ -18,6 +18,6 @@ class SearchController extends Controller
         $list_author = Author::where('author_display_name','LIKE','%'. $search_name.'%')->paginate(5);
         $list_news = News::where('news_title','LIKE','%'. $search_name.'%')->paginate(25);
         $authors =Author::get();
-        return view('enduser.page_search')->with(compact('list_news','list_cate','list_author','authors','news'));
+        return view('enduser.page_search')->with(compact('list_news','list_cate','list_author','authors','news','search_name'));
     }
 }

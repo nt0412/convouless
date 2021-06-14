@@ -35,72 +35,88 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
     <!-- Những bài viết mới nhất data posts-->
     <div class="content">
         <div class="row" style="background-color: white;">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Card with links</h5>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-text"></h3>
+                        <div class="cart-text">
+                            <span  class="fs-3">result "<span id="inputSearch">{{$search_name}}</span> "</span>
+                            Post news: {{ (string) $list_news->count() }}
+                            Category: {{ (string) $list_cate->count() }}
+                            Author: {{ (string) $list_author->count() }}
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-sm-8">
                 {{-- list author --}}
                 <div id="cate">
-
                     @foreach ($list_author as $item)
-                    <div class="news_items">
-                        <h4>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                    <th scope="col">author</th>
-                                    <th scope="col">
-                                        <a href="{{ asset('/author') }}/{{$item->author_display_name}}">
-                                            {{$item->author_display_name}}
-                                        </a>
-                                    </th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </h4>
-                    </div>
+                        <div class="news_items">
+                            <h4>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">author</th>
+                                            <th scope="col">
+                                                <a href="{{ asset('/author') }}/{{ $item->author_display_name }}">
+                                                    {{ $item->author_display_name }}
+                                                </a>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </h4>
+                        </div>
                     @endforeach
                 </div>
                 {{-- list categoryry --}}
                 <div id="cate">
 
                     @foreach ($list_cate as $item)
-                    <div class="news_items">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <br>
-                                <div class="news_image">
-                                    <a class='nav-link' href='{{route('category.show',[$item->category_slug])}}'>
-                                        <h1>
-                                            {{$item->category_name}}
-                                        </h1>
-                                    </a>
+                        <div class="news_items">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <br>
+                                    <div class="news_image">
+                                        <a class='nav-link' href='{{ route('category.show', [$item->category_slug]) }}'>
+                                            <h1>
+                                                {{ $item->category_name }}
+                                            </h1>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <br>
-                                <div class="title">
-                                    <a href="#">
-                                        <h4 class="lamgon" style="font-weight: bold;">
-                                            {{ $item->category_description }}
-                                        </h4>
-                                    </a>
-                                </div>
+                                <div class="col-sm-8">
+                                    <br>
+                                    <div class="title">
+                                        <a href="#">
+                                            <h4 class="lamgon" style="font-weight: bold;">
+                                                {{ $item->category_description }}
+                                            </h4>
+                                        </a>
+                                    </div>
 
-                                <div class=" news_static d-flex justify-content-start">
-                                    <div>
-                                        @php
-                                            $news_ = $news->where('category_id',$item->category_id);
-                                            $key_ = 0;
-                                            foreach ($news_ as $key => $value) {
-                                                $key_ += 1;
-                                            }
+                                    <div class=" news_static d-flex justify-content-start">
+                                        <div>
+                                            @php
+                                                $news_ = $news->where('category_id', $item->category_id);
+                                                $key_ = 0;
+                                                foreach ($news_ as $key => $value) {
+                                                    $key_ += 1;
+                                                }
                                             @endphp
-                                            <p>number of posts {{$key_}}</p>
+                                            <p>number of posts {{ $key_ }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
+                {{-- list news posts --}}
                 <div class="news">
                     <div class="news_items">
                         <br>
@@ -137,8 +153,10 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                                                     <h4 class="lamgon">{{ $item->news_title }}</h4>
                                                 </a>
                                                 <p class=" lamgon type_3_summary">{{ $item->news_summary }}</p>
-                                                <p class="type_3_info">By <a href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
-                                                    {{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a> |
+                                                <p class="type_3_info">By <a
+                                                        href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
+                                                        {{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a>
+                                                    |
                                                     {{ $item->date_updated }}
                                                 </p>
                                             </div>
@@ -195,8 +213,9 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
 
                                                         <div class=" news_static d-flex justify-content-start">
                                                             <div class="author">
-                                                                <p class="type_3_info">By <a href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
-                                                                    {{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a>
+                                                                <p class="type_3_info">By <a
+                                                                        href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
+                                                                        {{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a>
                                                                 </p>
                                                             </div>
 
@@ -293,4 +312,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
     </div>
 
 </div>
+<script>
+    document.getElementById("search").value = $("#inputSearch").html();
+</script>
 @include('footer')

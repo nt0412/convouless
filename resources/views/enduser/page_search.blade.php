@@ -37,7 +37,6 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
             <div class="col-sm-8">
                 {{-- list author --}}
                 <div id="cate">
-
                     @foreach ($list_author as $item)
                     <div class="news_items">
                         <h4>
@@ -57,13 +56,13 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                     </div>
                     @endforeach
                 </div>
-                {{-- list categoryry --}}
+                {{-- list category --}}
                 <div id="cate">
                     @foreach ($list_cate as $item)
                     <div class="news_items">
                         <div class="row">
                             <div class="col-sm-4">
-                                <a style="text-decoration: none;" href='{{route('category.show',[$item->category_slug])}}'>
+                                <a style="text-decoration: none; color: #cc165c;" href="{{route('category.show',[$item->category_slug])}}">
                                     <p style="font-family: 'Anton', sans-serif; font-style: italic; text-transform: uppercase; font-size: 5rem;">
                                         {{$item->category_name}}
                                     </p>
@@ -72,7 +71,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                             <div class="col-sm-8">
                                 <br>
                                 <div class="title">
-                                    <a href="#">
+                                    <a href="{{route('category.show',[$item->category_slug])}}">
                                         <h4 class="lamgon" style="font-weight: bold;">
                                             {{ $item->category_description }}
                                         </h4>
@@ -198,11 +197,6 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                                         <div class="time">
                                             {{ Carbon\Carbon::parse($item->date_updated)->format('l jS \of F Y') }}
                                         </div>
-                                        <div style="border-left: 1px solid; margin: 5px;"></div>
-
-                                        <div class="comment">
-
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -215,40 +209,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                         @endif
 
                         @endforeach
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <br>
-                                <div class="news_image">
-                                    <img src="{{ url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg') }}" class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <br>
-                                <div class="title">
-                                    <a href="#">
-                                        <h4 style="font-weight: bold;">Hardware, apps, and much more and much more. From
-                                            top companies like Google and Apple to tiny startups
-                                        </h4>
-                                    </a>
-                                </div>
-                                <div class=" news_static d-flex justify-content-start">
-                                    <div class="author">
-                                        by <a href="#">John Thomas</a>
-                                    </div>
 
-                                    <div style="border-left: 1px solid; margin: 5px;"></div>
-                                    <div class="time">
-                                        {{-- Today at 11:12am --}}
-
-                                    </div>
-                                    <div style="border-left: 1px solid; margin: 5px;"></div>
-
-                                    <div class="comment">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

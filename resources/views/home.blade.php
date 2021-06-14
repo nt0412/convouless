@@ -21,11 +21,6 @@
 use App\Models\Author;
 use App\Models\News;
 
-$news = News::paginate(25);
-// dd($news->where('news_id', $newshot1s[0]->news_id)->first()->news_img);
-// dd($news->where('news_id', $newshot1s[1]->news_id));
-// dd($news, $news[0]);
-// dd($covid);
 $newshot1_1 = $news[0]->where('news_id', $newshot1s[0]->news_id)->first();
 $newshot1_2 = $news[1]->where('news_id', $newshot1s[1]->news_id)->first();
 $newshot1_3 = $news[2]->where('news_id', $newshot1s[2]->news_id)->first();

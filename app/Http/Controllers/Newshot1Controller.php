@@ -116,7 +116,7 @@ class Newshot1Controller extends Controller
     public function showhome(){
 
         // $newshots = News::has('news_id')->get();
-        $news = News::paginate(25);
+        $news = News::paginate(15);
         $auth = Author::get();
         $newshot1s = Newshot1::orderBy('id')->get();
         $covid =  Http::get('https://api.apify.com/v2/key-value-stores/EaCBL1JNntjR3EakU/records/LATEST?disableRedirect=true');

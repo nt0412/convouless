@@ -3,7 +3,7 @@
 @endphp
 @include('header')
 <style>
-    body{
+    body {
         overflow-x: hidden;
     }
 
@@ -39,7 +39,11 @@
     .img-title a {
         color: whitesmoke;
         text-decoration: none;
-        font-size: 1.25rem;
+        font-size: 1.5rem;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
     }
 
     .img-title a:hover {
@@ -50,9 +54,17 @@
         background: rgb(0, 0, 0);
     }
 
+    .relate_news img {
+        height: 22rem;
+    }
+
     @media (max-width: 640px) {
         .img-title a {
             font-size: 0.7rem;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
         }
 
         .relate_news img {
@@ -64,6 +76,10 @@
     @media (max-width: 610px) {
         .img-title a {
             font-size: 0.7rem;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
         }
 
         .relate_news img {
@@ -71,7 +87,6 @@
             max-height: 14rem;
         }
     }
-</style>
 </style>
 <div class="container-fluid" style="background: white; padding: 0; margin: 0;">
     <div class="news-main-image text-center">
@@ -87,11 +102,11 @@
                 <p>by <a href="#" style="color: #cc165c;">{{ $authors->author_display_name }}</a> | {{ $news->date_updated }}</p>
             </div>
         </div>
-        <div class="content fs-4" >
+        <div class="content fs-4">
             <!-- NỘI DUNG BÀI VIẾT -->
-            <p >
+            <p>
                 @php
-                    echo $news->news_content;
+                echo $news->news_content;
                 @endphp
             </p>
             <!-- Đây là chữ kết thúc để kết thúc bài viết đừng sửa nhé -->
@@ -108,32 +123,28 @@
     <div class="relate_news" id="grad">
         <div class="owl-carousel owl-theme">
             @foreach ($list_news_by_cate as $item)
-                @if ($item->news_id == $news->news_id)
-                    @php
-                        continue;
-                    @endphp
-                @else
-                    <div class="item">
-                        <img src="{{ asset('images') }}/{{ $item->news_img }}" class="img-fluid">
-                        <div class="img-title">
-                            <a href="{{ route('news.show', [$item->news_slug]) }}">
-                                <h4>{{ $item->news_title }}</h4>
-                            </a>
-                        </div>
-                    </div>
-                @endif
+            @if ($item->news_id == $news->news_id)
+            @php
+            continue;
+            @endphp
+            @else
+            <div class="item">
+                <img src="{{ asset('images') }}/{{ $item->news_img }}" class="img-fluid">
+                <div class="img-title">
+                    <a href="{{ route('news.show', [$item->news_slug]) }}">
+                        <p>{{ $item->news_title }}</p>
+                    </a>
+                </div>
+            </div>
+            @endif
             @endforeach
         </div>
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script type="text/javascript">
     $('.owl-carousel').owlCarousel({

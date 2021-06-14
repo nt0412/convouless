@@ -6,4 +6,7 @@
     footer{
         display: none;
     }
+    #api-covid{
+        display: none;
+    }
 </style>

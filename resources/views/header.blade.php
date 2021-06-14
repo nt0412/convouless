@@ -355,6 +355,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
             color: black;
             opacity: 1;
         }
+
         body::-webkit-scrollbar {
             width: 0.25rem;
         }

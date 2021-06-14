@@ -12,6 +12,9 @@
         display: none;
     }
 
+    #pagination-bar{
+        margin-top: 1rem;
+    }
 
 </style>
 @php
@@ -27,12 +30,9 @@ $newshot1_6 = $news[5]->where('news_id', $newshot1s[5]->news_id)->first();
 $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
 // dd($newshot1_2->news_id);
 @endphp
-
+<!-- API COVID 19 -->
+@include('enduser.page_covid19')
 <div class="container" id="grad">
-
-    {{-- api covid --}}
-    @include('enduser.page_covid19')
-
     <div id="newshot1">
         <div class="row">
             <div class="col-sm-8" style="padding: 1px;">
@@ -286,7 +286,8 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
                         </div>
                     </div>
                 </div>
-                <div id="pagination-bar" class="mx-auto" style="width: 400px;">
+                <br>
+                <div id="pagination-bar" class="mx-auto d-flex justify-content-center">
                     {{ $news->links('pagination::bootstrap-4') }}
                 </div>
             </div>

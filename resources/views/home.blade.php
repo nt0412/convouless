@@ -226,7 +226,7 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
                             <div class="col-sm-4">
                                 <br>
                                 <div class="news_image">
-                                    <a href="{{route('news.show',[$item->news_img])}}">
+                                    <a href="">
                                         <img src="{{ asset('public/images') }}/{{ $item->news_img }}" class="img-fluid">
                                     </a>
                                 </div>

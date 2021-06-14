@@ -35,6 +35,12 @@ use App\Models\News;
             padding-right: 0px;
         }
     }
+    #navbarNav > ul.navbar-nav.ml-auto{
+        display: none;
+    }
+    #grad > div.container{
+        display: none;
+    }
 
     #btn-preview {
         border: linear-gradient(90deg, #f7c626 15%, #f68c2f 40%, #e5127d 85%);

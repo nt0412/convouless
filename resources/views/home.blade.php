@@ -11,12 +11,7 @@
     .w-5{
         display: none;
     }
-    #navbarNav > ul.navbar-nav.ml-auto{
-        display: none;
-    }
-    #grad > div.container{
-        display: none;
-    }
+
 
 </style>
 @php

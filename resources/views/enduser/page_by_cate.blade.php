@@ -1,5 +1,6 @@
 @include('header')
 @php
+// echo number_format("160469213");
 use App\Models\News;
 use App\Models\Author;
 $news = News::get();

@@ -21,7 +21,7 @@ $news = News::paginate(25);
 // dd($news->where('news_id', $newshot1s[0]->news_id)->first()->news_img);
 // dd($news->where('news_id', $newshot1s[1]->news_id));
 // dd($news, $news[0]);
-
+// dd($covid);
 $newshot1_1 = $news[0]->where('news_id', $newshot1s[0]->news_id)->first();
 $newshot1_2 = $news[1]->where('news_id', $newshot1s[1]->news_id)->first();
 $newshot1_3 = $news[2]->where('news_id', $newshot1s[2]->news_id)->first();
@@ -31,7 +31,12 @@ $newshot1_6 = $news[5]->where('news_id', $newshot1s[5]->news_id)->first();
 $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
 // dd($newshot1_2->news_id);
 @endphp
+
 <div class="container" id="grad">
+
+    {{-- api covid --}}
+    @include('enduser.page_covid19')
+
     <div id="newshot1">
         <div class="row">
             <div class="col-sm-8" style="padding: 1px;">

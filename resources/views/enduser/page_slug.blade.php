@@ -3,6 +3,10 @@
 @endphp
 @include('header')
 <style>
+    body{
+        overflow-x: hidden;
+    }
+
     body::-webkit-scrollbar {
         width: 0.25rem;
     }
@@ -29,6 +33,7 @@
         width: 100%;
         text-align: center;
         padding: 0;
+        font-family: 'Anton', sans-serif;
     }
 
     .img-title a {
@@ -112,9 +117,7 @@
                         <img src="{{ asset('images') }}/{{ $item->news_img }}" class="img-fluid">
                         <div class="img-title">
                             <a href="{{ route('news.show', [$item->news_slug]) }}">
-                                <h4 style="font-weight: bold;">
-                                    {{ $item->news_title }}
-                                </h4>
+                                <h4>{{ $item->news_title }}</h4>
                             </a>
                         </div>
                     </div>

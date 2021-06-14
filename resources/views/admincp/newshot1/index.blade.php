@@ -3,6 +3,10 @@
 @include('layouts.nav')
 @php
 use App\Models\News;
+
+$news = News::paginate(25);
+// dd($newshot1s);
+// dd($newshot->news_slug);
 @endphp
 
 <style>
@@ -35,10 +39,12 @@ use App\Models\News;
             padding-right: 0px;
         }
     }
-    #navbarNav > ul.navbar-nav.ml-auto{
+
+    #navbarNav>ul.navbar-nav.ml-auto {
         display: none;
     }
-    #grad > div.container{
+
+    #grad>div.container {
         display: none;
     }
 
@@ -56,6 +62,13 @@ use App\Models\News;
     #btn-preview:hover {
         background: linear-gradient(90deg, #f7c626 15%, #f68c2f 40%, #e5127d 85%);
     }
+
+    table tbody tr td p {
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+    }
 </style>
 <div class="container-fluid">
     <div class="card-header" style="color: gold; text-align: center;">
@@ -68,14 +81,14 @@ use App\Models\News;
     </div>
     @endif
     <div class="row">
-        <div class="col-sm-6" id="table-manage">
+        <div class="col-sm-5" id="table-manage">
             <table class="table" style="border-top: goldenrod solid 2px;">
                 <thead class="thead-light">
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">News's Title</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Tools</th>
+                        <th scope="col" style="width: 10%;">#</th>
+                        <th scope="col" style="width: 30%;">News's Title</th>
+                        <th scope="col" style="width: 30%;">Image</th>
+                        <th scope="col" style="width: 10%;">Tools</th>
                     </tr>
                 </thead>
                 <tbody style="color: whitesmoke;">
@@ -88,8 +101,7 @@ use App\Models\News;
                             </a>
                         </td>
                         <td>
-                            {{-- <img class=""  src="{{asset('public/images/')}}/{{$item->news_img}}" alt="{{$item->news_img}}" height="172px"> --}}
-                            <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="" height="172px">
+                            <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="Post's image" width="150px" height="150px">
                         </td>
                         <td>
                             <a style="color: blue;" class="btn btn-primary" href="{{route('newshot.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
@@ -99,7 +111,7 @@ use App\Models\News;
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-6" id="preview">
+        <div class="col-sm-7" id="preview">
             <h3 style="text-align: center;">
                 <input id="btn-preview" class="btn btn-dark btn-outline-warning" type="button" value="Preview" onclick="window.open('{{asset('/admin/manager/newshot/preview/')}}','preview','fullscreen=yes');">
             </h3>

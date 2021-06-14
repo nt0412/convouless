@@ -108,8 +108,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                                                     $key_ += 1;
                                                 }
                                             @endphp
-                                            <p>number of posts {{ $key_ }}</p>
-                                        </div>
+                                            <p>Number of posts {{$key_}}</p>
                                     </div>
                                 </div>
                             </div>

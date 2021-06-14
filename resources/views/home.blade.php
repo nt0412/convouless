@@ -16,7 +16,7 @@
 </style>
 @php
 use App\Models\Author;
-// dd($covid);
+use App\Models\News;
 
 $newshot1_1 = $news[0]->where('news_id', $newshot1s[0]->news_id)->first();
 $newshot1_2 = $news[1]->where('news_id', $newshot1s[1]->news_id)->first();
@@ -215,7 +215,7 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
                             </div>
                             <div class="col-sm-5 type_2_title">
                                 <a href="{{ route('news.show', [$item->news_slug]) }}">
-                                    <h4 class="lamgon" style="font-weight: bold;">{{ $item->news_title }}</h4>
+                                    <h2 class="lamgon" style="font-weight: bold;">{{ $item->news_title }}</h2>
                                 </a>
                             </div>
                         </div>
@@ -286,7 +286,7 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
                         </div>
                     </div>
                 </div>
-                <div class="mx-auto" style="width: 400px;">
+                <div id="pagination-bar" class="mx-auto" style="width: 400px;">
                     {{ $news->links('pagination::bootstrap-4') }}
                 </div>
             </div>

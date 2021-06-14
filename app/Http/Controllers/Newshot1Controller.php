@@ -72,13 +72,11 @@ class Newshot1Controller extends Controller
     public function edit($id)
     {
         $list_newshot1 = Newshot1::get();
-        // $list_news = DB::table('tblnews')
-        //     ->leftJoin('tblnewshot1', 'tblnews.news_id', '=', 'tblnewshot1.news_id')
-        //     ->get();
-        $list_news = News::orderBy('date_updated','DESC')->get();
+        $list_news = News::where('news_enable', 1)->orderBy('date_updated','DESC')->paginate(25);
+        $news_curen = News::where('news_id', $id)->first();
         $cate = Category::get();
         $author = Author::get();
-        return view('admincp.newshot1.edit')->with(compact('list_news','id','cate','author'));
+        return view('admincp.newshot1.edit')->with(compact('list_news','id','cate','author','news_curen'));
     }
 
     /**

@@ -144,6 +144,9 @@
             @endforeach
         </tbody>
     </table>
+    <div class="mx-auto" style="width: 400px;">
+        {{ $list_news->links('pagination::bootstrap-4') }}
+    </div>
 
 </div>
 @endsection

@@ -23,9 +23,12 @@ class Newshot1Controller extends Controller
     public function index()
     {
 
+        $covid =  Http::get('https://api.apify.com/v2/key-value-stores/EaCBL1JNntjR3EakU/records/LATEST?disableRedirect=true');
+        $covid_world =  Http::get('https://api.apify.com/v2/key-value-stores/SmuuI0oebnTWjRTUh/records/LATEST?disableRedirect=true');
+        $news = News::paginate(25);
         $newshots = Newshot1::join('tblnews', 'tblnews.news_id', '=', 'tblnewshot1.news_id' )->get();
         $newshot1s = $newshots;
-        return view('admincp.newshot1.index')->with(compact('newshot1s'));
+        return view('admincp.newshot1.index')->with(compact('newshot1s','news','covid','covid_world'));
     }
 
     /**

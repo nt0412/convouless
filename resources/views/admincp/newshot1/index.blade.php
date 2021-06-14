@@ -3,11 +3,6 @@
 @include('layouts.nav')
 @php
 use App\Models\News;
-
-$news = News::get();
-// dd($newshot1s);
-
-// dd($newshot->news_slug);
 @endphp
 
 <style>

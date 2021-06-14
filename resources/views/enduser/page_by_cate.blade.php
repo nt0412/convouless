@@ -91,10 +91,11 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                                                     <h4 class="lamgon">{{ $item->news_title }}</h4>
                                                 </a>
                                                 <p class=" lamgon type_3_summary">{{ $item->news_summary }}</p>
-                                                {{-- <p class="type_3_info">By <a href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
-                                    {{ Author::where('author_id', $item->author_id)->first()->author_display_name }}</a> |
-                                    {{ $item->date_updated }}
-                                </p> --}}
+                                                <p class="type_3_info">By
+                                                    <a href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
+                                                    {{ Author::where('author_id', $item->author_id)->first()->author_display_name }}
+                                                    </a> | {{ $item->date_updated }}
+                                                </p>
                                             </div>
                                             <br>
                                             <div class="news_image_type_3">
@@ -149,7 +150,10 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
 
                                                         <div class=" news_static d-flex justify-content-start">
                                                             <div class="author">
-                                                                by <a href="#">John Thomas</a>
+                                                                by <a href="{{ asset('/author') }}/{{ Author::where('author_id', $item->author_id)->first()->author_display_name }}">
+                                                    {{ Author::where('author_id', $item->author_id)->first()->author_display_name }}
+
+                                                            </a>
                                                             </div>
 
                                                             <div style="border-left: 1px solid; margin: 5px;"></div>
@@ -175,43 +179,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                             @endif
 
                         @endforeach
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <br>
-                                <div class="news_image">
-                                    <img src="{{ url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg') }}"
-                                        class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <br>
-                                <div class="title">
-                                    <a href="#">
-                                        <h4 style="font-weight: bold;">Hardware, apps, and much more and much more. From
-                                            top companies like Google and Apple to tiny startups
-                                        </h4>
-                                    </a>
-                                </div>
-                                <div class=" news_static d-flex justify-content-start">
-                                    <div class="author">
-                                        by <a href="#">John Thomas</a>
-                                    </div>
-
-                                    <div style="border-left: 1px solid; margin: 5px;"></div>
-                                    <div class="time">
-                                        {{-- Today at 11:12am --}}
-
-                                    </div>
-                                    <div style="border-left: 1px solid; margin: 5px;"></div>
-
-                                    <div class="comment">
-                                        <a href="#">
-                                            123 comments
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      
                     </div>
                 </div>
             </div>

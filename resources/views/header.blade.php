@@ -367,6 +367,32 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         body::-webkit-scrollbar-thumb {
             background: #cc165c;
         }
+
+        .page-link {
+            background-color: white;
+            color: #cc165c;
+            border-color: #cc165c;
+        }
+
+        .page-link:hover {
+            background-color: black;
+            color: white;
+            border-color: #cc165c;
+        }
+
+        .page-item.active .page-link {
+            z-index: 3;
+            color: #fff;
+            background-color: #cc165c;
+            border-color: #cc165c;
+        }
+
+        .page-item.disabled .page-link {
+            color: #cc165c;
+            pointer-events: none;
+            background-color: white;
+            border-color: #cc165c;
+        }
     </style>
 </head>
 
@@ -374,7 +400,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
     <div class="container">
         <div class="row">
             <nav class="navbar navbar-expand-md navbar-dark" style="background-color: black !important;">
-                <a class="navbar-brand" href="../../../Convouless/">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{url('image/logo.png')}}" class="img-fluid">
                 </a>
 
@@ -427,7 +453,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
                         <!-- Search engine -->
                         <div class="search-box">
                             <form method="get" action="{{url('/search')}}">
-                                <input class="search-txt" name="query" type="text" placeholder="Searching for ..." aria-label="Search">
+                                <input id="search" class="search-txt" name="query" type="text" placeholder="Searching for ..." aria-label="Search">
                                 <a class="search-btn" type="submit"><i class="fas fa-search" style="padding: 6px;"></i></a>
                             </form>
                         </div>

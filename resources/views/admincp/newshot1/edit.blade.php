@@ -140,15 +140,11 @@
                 </ul>
             </div> -->
 
-            @php
-            // dd($list_news);
-            @endphp
+            {{-- @php
+            dd($list_news);
+            @endphp --}}
             <div class="row">
-                <div class="col-sm-4" id="post-profile">
-                    @php
-                    $news_curen = $list_news->where('news_id', $id)->first();
-                    // dd($id,$news_curen);
-                    @endphp
+                <div class="col-sm-4" id="post-profile" style="position: fixed; top: 137px">
                     <div class="col-sm-8">
                         <img class="post-image" src="{{ asset('public/images') }}/{{ $news_curen->news_img }}" alt="Post's image">
                     </div>
@@ -161,7 +157,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-8" id="table-manage">
+                <div class="col-sm-8" id="table-manage" style="position: absolute; right: 23">
                     <table class="table" id="news-list" style="border-top: goldenrod solid 2px;">
                         <thead class="thead-light">
                             <tr>
@@ -179,130 +175,70 @@
                         <tbody style="color: whitesmoke;">
                             @foreach ($list_news as $key => $item)
                             {{-- loại bọ id đang chỉnh sửa, hoặc các item bị ẩn --}}
-                            @if ($item->news_id != $id && $item->news_enable == 1)
-                            <tr>
-                                <form class="box" method="POST" action="{{ route('newshot.update', [$item->news_id]) }}" style="padding: 0 5%;" enctype="multipart/form-data">
-                                    @method('PUT')
-                                    @csrf
-                                    <th>
-                                        <p class="text-in-table">{{ $key + 1 }}</p>
-                                    </th>
-                                    <td>
-                                        <p class="text-in-table">{{ $item->news_id }}</p>
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('news.show', [$item->news_slug]) }}">
-                                            <p>{{ $item->news_title }}</p>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="Post's image" width="100px" height="100px">
-                                    </td>
-                                    <td>
-                                        <a href="#">
-                                            {{ $cate->where('category_id', $item->category_id)->first()->category_name }}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#">
-                                            {{ $author->where('author_id', $item->author_id)->first()->author_display_name }}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <p class="text-in-table">{{ $item->date_posted }}</p>
-                                    </td>
-                                    <td>
-                                        @if ($item->news_enable == 1)
-                                        <span class="text text-success">Enable</span>
-                                        @elseif($item->news_enable == 0)
-                                        <span class="text text-danger">Disenable</span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <input style="display: none" type="text" name="news_select" value="{{$item->news_id}}">
-                                        <input style="display: none" type="text" name="id_curen" value="{{$id}}">
-                                        <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add" value="{{$item->news_id}}">Update</button>
-                                    </td>
-                                </form>
-                            </tr>
-                            @else
-                            @php
-                            continue;
-                            @endphp
-                            @endif
+                                @if ($item->news_id != $id && $item->news_enable == 1)
+                                    <tr>
+                                        {{-- {{dd($list_news)}} --}}
+                                        <form class="box" method="POST" action="{{ route('newshot.update', [$item->news_id]) }}" style="padding: 0 5%;" enctype="multipart/form-data">
+                                            @method('PUT')
+                                            @csrf
+                                            <th>
+                                                <p class="text-in-table">{{ $key + 1 }}</p>
+                                            </th>
+                                            <td>
+                                                <p class="text-in-table">{{ $item->news_id }}</p>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('news.show', [$item->news_slug]) }}">
+                                                    <p>{{ $item->news_title }}</p>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="Post's image" width="100px" height="100px">
+                                            </td>
+                                            <td>
+                                                <a href="#">
+                                                    {{ $cate->where('category_id', $item->category_id)->first()->category_name }}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="#">
+                                                    {{ $author->where('author_id', $item->author_id)->first()->author_display_name }}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <p class="text-in-table">{{ $item->date_posted }}</p>
+                                            </td>
+                                            <td>
+                                                @if ($item->news_enable == 1)
+                                                <span class="text text-success">Enable</span>
+                                                @elseif($item->news_enable == 0)
+                                                <span class="text text-danger">Disenable</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <input style="display: none" type="text" name="news_select" value="{{$item->news_id}}">
+                                                <input style="display: none" type="text" name="id_curen" value="{{$id}}">
+                                                <button type="submit" class="btn btn-dark btn-outline-warning" name="btn-add" value="{{$item->news_id}}">Update</button>
+                                            </td>
+                                        </form>
+                                    </tr>
+                                @else
+                                    @php
+                                        // dd($list_news);
+                                        continue;
+                                    @endphp
+                                @endif
 
                             @endforeach
                         </tbody>
                     </table>
+                    <div id="pagination-bar" class="mx-auto" style="width: 400px;">
+                        {{ $list_news->links('pagination::bootstrap-4') }}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-{{-- <script>
-    $(document).ready(function() {
-
-        $('#news_name').keyup(function() { //bắt sự kiện keyup khi người dùng gõ từ khóa tim kiếm
-            var query = $(this).val(); //lấy gía trị ng dùng gõ
-            if (query != '') //kiểm tra khác rỗng thì thực hiện đoạn lệnh bên dưới
-            {
-                var _token = $('input[name="_token"]').val(); // token để mã hóa dữ liệu
-                $.ajax({
-                    url: "{{ route('search') }}", // đường dẫn khi gửi dữ liệu đi 'search' là tên route mình đặt bạn mở route lên xem là hiểu nó là cái j.
-method: "POST", // phương thức gửi dữ liệu.
-data: {
-query: query,
-_token: _token
-},
-success: function(data) { //dữ liệu nhận về
-$('#newsList').fadeIn();
-$('#newsList').html(
-data
-); //nhận dữ liệu dạng html và gán vào cặp thẻ có id là newsList
-
-}
-});
-}
-});
-
-$(document).on('click', 'li', function() {
-$('#news_name').val($(this).text());
-// lấy giá trị của người dùng nhập vàp thông qua jquery và #news_name
-$('#output').val($(this).text());
-
-$('#newsList').fadeOut();
-});
-
-});
-
-</script> --}}
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        var action = "search";
-        $("#search_name").keyup(function() {
-            var search_name = $("#search_name").val();
-            if ($("#search_name").val() != '') {
-                $.ajax({
-                    url: "edit",
-                    method: "POST",
-                    data: {
-                        action: action,
-                        search_name: search_name
-                    },
-                    success: function(data) {
-                        $("#output_search").html(data);
-                    }
-                });
-                console.log(action);
-
-            } else {
-                $("#output_search").html("");
-
-            }
-
-        });
-    });
-</script>
 {{-- @endsection --}}

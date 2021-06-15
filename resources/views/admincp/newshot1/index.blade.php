@@ -96,7 +96,7 @@ $news = News::paginate(25);
                     <tr>
                         <th scope="row">{{(integer)$key+1}}</th>
                         <td>
-                            <a href="{{$item->news_slug}}">
+                            <a style="text-decoration: none; color: goldenrod;" href="{{$item->news_slug}}">
                                 <p>{{$item->news_title}}</p>
                             </a>
                         </td>
@@ -104,7 +104,7 @@ $news = News::paginate(25);
                             <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="Post's image" width="150px" height="150px">
                         </td>
                         <td>
-                            <a style="color: blue;" class="btn btn-primary" href="{{route('newshot.edit',[$item->news_id])}}"><img src="{{url('image\edit_icon.png')}}" alt=""></a>
+                            <a style="color: blue;" class="btn btn-dark btn-outline-warning" href="{{route('newshot.edit',[$item->news_id])}}"><i class="fas fa-exchange-alt" style="font-size: 2rem; color: goldenrod;"></i></a>
                         </td>
                     </tr>
                     @endforeach

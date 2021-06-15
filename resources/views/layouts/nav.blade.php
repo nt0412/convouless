@@ -154,7 +154,7 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
-                <a style="font-weight: bold; color: goldenrod;" class="dropdown-item" href="{{ route('main-category.create') }}">Info</a>
+                <!-- <a style="font-weight: bold; color: goldenrod;" class="dropdown-item" href="{{ route('main-category.create') }}">Info</a> -->
             </div>
         </li>
         <li>
@@ -193,7 +193,7 @@
             </a>
             <div class="dropdown-menu" style="background: black;" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{route('newshot.index')}}">Hot News</a>
-                <a class="dropdown-item" href="#">Post Page</a>
+                <!-- <a class="dropdown-item" href="#">Post Page</a> -->
             </div>
         </li>
 

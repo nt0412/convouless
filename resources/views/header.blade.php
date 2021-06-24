@@ -33,9 +33,46 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         body {
             font-family: 'Nunito', sans-serif;
             color: whitesmoke;
-            background-color: black;
+            background-color: #080808;
+        }
+        .stick{
+            position: sticky;
+            top: 50px;
+        }
+        .stick img{
+            border-radius: 10px 10px 0px 0px !important;
         }
 
+        .content img{
+            border-radius: 10px;
+        }
+
+        .side-news{
+            background: #080808;
+            border-radius: 0px 0px 10px 10px !important;
+            border-top: 2px solid #cc165c;
+        }
+        .side-news a{
+            text-decoration: none;
+            color: white;
+            font-family: 'Anton', sans-serif;
+        }
+        .side-news a:hover{
+            color: #cc165c;
+        }
+
+        .side-news .side-title{
+            position: absolute;
+            bottom: 0px;
+            background: rgba(0, 0, 0);
+            width: 100%;
+            text-align: left;
+            padding-left: 16px;
+            padding-top: 16px;
+            margin-right: 1px;
+            text-transform: uppercase;
+            border-radius: 0px 0px 10px 10px;
+        }
         #navbarNav {
             transition: 0.5s;
             color: transparent;
@@ -59,7 +96,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         }
 
         .dropdown-menu a:hover {
-            background-color: black;
+            background-color: #080808;
             color: #cc165c;
         }
 
@@ -87,7 +124,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         }
 
         .content {
-            color: black;
+            color: #080808;
         }
 
         ul li {
@@ -139,7 +176,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         }
 
         .title a {
-            color: black;
+            color: #080808;
             text-decoration: none;
             text-transform: uppercase;
         }
@@ -179,6 +216,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
             padding-top: 16px;
             margin-right: 1px;
             text-transform: uppercase;
+            border-radius: 0px 0px 10px 10px;
         }
 
         .title-big {
@@ -245,7 +283,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         }
 
         #newshot1 .card {
-            border-radius: 0px;
+            border-radius: 10px;
             background: transparent;
         }
 
@@ -323,7 +361,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         .search-btn {
             float: right;
             border-radius: 50%;
-            background-color: black;
+            background-color: #080808;
             align-items: center;
             transition: 0.5s;
             color: #343a40;
@@ -352,7 +390,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         }
 
         ::placeholder {
-            color: black;
+            color: #080808;
             opacity: 1;
         }
 
@@ -361,7 +399,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         }
 
         body::-webkit-scrollbar-track {
-            background: black;
+            background: #080808;
         }
 
         body::-webkit-scrollbar-thumb {
@@ -375,7 +413,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
         }
 
         .page-link:hover {
-            background-color: black;
+            background-color: #080808;
             color: white;
             border-color: #cc165c;
         }
@@ -399,7 +437,7 @@ $list_main_cate = MainCategory::orderBy('main_cate_name','DESC')->get();
 <body>
     <div class="container">
         <div class="row">
-            <nav class="navbar navbar-expand-md navbar-dark" style="background-color: black !important;">
+            <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #080808 !important;">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{url('image/logo.png')}}" class="img-fluid">
                 </a>

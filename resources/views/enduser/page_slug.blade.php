@@ -2,6 +2,12 @@
 // dd($news->date_posted->format());
 @endphp
 @include('header')
+
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
 <style>
     body {
         overflow-x: hidden;
@@ -58,6 +64,22 @@
         height: 22rem;
     }
 
+    .news_title {
+        font-size: 4rem;
+        font-family: 'Roboto', sans-serif;
+        text-transform: uppercase;
+        line-height: 1em;
+    }
+
+    .content a {
+        color: #cc165c;
+        text-decoration: none;
+    }
+
+    .content img{
+        border-radius: 10px;
+    }
+
     @media (max-width: 640px) {
         .img-title a {
             font-size: 0.7rem;
@@ -89,14 +111,10 @@
     }
 </style>
 <div class="container-fluid" style="background: white; padding: 0; margin: 0;">
-    <div class="news-main-image text-center">
-        <!-- ĐỂ XUẤT RA MAIN IMAGE CỦA BÀI VIẾT -->
-        <img src="{{ asset('images') }}/@php echo $news->news_img; @endphp" class="img-fluid">
-    </div>
     <div class="container" style="background-color: white !important; color: black;">
         <div class="title">
             <!-- TITLE CỦA BÀI VIẾT -->
-            <h1>{{ $news->news_title }}</h1>
+            <p class="news_title">{{ $news->news_title }}</p>
             <div class="author">
                 <!-- TÁC GIÀ, KÈM NGÀY THÁNG NĂM NẾU CÓ -->
                 <p>by <a href="#" style="color: #cc165c;">{{ $authors->author_display_name }}</a> | {{ $news->date_updated }}</p>
@@ -104,7 +122,7 @@
         </div>
         <div class="content fs-4">
             <!-- NỘI DUNG BÀI VIẾT -->
-            <p>
+            <p style="font-family: sans-serif;">
                 @php
                 echo $news->news_content;
                 @endphp
@@ -129,7 +147,7 @@
             @endphp
             @else
             <div class="item">
-                <img src="{{ asset('images') }}/{{ $item->news_img }}" class="img-fluid">
+                <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="{{$item->news_title}}" class="img-fluid">
                 <div class="img-title">
                     <a href="{{ route('news.show', [$item->news_slug]) }}">
                         <p>{{ $item->news_title }}</p>

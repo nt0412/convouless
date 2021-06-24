@@ -156,7 +156,7 @@
             </form>
         </div>
     </body>
-    <script>
+    <script type="text/javascript">
         imgInp.onchange = evt => {
             const [file] = imgInp.files
             if (file) {

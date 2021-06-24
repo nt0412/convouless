@@ -3,7 +3,7 @@
 // echo number_format("160469213");
 @endphp
 <div class="container" id="api-covid">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000" style="background-color: black;">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000" style="background-color: #080808;">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="row mx-auto">

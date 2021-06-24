@@ -28,16 +28,16 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
 @endphp
 <!-- API COVID 19 -->
 @include('enduser.page_covid19')
-<div class="container" id="grad">
+<div class="container" id="grad" style="border-radius: 10px;">
     <div id="newshot1">
         <div class="row">
             <div class="col-sm-8" style="padding: 1px;">
                 <div class="card">
                     <div class="row" style="margin-right: 0;">
                         <div class="col-sm-6" style="padding-right: 0;">
-                            <img src="{{ asset('public/images') }}/{{ $newshot1_1->news_img }}">
+                            <img style="border-radius: 10px 0px 0px 10px;" src="{{ asset('public/images') }}/{{ $newshot1_1->news_img }}">
                         </div>
-                        <div class="col-sm-6" style="background: black;">
+                        <div class="col-sm-6" style="background: black; border-radius: 0px 10px 10px 0px;">
                             <div class="title-main">
                                 <a href="{{route('news.show',[$newshot1_1->news_slug])}}">
                                     <h2 class="title-big">{{ $newshot1_1->news_title }} </h2>
@@ -53,8 +53,8 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
             </div>
             <div class="col-sm-4" style="padding: 1px;">
                 <div class="card">
-                    <img src="{{ asset('public/images') }}/{{ $newshot1_2->news_img }}" class="img-fluid">
-                    <div class="hot-title">
+                    <img style="border-radius: 10px" src="{{ asset('public/images') }}/{{ $newshot1_2->news_img }}" class="img-fluid">
+                    <div class="hot-title" style="border-radius: 0px 0px 10px 10px;">
                         <a href="{{route('news.show',[$newshot1_2->news_slug])}}">
                             <h4 class="title-mini lamgon lamgon">{{ $newshot1_2->news_title }}</h4>
                         </a>
@@ -68,8 +68,8 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
         <div class="row">
             <div class="col-sm-4" style="padding: 1px;">
                 <div class="card">
-                    <img src="{{ asset('public/images') }}/{{ $newshot1_3->news_img }}" class="img-fluid">
-                    <div class="hot-title">
+                    <img style="border-radius: 10px" src="{{ asset('public/images') }}/{{ $newshot1_3->news_img }}" class="img-fluid">
+                    <div class="hot-title" style="border-radius: 0px 0px 10px 10px;">
                         <a href="{{route('news.show',[$newshot1_3->news_slug])}}">
                             <h4 class="title-mini lamgon">{{ $newshot1_3->news_title }}</h4>
                         </a>
@@ -80,7 +80,7 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
             <div class="col-sm-8" style="padding: 1px;">
                 <div class="card">
                     <div class="row" style="margin-right: 0; margin-left: 0;">
-                        <div class="col-sm-6 p-0" style="background: black;">
+                        <div class="col-sm-6" style="background: black; border-radius: 10px 0px 0px 10px;">
                             <div class="title-main">
                                 <a href="{{route('news.show',[$newshot1_4->news_slug])}}">
                                     <h2 class="title-big lamgon">{{ $newshot1_4->news_title }} </h2>
@@ -89,7 +89,7 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
                             </div>
                         </div>
                         <div class="col-sm-6 p-0">
-                            <img src="{{ asset('public/images') }}/{{ $newshot1_4->news_img }}">
+                            <img style="border-radius: 0px 10px 10px 0px;" src="{{ asset('public/images') }}/{{ $newshot1_4->news_img }}">
                         </div>
                     </div>
                 </div>
@@ -99,9 +99,9 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
         <div class="row">
             <div class="col-sm-4" style="padding: 1px;">
                 <div class="card">
-                    {{-- <a href="{{route('news.show',[$newshot1_5->news_slug])}}"> --}}
-                    <img src="{{ asset('public/images') }}/{{ $newshot1_5->news_img }}" class="img-fluid">
-                    {{-- </a> --}}
+                    <a href="{{route('news.show',[$newshot1_5->news_slug])}}">
+                        <img style="border-radius: 10px;" src="{{ asset('public/images') }}/{{ $newshot1_5->news_img }}" class="img-fluid">
+                    </a>
                     <div class="hot-title">
                         <a href="{{route('news.show',[$newshot1_5->news_slug])}}">
                             <h4 class="title-mini lamgon">{{ $newshot1_5->news_title }}</h4>
@@ -113,9 +113,9 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
 
             <div class="col-sm-4" style="padding: 1px;">
                 <div class="card">
-                    {{-- <a href="{{route('news.show',[$newshot1_6->news_slug])}}"> --}}
-                    <img src="{{ asset('public/images') }}/{{ $newshot1_6->news_img }}" class="img-fluid">
-                    {{-- </a> --}}
+                    <a href="{{route('news.show',[$newshot1_6->news_slug])}}">
+                        <img style="border-radius: 10px;" src="{{ asset('public/images') }}/{{ $newshot1_6->news_img }}" class="img-fluid">
+                    </a>
                     <div class="hot-title">
                         <a href="{{route('news.show',[$newshot1_6->news_slug])}}">
                             <h4 class="title-mini lamgon">{{ $newshot1_6->news_title }}</h4>
@@ -126,9 +126,9 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
             </div>
             <div class="col-sm-4" style="padding: 1px;">
                 <div class="card">
-                    {{-- <a href="{{route('news.show',[$newshot1_7->news_slug])}}"> --}}
-                    <img src="{{ asset('public/images') }}/{{ $newshot1_7->news_img }}" class="img-fluid">
-                    {{-- </a> --}}
+                    <a href="{{route('news.show',[$newshot1_7->news_slug])}}">
+                        <img style="border-radius: 10px;" src="{{ asset('public/images') }}/{{ $newshot1_7->news_img }}" class="img-fluid">
+                    </a>
                     <div class="hot-title">
                         <a href="{{route('news.show',[$newshot1_7->news_slug])}}">
                             <h4 class="title-mini lamgon">{{ $newshot1_7->news_title }}</h4>
@@ -141,15 +141,6 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
     </div>
 
     <div id="tinthuong">
-        <div class="mota" style="text-align: center;">
-            <h3 class="fs-1 text-uppercase " style="font-weight: bold;">tech</h3>
-            <p class="fs-4">The latest tech news about the world's best
-                (and sometimes worst) hardware, apps, and much more. From
-                top companies like Google and Apple to tiny startups vying
-                for your attention, Verge Tech has the latest in what matters in technology daily.</p>
-        </div>
-
-
         <div class="content">
             <div class="row" style="background-color: white;">
                 <div class="col-sm-8">
@@ -158,20 +149,25 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
                     @php
                     // tạo một mảng với các vị trí đánh số dạng trình bày
                     $index_news;
-                    foreach ($news as $key => $value){
-                    // $key = $key_i + 1;
-                    // $index_news[$key] = rand(1,4);
-                    if (($key + 1) % (5 + rand(0, 2)) == 0 && $index_news[$key - 1] != 3){
-                    $index_news[$key] = 3;
-                    }
-                    else{
-                    if (($key + 1) % (3 + rand(0, 2)) == 0 && $index_news[$key - 1] != 2){
-                    $index_news[$key] = 2;
-                    }
-                    else{
-                    $index_news[$key] = 1;
-                    }
-                    }
+                    foreach ($news as $key => $value)
+                    {
+                        // $key = $key_i + 1;
+                        // $index_news[$key] = rand(1,4);
+                        if (($key + 1) % (5 + rand(0, 2)) == 0 && $index_news[$key - 1] != 3)
+                        {
+                            $index_news[$key] = 3;
+                        }
+                        else
+                        {
+                            if (($key + 1) % (3 + rand(0, 2)) == 0 && $index_news[$key - 1] != 2)
+                            {
+                                $index_news[$key] = 2;
+                            }
+                            else
+                            {
+                                $index_news[$key] = 1;
+                            }
+                        }
                     }
                     @endphp
 
@@ -182,7 +178,7 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
                     @endphp
                     @else
                     @if ($index_news[$key] == 3)
-                    <div class="type_3" style="background: black;">
+                    <div class="type_3" style="background: black; border-radius: 10px;">
                         <div class="type_3_title">
                             <a href="{{ route('news.show', [$item->news_slug]) }}">
                                 <h2 class="lamgon">{{ $item->news_title }}</h2>
@@ -260,27 +256,20 @@ $newshot1_7 = $news[6]->where('news_id', $newshot1s[6]->news_id)->first();
 
                     @endforeach
                 </div>
-
+                <br>
+                <br>
                 <div class="col-sm-4">
-                    <div class="video">
-                        <h4 class="text-center fs-1" style="border-bottom: 2px solid #b973ff; font-family: sans-serif; margin-top: 2%;">News
-                            video
-                        </h4>
-                        <div class="video_items">
-                            <ul style="padding-left: 0px;">
-                                <li style="position: relative;">
-                                    <div style="overflow: hidden;">
-                                        <img class="img-fluid" src="{{ url('/image/4e605c29cd9620b59d7eeacfe40c1fe2.jpg') }}" alt="">
-                                    </div>
-                                    <i class="fas fa-play" style="color:whitesmoke; position: absolute;top: 35%;font-size: 80px;right: 39%;"></i>
-                                </li>
-                                <li class="title">
-                                    <a href="">
-                                        <h5 style="font-weight: bold;">Hardware, apps, and much more and much more. From
-                                            top companies like Google and Apple to tiny startups</h5>
+                    <div class="stick">
+                        <h1 style="text-align: center; font-family: 'Anton'; color: #cc165c;">HOT NEWS</h1>
+                        <div class="side-news-1">
+                            <img src="{{ asset('public/images') }}/{{ $newshot1_1->news_img }}" class="img-fluid">
+                            <div class="side-news">
+                                <div class="side-title">
+                                    <a href="{{route('news.show',[$newshot1_1->news_slug])}}">
+                                        <h2>{{ $newshot1_1->news_title }}</h2>
                                     </a>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

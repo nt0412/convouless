@@ -118,7 +118,7 @@ class newsController extends Controller
         $news = News::where('news_slug', $slug)->first();
         $authors = Author::where('author_id', $news->author_id)->first();
         // list các bài biết liên quan theo loại
-        $list_news_by_cate = News::where('category_id', $news->category_id)->get();
+        $list_news_by_cate = News::where('category_id', $news->category_id)->orderBy('news_id', 'DESC')->get();
         $list_news_by_author = News::where('author_id', $authors->author_id)->orderBy('date_posted', 'DESC')->get();
         return view('enduser.page_slug')->with(compact('list_news_by_cate', 'list_news_by_author', 'news', 'authors'));
     }

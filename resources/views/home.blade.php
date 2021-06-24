@@ -1,6 +1,9 @@
 @include('banner')
 @include('header')
-
+@php
+use App\Models\News;
+$news = News::with('category')->orderBy('news_id', 'DESC')->paginate(25);
+@endphp
 <style>
     .lamgon {
         -webkit-line-clamp: 3;
@@ -15,7 +18,7 @@
 </style>
 @php
 use App\Models\Author;
-use App\Models\News;
+
 
 $newshot1_1 = $news[0]->where('news_id', $newshot1s[0]->news_id)->first();
 $newshot1_2 = $news[1]->where('news_id', $newshot1s[1]->news_id)->first();

@@ -6,6 +6,10 @@ $news = News::get();
 $auth = Author::where('author_id', 1)->first()->author_display_name;
 @endphp
 <style>
+    img{
+        border-radius: 10px;
+    }
+
     body {
         overflow-x: hidden;
     }
@@ -41,13 +45,13 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
 <div class="container">
     <h1 style="text-align: center; font-family: sans-serif; text-transform: capitalize">{{ $cate_name }}'s NEWS</h1>
     <!-- Những bài viết mới nhất data posts-->
-    <div class="row" id="grad">
+    <div class="row" id="grad" style="border-radius: 10px;">
         @foreach ($list_news as $key => $item)
         @if ($key < 2)
         <div class="col-sm-6" style="padding: 1px;">
             <div class="card">
                 <a href="{{ route('news.show', [$item->news_slug]) }}">
-                    <img class="img-fluid" src="{{ asset('public/images') }}/{{ $item->news_img }}">
+                    <img style="width: 100%; height: 30rem;" src="{{ asset('public/images') }}/{{ $item->news_img }}">
                 </a>
                 <div class="hot-title">
                     <a href="{{ route('news.show', [$item->news_slug]) }}" style="color: white">
@@ -100,7 +104,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                         @else
                         @if ($key >= 2)
                         @if ($index_news[$key] == 3)
-                        <div class="type_3" style="background: black;">
+                        <div class="type_3" style="background: black; border-radius: 10px;">
                             <div class="type_3_title">
                                 <a href="{{ route('news.show', [$item->news_slug]) }}">
                                     <h4 class="lamgon">{{ $item->news_title }}</h4>
@@ -113,7 +117,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
                                 </p>
                             </div>
                             <br>
-                            <div class="news_image_type_3">
+                            <div class="news_image_type_3" style="border-radius: 10px;">
                                 <a href="{{ route('news.show', [$item->news_slug]) }}">
                                     <img src="{{ asset('public/images') }}/{{ $item->news_img }}">
                                 </a>

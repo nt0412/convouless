@@ -6,6 +6,8 @@ $news = News::get();
 $auth = Author::where('author_id', 1)->first()->author_display_name;
 @endphp
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@600&display=swap');
+
     img{
         border-radius: 10px;
     }
@@ -43,7 +45,7 @@ $auth = Author::where('author_id', 1)->first()->author_display_name;
 </style>
 
 <div class="container">
-    <h1 style="text-align: center; font-family: sans-serif; text-transform: capitalize">{{ $cate_name }}'s NEWS</h1>
+    <p style="text-align: center; font-family: Mukta Vaani; text-transform: uppercase; font-size: 4.5rem; margin-bottom: 0px;">{{ $cate_name }}</p>
     <!-- Những bài viết mới nhất data posts-->
     <div class="row" id="grad" style="border-radius: 10px;">
         @foreach ($list_news as $key => $item)

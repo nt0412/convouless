@@ -76,10 +76,18 @@
             margin: 0;
         }
     }
+
+    .preview-footer a{
+        color: white;
+    }
+
+    .preview-footer p{
+        color: white;
+    }
 </style>
 <div class="container-fluid">
     <div class="card-header" style="color: gold; text-align: center;">
-        <h2>Post list</h2>
+        <h2>FOOTER</h2>
     </div>
     @if (session('status'))
     <div class="alert alert-success" role="alert">
@@ -90,8 +98,8 @@
         <thead class="thead-light">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col" >News's name</th>
-                <th scope="col" >destions</th>
+                <th scope="col" >Title</th>
+                <th scope="col" >Content</th>
                 <th scope="col" >icon</th>
                 <th scope="col" style="width: 10%;">Status</th>
 
@@ -124,9 +132,11 @@
             @endforeach
         </tbody>
     </table>
-    <div class="">
+    <div class="preview-footer">
         <div class="container">
-            <label for="" class="text-white"><h3>preview</h3></label>
+            <div class="d-flex justify-content-center">
+                <h2 style="color: goldenrod;">PREVIEW</h2>
+            </div>
             @include('footer')
         </div>
     </div>

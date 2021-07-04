@@ -1,10 +1,8 @@
-@extends('layouts.app')
 @section('content')
 @include('layouts.nav')
 <header>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     {{-- search --}}
-    <title>Ajax search</title>
 
     <style type="text/css">
         body {
@@ -89,7 +87,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        {{-- tìm kiếm bài viết --}}
+        <!-- {{-- tìm kiếm bài viết --}} -->
         <div class="col-sm-12">
             <h3 style="color: goldenrod; text-align: center;">Edit Hot News</h3><br />
             <!-- <div class="form-group" style="margin: 10px">
@@ -100,7 +98,7 @@
                     <div id="newsList" style="position: absolute"><br>
                     </div>
                 </div> -->
-            {{ csrf_field() }}
+            <!-- {{ csrf_field() }} -->
             <!-- <div class="">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
@@ -140,21 +138,24 @@
                 </ul>
             </div> -->
 
-            {{-- @php
+            <!-- {{-- @php
             dd($list_news);
-            @endphp --}}
+            @endphp --}} -->
             <div class="row">
                 <div class="col-sm-4" id="post-profile" style="position: fixed; top: 137px">
                     <div class="col-sm-8">
                         <img class="post-image" src="{{ asset('public/images') }}/{{ $news_curen->news_img }}" alt="Post's image">
                     </div>
                     <div class="co-sm-4">
+                        <div class="d-flex justify-content-center">
                         <div class="post-detail">
                             <p>Post's ID: {{ $id }}</p>
                             <p>Category: {{ $cate->where('category_id', $news_curen->category_id)->first()->category_name }}</p>
                             <p style="font-weight: bold; font-size: large;">Title: {{ $news_curen->news_title }}</p>
                             <p>Author: {{ $author->where('author_id', $news_curen->author_id)->first()->author_display_name }}</p>
                         </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-sm-8" id="table-manage" style="position: absolute; right: 23">

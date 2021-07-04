@@ -10,6 +10,8 @@ $news = News::paginate(25);
 @endphp
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
     @media (max-width: 1000px) {
         .side-bar {
             left: -60px;
@@ -69,10 +71,30 @@ $news = News::paginate(25);
         overflow: hidden;
         display: -webkit-box;
     }
+
+    #table-manage a {
+        font-family: 'Lato', sans-serif;
+    }
+
+    a h3:hover{
+        color: black;
+    }
+
+    a h3 i:hover{
+        color: black;
+    }
+
+    #table-manage i{
+        font-size: 2rem; 
+        color: goldenrod;
+    }
+    #table-manage i:hover{
+        color: black;
+    }
 </style>
 <div class="container-fluid">
     <div class="card-header" style="color: gold; text-align: center;">
-        <h2>Hot news list</h2>
+        <h2 style="font-family: 'Lato'; text-transform: uppercase;">Hot news list</h2>
         <hr>
     </div>
     @if (session('status'))
@@ -104,16 +126,21 @@ $news = News::paginate(25);
                             <img src="{{asset('public/images/')}}/{{$item->news_img}}" alt="Post's image" width="150px" height="150px">
                         </td>
                         <td>
-                            <a style="color: blue;" class="btn btn-dark btn-outline-warning" href="{{route('newshot.edit',[$item->news_id])}}"><i class="fas fa-exchange-alt" style="font-size: 2rem; color: goldenrod;"></i></a>
+                            <a class="btn btn-dark btn-outline-warning" href="{{route('newshot.edit',[$item->news_id])}}">REPLACE<i class="fas fa-exchange-alt"></i></a>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+            <div class="d-flex justify-content-center">
+                <a style="color: goldenrod;" class="btn btn-dark btn-outline-warning" href="{{route('newshot.index')}}">
+                    <h3>REFRESH <i class="fas fa-sync-alt"></i></h3> 
+                </a>
+            </div>
         </div>
         <div class="col-sm-7" id="preview">
-            <h3 style="text-align: center;">
-                <input id="btn-preview" class="btn btn-dark btn-outline-warning" type="button" value="Preview" onclick="window.open('{{asset('/admin/manager/newshot/preview/')}}','preview','fullscreen=yes');">
+            <h3 style="text-align: center; font-family: 'Lato', Courier, monospace;">
+                <input id="btn-preview" class="btn btn-dark btn-outline-warning" type="button" value="Preview" onclick="window.open('{{asset('/')}}','preview','fullscreen=yes');">
             </h3>
             <div id="preview">
                 @include('admincp.newshot1.preview')

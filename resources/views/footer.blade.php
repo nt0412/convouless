@@ -26,7 +26,7 @@ use App\Models\Footer;
                 <div class="contact">
                     <ul style="list-style: none;">
                         <li>
-                            Advertise with us: <a href="#">mediahelp@iwontcheck.com</a>
+                            <a href="#">Advertise with us: mediahelp@iwontcheck.com</a>
                         </li>
                         <li>
                             <a href="{{$footer[5]->desitions}}">

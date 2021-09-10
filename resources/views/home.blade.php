@@ -2,7 +2,7 @@
 @include('header')
 @php
 use App\Models\News;
-$news = News::with('category')->orderBy('news_id', 'DESC')->paginate(25);
+$news = News::where('news_enable',1)->with('category')->orderBy('news_id', 'DESC')->paginate(25);
 @endphp
 <style>
     .lamgon {

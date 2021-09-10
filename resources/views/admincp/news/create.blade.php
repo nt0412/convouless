@@ -224,12 +224,12 @@
             // toolbar: [ 'ckfinder'],
 
             // ckfinder uload file
-            filebrowserBrowseUrl: '<?php asset('
-            public '); ?>/ckfinder/ckfinder.html',
-            filebrowserUploadUrl: '<?php asset('
-            public '); ?>/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=image',
-            filebrowserWindowWidth: '1000',
-            filebrowserWindowHeight: '700',
+            filebrowserBrowseUrl: '{{asset('public')}}/ckfinder/ckfinder.html', 
+    filebrowserImageBrowseUrl: '{{asset('public')}}/ckfinder/ckfinder.html?Type=Images',
+    filebrowserUploadUrl: '{{asset('public')}}/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+    filebrowserImageUploadUrl: '{{asset('public')}}/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+    filebrowserWindowWidth : '1000',
+    filebrowserWindowHeight : '700'
 
         });
 

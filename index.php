@@ -1,4 +1,5 @@
 <?php
+// phpinfo();
 
 /**
  * Laravel - A PHP Framework For Web Artisans
@@ -17,5 +18,15 @@ $uri = urldecode(
 if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
     return false;
 }
+
+function write_to_console($data) {
+    $console = $data;
+    if (is_array($console))
+    $console = implode(',', $console);
+   
+    echo "<script>console.log('Console: " . $console . "' );</script>";
+   }
+   write_to_console(__DIR__);
+   write_to_console([1,2,3]);
 
 require_once __DIR__.'/public/index.php';

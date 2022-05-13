@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 // home page
 Route::get('/home', [Newshot1Controller::class, 'showhome']);
 Route::get('/', [Newshot1Controller::class, 'showhome']);
+// Route::get('/', [Newshot1Controller::class, 'showhome']);
 
 Auth::routes();
 // admin page

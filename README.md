@@ -53,4 +53,9 @@ pass: admin@gmail.com
 
 pass: 12345678
 
-image
+#image
+## Home
+<img alt="Awesome GitHub Profile Readme" src="https://github.com/nt0412/convouless/blob/92be4f4d935b480575541c7e4020e8a291119fe1/image/page_home.png"> </img>
+
+## Dashboad
+<img alt="Awesome GitHub Profile Readme" src="https://github.com/nt0412/convouless/blob/92be4f4d935b480575541c7e4020e8a291119fe1/image/dashboad.png"> </img>

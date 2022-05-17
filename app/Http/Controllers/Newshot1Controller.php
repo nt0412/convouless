@@ -112,9 +112,6 @@ class Newshot1Controller extends Controller
     public function showhome()
     {
 
-        if (DB::connection()->getDatabaseName()) {
-            echo "Yes! successfully connected to the DB: " . DB::connection()->getDatabaseName();
-        }
         // $newshots = News::has('news_id')->get();
         $news = News::paginate(15);
         $auth = Author::get();

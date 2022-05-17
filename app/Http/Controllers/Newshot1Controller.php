@@ -26,9 +26,9 @@ class Newshot1Controller extends Controller
         $covid =  Http::get('https://api.apify.com/v2/key-value-stores/EaCBL1JNntjR3EakU/records/LATEST?disableRedirect=true');
         $covid_world =  Http::get('https://api.apify.com/v2/key-value-stores/SmuuI0oebnTWjRTUh/records/LATEST?disableRedirect=true');
         $news = News::paginate(25);
-        $newshots = Newshot1::join('tblnews', 'tblnews.news_id', '=', 'tblnewshot1.news_id' )->get();
+        $newshots = Newshot1::join('tblnews', 'tblnews.news_id', '=', 'tblnewshot1.news_id')->get();
         $newshot1s = $newshots;
-        return view('admincp.newshot1.index')->with(compact('newshot1s','news','covid','covid_world'));
+        return view('admincp.newshot1.index')->with(compact('newshot1s', 'news', 'covid', 'covid_world'));
     }
 
     /**
@@ -60,7 +60,6 @@ class Newshot1Controller extends Controller
      */
     public function show($id)
     {
-
     }
 
     /**
@@ -72,11 +71,11 @@ class Newshot1Controller extends Controller
     public function edit($id)
     {
         $list_newshot1 = Newshot1::get();
-        $list_news = News::where('news_enable', 1)->orderBy('date_updated','DESC')->paginate(25);
+        $list_news = News::where('news_enable', 1)->orderBy('date_updated', 'DESC')->paginate(25);
         $news_curen = News::where('news_id', $id)->first();
         $cate = Category::get();
         $author = Author::get();
-        return view('admincp.newshot1.edit')->with(compact('list_news','id','cate','author','news_curen'));
+        return view('admincp.newshot1.edit')->with(compact('list_news', 'id', 'cate', 'author', 'news_curen'));
     }
 
     /**
@@ -97,7 +96,6 @@ class Newshot1Controller extends Controller
         // dd($id_curen,$news_select,$newshot);
         $newshot->update();
         return $this->index()->with('status', 'Message: Updated success');
-
     }
 
     /**
@@ -111,8 +109,12 @@ class Newshot1Controller extends Controller
         //
     }
 
-    public function showhome(){
+    public function showhome()
+    {
 
+        if (DB::connection()->getDatabaseName()) {
+            echo "Yes! successfully connected to the DB: " . DB::connection()->getDatabaseName();
+        }
         // $newshots = News::has('news_id')->get();
         $news = News::paginate(15);
         $auth = Author::get();
@@ -120,12 +122,13 @@ class Newshot1Controller extends Controller
         $covid =  Http::get('https://api.apify.com/v2/key-value-stores/EaCBL1JNntjR3EakU/records/LATEST?disableRedirect=true');
         $covid_world =  Http::get('https://api.apify.com/v2/key-value-stores/SmuuI0oebnTWjRTUh/records/LATEST?disableRedirect=true');
 
-        return view('home')->with(compact('newshot1s','news','auth','covid','covid_world'));
+        return view('home')->with(compact('newshot1s', 'news', 'auth', 'covid', 'covid_world'));
         // resources\views\home.blade.php
     }
 
-    public function preview(){
-        $newshots = Newshot1::join('tblnews', 'tblnews.news_id', '=', 'tblnewshot1.news_id' )->get();
+    public function preview()
+    {
+        $newshots = Newshot1::join('tblnews', 'tblnews.news_id', '=', 'tblnewshot1.news_id')->get();
 
         // $newshots = News::has('news_id')->get();
 
